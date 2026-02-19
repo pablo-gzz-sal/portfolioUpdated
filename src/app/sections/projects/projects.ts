@@ -10,43 +10,43 @@ import { Project, ProjectCard } from '../../shared/project-card/project-card';
   styleUrl: './projects.css',
 })
 export class Projects {
-
-    projects: Project[] = [
+  projects: Project[] = [
     {
-      id: 'xpln',
-      title: 'Xpln — Social experiments platform',
-      description: 'Spanish-language platform for sharing and validating everyday experiments.',
-      tags: ['Angular/React', '.NET', 'PostgreSQL', 'Docker'],
+      id: 'josephbattisti',
+      title: 'Joseph Battisti — Salon based in NY',
+      description: 'Beauty salon with shopify integrated',
+      tags: ['Angular', 'Next', 'PostgreSQL', 'Swagger'],
       links: [
-        { label: 'Case study', href: '#' },
-        { label: 'GitHub', href: '#' },
+        { label: 'Website', href: 'https://josephbattisti-q6dqe.ondigitalocean.app/' },
+        { label: 'GitHub', href: 'https://github.com/pablo-gzz-sal/barber-frontend' },
       ],
       highlight: 'Architecture + UX',
     },
     {
       id: 'referral',
-      title: 'Referral & commission system',
-      description: 'QR-code referrals, tracked conversions, and automated Stripe payouts.',
-      tags: ['Angular', 'Express', 'MongoDB', 'Stripe'],
-      links: [{ label: 'Overview', href: '#' }],
-      highlight: 'Payments + tracking',
-    },
-    {
-      id: 'pdfs',
-      title: 'Formal PDF generation (DE)',
-      description: 'Dynamic multi-page documents with strict layout control and print-friendly styling.',
-      tags: ['Angular', 'pdfMake', 'Templates'],
-      links: [{ label: 'Details', href: '#' }],
-      highlight: 'Docs + formatting',
+      title: 'Lending Group based in TX',
+      description: 'Employment seeking dedicated app',
+      tags: ['Angular', 'Express', 'MongoDB', 'CI/CD'],
+      links: [{ label: 'Website', href: 'https://bclg-uhe93.ondigitalocean.app/' }],
+      highlight: 'Leads generation',
     },
     {
       id: 'video',
-      title: 'Yoga/Meditation weekly plan',
+      title: 'Esencial360 Yoga/Meditation',
       description: 'Configurable plan + BunnyStream video retrieval + admin tooling.',
-      tags: ['Express', 'MongoDB', 'BunnyStream', 'Admin UI'],
-      links: [{ label: 'Flow', href: '#' }],
+      tags: ['Angular', 'Express', 'MongoDB', 'BunnyStream', 'Admin UI'],
+      links: [{ label: 'Website', href: 'https://esencial360.com/' }],
       highlight: 'Content platform',
     },
+        {
+      id: 'xpln',
+      title: 'Xpln — Social experiments platform',
+      description: 'Multi-language platform for sharing and validating everyday experiments.',
+      tags: ['Svelte', 'Python', 'PostgreSQL', 'Docker'],
+      links: [
+        { label: 'GitHub', href: 'https://github.com/pablo-gzz-sal/expln-frontend' },
+      ],
+      highlight: 'Architecture + UX',
+    },
   ];
-
 }

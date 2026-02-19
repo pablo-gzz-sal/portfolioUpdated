@@ -13,9 +13,11 @@ type TechGroup = { title: string; items: string[] };
 })
 export class Knowledge {
   groups: TechGroup[] = [
-    { title: 'Frontend', items: ['Angular', 'React', 'TypeScript', 'Tailwind', 'RxJS'] },
-    { title: 'Backend', items: ['Node.js', 'Express', '.NET', 'REST APIs', 'Auth0'] },
+    { title: 'Frontend', items: ['Angular', 'React', 'Vue', 'TypeScript', 'Tailwind', 'RxJS'] },
+    { title: 'Mobile', items: ['React Native', 'Ionic', 'Expo', 'Android Studio'] },
+    { title: 'Backend', items: ['Node.js', 'Express', "Nestjs", '.NET', 'Python', 'REST APIs', 'Auth0'] },
     { title: 'Databases', items: ['PostgreSQL', 'MongoDB', 'MariaDB'] },
-    { title: 'Infra / Tooling', items: ['Docker', 'Swagger/OpenAPI', 'Stripe', 'CI/CD'] },
+    { title: 'Infra / Tooling', items: ['Docker', 'Swagger/OpenAPI', 'Stripe', 'CI/CD', 'Azure'] },
+    { title: 'Cybersecurity', items: ['Kali', 'PortSwigger', 'Red/Blue Team', 'Pentesting',] },
   ];
 }
