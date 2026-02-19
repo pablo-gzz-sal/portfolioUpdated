@@ -4,11 +4,12 @@ import { Knowledge } from '../../sections/knowledge/knowledge';
 import { Projects } from '../../sections/projects/projects';
 import { Hero } from '../../sections/hero/hero';
 import { Footer } from '../../layout/footer/footer';
+import { Systems } from "../../sections/systems/systems";
 
 @Component({
   selector: 'app-landing',
   standalone: true,
-  imports: [Header, Footer, Hero, Projects, Knowledge],
+  imports: [Header, Footer, Hero, Projects, Knowledge, Systems],
   templateUrl: './landing.html',
   styleUrl: './landing.css',
 })

@@ -1,0 +1,133 @@
+<section id="systems" class="py-16 sm:py-24">
+
+  <!-- header -->
+  <p class="inline-flex items-center gap-2 text-xs uppercase tracking-widest text-[color:var(--muted2)]">
+    <span class="h-px w-4 bg-[rgba(180,140,255,0.4)]"></span>
+    Process
+  </p>
+
+  <div class="mt-3 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+    <h2 class="text-2xl font-semibold tracking-tight sm:text-3xl">How I build systems</h2>
+    <p class="max-w-xl text-sm leading-relaxed text-[color:var(--muted2)]">
+      From first requirements to production hosting — with performance, maintainability, and UX in mind.
+    </p>
+  </div>
+
+  <!-- pipeline -->
+  <div class="relative mt-10">
+
+    <!-- vertical connector line -->
+    <div
+      class="pointer-events-none absolute left-[1.1rem] top-10 hidden h-[calc(100%-3.5rem)] w-px sm:block
+             bg-[linear-gradient(180deg,transparent,rgba(124,58,237,0.25)_20%,rgba(124,58,237,0.25)_80%,transparent)]"
+    ></div>
+
+    <div class="grid gap-3">
+
+      <!-- shared article template — repeated per step -->
+      @for (step of steps; track step.id) {
+        <article
+          class="group relative overflow-hidden rounded-2xl p-px
+                 bg-[rgba(255,255,255,0.04)] transition duration-300
+                 hover:bg-[rgba(255,255,255,0.06)]"
+        >
+          <!-- border glow on hover -->
+          <div
+            class="pointer-events-none absolute inset-0 rounded-2xl opacity-0 transition duration-500 group-hover:opacity-100
+                   bg-[conic-gradient(from_180deg_at_50%_50%,rgba(124,58,237,0.35),rgba(255,255,255,0.05),rgba(124,58,237,0.35))]"
+          ></div>
+
+          <div class="relative rounded-[15px] bg-[#0b0912] p-6">
+
+            <!-- corner glow -->
+            <div
+              class="pointer-events-none absolute -top-10 -right-10 h-32 w-32 rounded-full blur-2xl
+                     opacity-0 transition duration-500 group-hover:opacity-100
+                     bg-[radial-gradient(circle,rgba(124,58,237,0.25),transparent_65%)]"
+            ></div>
+
+            <div class="flex flex-col gap-5 sm:flex-row sm:items-start sm:gap-6">
+
+              <!-- step number -->
+              <span
+                class="grid h-9 w-9 shrink-0 place-items-center rounded-xl text-xs font-semibold
+                       bg-[rgba(124,58,237,0.08)] ring-1 ring-[rgba(124,58,237,0.2)]
+                       text-[rgba(180,140,255,0.8)]"
+              >
+                {{ step.number }}
+              </span>
+
+              <!-- body -->
+              <div class="flex-1">
+                <h3 class="text-sm font-semibold text-[color:var(--text)]">{{ step.title }}</h3>
+                <p class="mt-1.5 text-sm leading-relaxed text-[color:var(--muted2)]">
+                  {{ step.description }}
+                </p>
+
+                <!-- tags / mini-cards depending on step -->
+                <ng-container *ngTemplateOutlet="step.detailTpl"></ng-container>
+              </div>
+
+              <!-- phase badge -->
+              <span
+                class="hidden sm:inline-flex shrink-0 items-center gap-2 rounded-full px-3 py-1 text-xs
+                       bg-[rgba(124,58,237,0.08)] ring-1 ring-[rgba(124,58,237,0.18)]
+                       text-[rgba(180,140,255,0.75)]"
+              >
+                <span class="h-1.5 w-1.5 rounded-full bg-[rgba(180,140,255,0.6)]"></span>
+                {{ step.badge }}
+              </span>
+
+            </div>
+          </div>
+        </article>
+      }
+
+    </div>
+  </div>
+
+  <!-- CTA strip -->
+  <div
+    class="relative mt-6 overflow-hidden rounded-2xl p-px
+           bg-[rgba(255,255,255,0.04)]"
+  >
+    <div
+      class="pointer-events-none absolute inset-0 rounded-2xl
+             bg-[conic-gradient(from_200deg_at_30%_80%,rgba(124,58,237,0.3),transparent_40%,rgba(124,58,237,0.15),transparent_70%)]"
+    ></div>
+
+    <div class="relative rounded-[15px] bg-[#0b0912] p-6">
+      <div class="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+        <div>
+          <h3 class="text-sm font-semibold text-[color:var(--text)]">Want this approach on your product?</h3>
+          <p class="mt-1 text-sm text-[color:var(--muted2)]">
+            I'm happy to help with architecture, implementation, or shipping an MVP.
+          </p>
+        </div>
+
+        <div class="flex shrink-0 gap-2">
+          <a
+            href="#projects"
+            class="rounded-full px-4 py-2 text-sm font-medium text-[color:var(--muted)]
+                   bg-[rgba(255,255,255,0.05)] ring-1 ring-[rgba(255,255,255,0.08)]
+                   transition duration-300 hover:text-white hover:bg-[rgba(255,255,255,0.09)]"
+          >
+            See projects
+          </a>
+
+          <a
+            href="#contact"
+            class="rounded-full px-4 py-2 text-sm font-medium text-white
+                   bg-[rgba(100,60,200,0.35)] ring-1 ring-[rgba(124,58,237,0.25)]
+                   transition duration-300
+                   hover:bg-[rgba(100,60,200,0.5)]
+                   hover:shadow-[0_0_16px_rgba(124,58,237,0.25)]"
+          >
+            Contact me
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section>
