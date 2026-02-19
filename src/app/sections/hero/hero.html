@@ -1,0 +1,130 @@
+<section class="relative py-14 sm:py-20">
+  <!-- abstract blobs -->
+  <div class="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
+    <!-- blob 1 -->
+    <svg
+      class="absolute -top-28 left-1/2 h-[520px] w-[520px] -translate-x-1/2 opacity-60 blur-2xl"
+      viewBox="0 0 600 600"
+      aria-hidden="true"
+    >
+      <defs>
+        <radialGradient id="g1">
+          <stop offset="0%" stop-color="var(--a2)" stop-opacity="0.55"></stop>
+          <stop offset="60%" stop-color="var(--a1)" stop-opacity="0.35"></stop>
+          <stop offset="100%" stop-color="transparent"></stop>
+        </radialGradient>
+      </defs>
+      <path
+        fill="url(#g1)"
+        d="M421,86Q507,172,475,283.5Q443,395,339.5,451Q236,507,152.5,428Q69,349,88.5,241.5Q108,134,210,74Q312,14,421,86Z"
+      />
+    </svg>
+
+    <!-- blob 2 -->
+    <svg
+      class="absolute top-24 right-[-140px] h-[480px] w-[480px] opacity-50 blur-2xl"
+      viewBox="0 0 600 600"
+      aria-hidden="true"
+    >
+      <defs>
+        <radialGradient id="g2">
+          <stop offset="0%" stop-color="var(--a3)" stop-opacity="0.40"></stop>
+          <stop offset="70%" stop-color="var(--a2)" stop-opacity="0.18"></stop>
+          <stop offset="100%" stop-color="transparent"></stop>
+        </radialGradient>
+      </defs>
+      <path
+        fill="url(#g2)"
+        d="M445,120Q520,240,462,343Q404,446,287,500Q170,554,103,439Q36,324,91,214Q146,104,270,76Q394,48,445,120Z"
+      />
+    </svg>
+
+    <!-- subtle grain-ish overlay -->
+    <div class="absolute inset-0 opacity-[0.08] bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.12),transparent_55%)]"></div>
+  </div>
+
+  <div class="flex flex-col gap-8">
+    <!-- pill -->
+    <div
+      class="inline-flex w-fit items-center gap-2 rounded-full
+             border border-[color:var(--border)]
+             bg-[color:var(--surface)]
+             px-3 py-1 text-xs text-[color:var(--muted)]
+             shadow-[0_0_0_1px_rgba(0,0,0,0.10)]
+             transition hover:bg-[color:var(--surface2)]"
+    >
+      <span class="h-1.5 w-1.5 rounded-full bg-[color:var(--a2)]"></span>
+      Full-stack • Web3 • Product-minded
+    </div>
+
+    <!-- headline -->
+    <div class="max-w-3xl">
+      <h1 class="text-4xl font-semibold leading-[1.05] tracking-tight sm:text-6xl">
+        Build sleek web apps that ship fast — and scale.
+      </h1>
+
+      <p class="mt-5 text-base leading-relaxed text-[color:var(--muted)] sm:text-lg">
+        I’m a full-stack developer focused on Angular/React, backend APIs, and modern UX. Here’s a
+        selection of my work and the tech I use daily.
+      </p>
+
+      <!-- CTAs -->
+      <div class="mt-8 flex flex-wrap gap-3">
+        <a
+          href="#projects"
+          class="rounded-xl bg-white px-4 py-2.5 text-sm font-medium text-black hover:bg-zinc-100
+                 transition"
+        >
+          View projects
+        </a>
+
+        <a
+          href="#contact"
+          class="rounded-xl border border-[color:var(--border)]
+                 bg-[color:var(--surface)] px-4 py-2.5 text-sm font-medium text-white
+                 transition hover:bg-[color:var(--surface2)]
+                 hover:shadow-[0_0_0_1px_rgba(255,255,255,0.10),0_18px_60px_-30px_rgba(124,58,237,0.40)]"
+        >
+          Contact
+        </a>
+      </div>
+    </div>
+
+    <!-- stats cards -->
+    <div class="grid gap-4 sm:grid-cols-3">
+      <div
+        class="group relative rounded-2xl border border-[color:var(--border)]
+               bg-[color:var(--surface)] p-5 transition
+               hover:bg-[color:var(--surface2)]
+               hover:shadow-[0_0_0_1px_rgba(255,255,255,0.10),0_18px_60px_-30px_rgba(6,182,212,0.35)]"
+      >
+        <div class="pointer-events-none absolute inset-0 rounded-2xl opacity-0 transition group-hover:opacity-100 ring-1 ring-[color:rgba(255,255,255,0.12)]"></div>
+        <p class="text-xs text-[color:var(--muted2)]">Focus</p>
+        <p class="mt-2 text-sm text-white">Angular, APIs, Stripe, scalable systems</p>
+      </div>
+
+      <div
+        class="group relative rounded-2xl border border-[color:var(--border)]
+               bg-[color:var(--surface)] p-5 transition
+               hover:bg-[color:var(--surface2)]
+               hover:shadow-[0_0_0_1px_rgba(255,255,255,0.10),0_18px_60px_-30px_rgba(124,58,237,0.35)]"
+      >
+        <div class="pointer-events-none absolute inset-0 rounded-2xl opacity-0 transition group-hover:opacity-100 ring-1 ring-[color:rgba(255,255,255,0.12)]"></div>
+        <p class="text-xs text-[color:var(--muted2)]">Style</p>
+        <p class="mt-2 text-sm text-white">Minimal, premium UI with motion</p>
+      </div>
+
+      <div
+        class="group relative rounded-2xl border border-[color:var(--border)]
+               bg-[color:var(--surface)] p-5 transition
+               hover:bg-[color:var(--surface2)]
+               hover:shadow-[0_0_0_1px_rgba(255,255,255,0.10),0_18px_60px_-30px_rgba(34,197,94,0.30)]"
+      >
+        <div class="pointer-events-none absolute inset-0 rounded-2xl opacity-0 transition group-hover:opacity-100 ring-1 ring-[color:rgba(255,255,255,0.12)]"></div>
+        <p class="text-xs text-[color:var(--muted2)]">Strength</p>
+        <p class="mt-2 text-sm text-white">Shipping + iteration + maintainability</p>
+      </div>
+    </div>
+  </div>
+</section>
+

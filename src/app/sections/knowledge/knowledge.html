@@ -1,0 +1,85 @@
+<section id="tech" class="py-12 sm:py-16">
+  <p class="text-xs uppercase tracking-widest text-[color:var(--muted2)]">Technologies</p>
+
+  <div class="mt-2 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+    <h2 class="text-2xl font-semibold tracking-tight sm:text-3xl">What I work with</h2>
+    <p class="max-w-xl text-sm text-[color:var(--muted)]">
+      Tools I’m confident shipping production code with — from frontend to backend and infra.
+    </p>
+  </div>
+
+  <div class="mt-8 grid gap-4 sm:grid-cols-2">
+    @for (g of groups; track g.title) {
+      <div
+        class="group relative rounded-2xl border border-[color:var(--border)]
+               bg-[color:var(--surface)] p-6 transition
+               hover:bg-[color:var(--surface2)]
+               hover:shadow-[0_0_0_1px_rgba(255,255,255,0.10),0_18px_70px_-40px_rgba(6,182,212,0.22)]"
+      >
+        <div
+          class="pointer-events-none absolute inset-0 rounded-2xl opacity-0 transition
+                 group-hover:opacity-100 ring-1 ring-[color:rgba(255,255,255,0.12)]"
+        ></div>
+
+        <h3 class="text-sm font-semibold text-[color:var(--text)]">{{ g.title }}</h3>
+
+        <div class="mt-4 flex flex-wrap gap-2">
+          @for (t of g.items; track t) {
+            <app-tech-badge [label]="t" />
+          }
+        </div>
+      </div>
+    }
+  </div>
+
+  <div
+    id="contact"
+    class="group relative mt-10 rounded-2xl border border-[color:var(--border)]
+           bg-[color:var(--surface)] p-6 transition
+           hover:bg-[color:var(--surface2)]
+           hover:shadow-[0_0_0_1px_rgba(255,255,255,0.10),0_22px_90px_-50px_rgba(124,58,237,0.30)]"
+  >
+    <div
+      class="pointer-events-none absolute inset-0 rounded-2xl opacity-0 transition
+             group-hover:opacity-100 ring-1 ring-[color:rgba(255,255,255,0.12)]"
+    ></div>
+
+    <h3 class="text-base font-semibold text-[color:var(--text)]">Contact</h3>
+    <p class="mt-2 text-sm text-[color:var(--muted)]">
+      Add your email + socials here. (Or wire this to a contact form / mailto.)
+    </p>
+
+    <div class="mt-4 flex flex-wrap gap-3">
+      <a
+        class="rounded-xl bg-white px-4 py-2.5 text-sm font-medium text-black hover:bg-zinc-100 transition"
+        href="mailto:you@example.com"
+      >
+        Email me
+      </a>
+
+      <a
+        class="rounded-xl border border-[color:var(--border)]
+               bg-[color:var(--surface)] px-4 py-2.5 text-sm font-medium text-white
+               transition hover:bg-[color:var(--surface2)]
+               hover:shadow-[0_0_0_1px_rgba(255,255,255,0.10),0_18px_60px_-30px_rgba(6,182,212,0.35)]"
+        href="#"
+        target="_blank"
+        rel="noreferrer"
+      >
+        GitHub
+      </a>
+
+      <a
+        class="rounded-xl border border-[color:var(--border)]
+               bg-[color:var(--surface)] px-4 py-2.5 text-sm font-medium text-white
+               transition hover:bg-[color:var(--surface2)]
+               hover:shadow-[0_0_0_1px_rgba(255,255,255,0.10),0_18px_60px_-30px_rgba(124,58,237,0.35)]"
+        href="#"
+        target="_blank"
+        rel="noreferrer"
+      >
+        LinkedIn
+      </a>
+    </div>
+  </div>
+</section>
