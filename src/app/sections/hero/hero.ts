@@ -9,7 +9,7 @@ import { Component } from '@angular/core';
 })
 export class Hero {
   statCards = [
-    { label: 'Focus', value: 'Angular, APIs, Stripe, scalable systems' },
+    { label: 'Focus', value: 'Angular, APIs, Backend, scalable systems' },
     { label: 'Style', value: 'Minimal, premium UI with motion' },
     { label: 'Strength', value: 'Shipping + iteration + maintainability' },
   ];
