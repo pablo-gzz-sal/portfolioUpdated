@@ -10,8 +10,8 @@ export type Project = {
   tags: string[];
   highlight?: string;
   links?: ProjectLink[];
+  previewImage?: string;   // optional screenshot shown at top of card
 };
-
 
 @Component({
   selector: 'app-project-card',
@@ -21,7 +21,5 @@ export type Project = {
   styleUrl: './project-card.css',
 })
 export class ProjectCard {
-
-   @Input({ required: true }) project!: Project;
-
+  @Input({ required: true }) project!: Project;
 }

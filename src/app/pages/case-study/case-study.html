@@ -1,0 +1,278 @@
+<div
+  class="bg-pattern-cross relative min-h-dvh overflow-hidden bg-[color:var(--bg)] text-[color:var(--text)] selection:bg-white selection:text-black"
+>
+  @if (project) {
+    <!-- ── HERO ──────────────────────────────────────────────────── -->
+    <section class="relative h-[55vh] min-h-[380px] overflow-hidden sm:h-[65vh]">
+      <!-- bg image -->
+      @if (project.heroImage) {
+        <img
+          [src]="project.heroImage"
+          [alt]="project.title"
+          class="absolute inset-0 h-full w-full object-cover opacity-35"
+        />
+      }
+
+      <!-- overlays -->
+      <div
+        class="absolute inset-0 bg-[linear-gradient(to_top,var(--bg)_18%,rgba(8,6,15,0.55)_60%,rgba(8,6,15,0.3))]"
+      ></div>
+      <div
+        class="absolute inset-0 bg-[radial-gradient(ellipse_70%_60%_at_50%_100%,rgba(8,6,15,0.9),transparent_70%)]"
+      ></div>
+
+      <!-- grid -->
+      <!-- <div
+        class="pointer-events-none absolute inset-0
+               [background-image:linear-gradient(rgba(255,255,255,0.04)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.04)_1px,transparent_1px)]
+               [background-size:48px_48px]
+               [mask-image:linear-gradient(to_bottom,black_0%,transparent_85%)]"
+      ></div> -->
+
+      <!-- hero content -->
+      <div class="absolute bottom-0 left-0 right-0 mx-auto max-w-6xl px-4 pb-10 sm:px-6 lg:px-8">
+        <!-- year + tags -->
+        <div class="flex flex-wrap items-center gap-2">
+          <span class="text-xs uppercase tracking-[0.22em] text-[color:var(--muted2)]">
+            Case Study {{ project.year }}
+          </span>
+          @for (tag of project.tags; track tag) {
+            <span
+              class="rounded-full px-2.5 py-0.5 text-[11px] font-medium uppercase tracking-wider bg-[var(--a1-soft)] ring-1 ring-[var(--a1-ring)] text-[color:var(--lavender)]"
+              >{{ tag }}</span
+            >
+          }
+        </div>
+
+        <!-- title -->
+        <h1 class="mt-4 text-4xl font-bold leading-none tracking-tight sm:text-6xl lg:text-7xl">
+          {{ project.title }}
+        </h1>
+        <p
+          class="mt-1 text-3xl font-bold tracking-tight text-[color:var(--a1)] sm:text-5xl lg:text-6xl"
+        >
+          {{ project.subtitle }}
+        </p>
+
+        <!-- summary -->
+        <p class="mt-4 max-w-xl text-sm leading-7 text-[color:var(--muted)] sm:text-base">
+          {{ project.summary }}
+        </p>
+      </div>
+    </section>
+
+    <!-- ── BODY ───────────────────────────────────────────────────── -->
+    <div class="mx-auto max-w-6xl px-4 pb-24 sm:px-6 lg:px-8">
+      <!-- ── STACK ──────────────────────────────────────────────── -->
+      <section class="pt-12">
+        <p class="text-xs uppercase tracking-[0.22em] text-[color:var(--muted2)]">
+          Engineered with
+        </p>
+
+        <div class="mt-4 flex flex-wrap gap-2">
+          @for (tech of project.stack; track tech) {
+            <div
+              class="flex items-center gap-2 rounded-2xl border border-[var(--border)] bg-[var(--surface)] px-4 py-2.5"
+            >
+              <span
+                class="grid h-6 w-6 place-items-center rounded-md text-xs font-bold bg-[var(--a1-soft)] text-[color:var(--lavender)]"
+                >{{ tech[0] }}</span
+              >
+              <span class="text-sm font-medium text-[color:var(--muted)]">{{ tech }}</span>
+            </div>
+          }
+        </div>
+      </section>
+
+      <!-- ── CHALLENGE + SOLUTION ───────────────────────────────── -->
+      <section class="mt-10 grid gap-3 md:grid-cols-2">
+        <!-- challenge -->
+        <article
+          class="relative overflow-hidden rounded-[1.5rem] border border-[var(--border)] bg-[var(--surface)] p-6 sm:p-8"
+        >
+          <div
+            class="pointer-events-none absolute -bottom-10 -left-10 h-36 w-36 rounded-full blur-3xl bg-[radial-gradient(circle,rgba(255,255,255,0.04),transparent_70%)]"
+          ></div>
+          <h2 class="text-xl font-semibold tracking-tight">The Challenge</h2>
+          <p class="mt-4 text-sm leading-7 text-[color:var(--muted)]">{{ project.challenge }}</p>
+          <div class="mt-6 h-px w-12 bg-[rgba(255,255,255,0.12)]"></div>
+        </article>
+
+        <!-- solution -->
+        <article
+          class="relative overflow-hidden rounded-[1.5rem] border border-[var(--a1-ring)] bg-[var(--a1-soft)] p-6 sm:p-8"
+        >
+          <div
+            class="pointer-events-none absolute -top-10 -right-10 h-36 w-36 rounded-full blur-3xl bg-[radial-gradient(circle,rgba(124,58,237,0.2),transparent_70%)]"
+          ></div>
+          <h2 class="text-xl font-semibold tracking-tight text-[color:var(--lavender)]">
+            The Solution
+          </h2>
+          <p class="mt-4 text-sm leading-7 text-[color:var(--muted)]">{{ project.solution }}</p>
+          <div class="mt-6 h-px w-12 bg-[var(--a1-ring)]"></div>
+        </article>
+      </section>
+
+      <!-- ── FEATURES ───────────────────────────────────────────── -->
+      <section class="mt-10">
+        <p class="text-xs uppercase tracking-[0.22em] text-[color:var(--muted2)]">
+          Key architectures
+        </p>
+
+        <div class="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+          @for (f of project.features; track f.title) {
+            <article
+              class="group relative overflow-hidden rounded-[1.5rem] border border-[var(--border)] bg-[var(--surface)] p-5 transition duration-300 hover:border-[var(--a1-ring)] hover:bg-[var(--surface2)]"
+            >
+              <div
+                class="pointer-events-none absolute -top-8 -right-8 h-24 w-24 rounded-full blur-2xl opacity-0 transition duration-500 group-hover:opacity-100 bg-[radial-gradient(circle,rgba(124,58,237,0.15),transparent_65%)]"
+              ></div>
+
+              <div
+                class="grid h-10 w-10 place-items-center rounded-xl text-lg bg-[var(--a1-soft)] ring-1 ring-[var(--a1-ring)]"
+              >
+                {{ f.icon }}
+              </div>
+
+              <h3 class="mt-4 text-sm font-semibold text-[color:var(--text)]">{{ f.title }}</h3>
+              <p class="mt-2 text-sm leading-6 text-[color:var(--muted2)]">{{ f.description }}</p>
+            </article>
+          }
+        </div>
+      </section>
+
+      <!-- ── SCREENSHOTS ────────────────────────────────────────── -->
+      @if (project.screenshots.length) {
+        <section class="mt-14">
+          <div class="flex items-end justify-between gap-4">
+            <div>
+              <p class="text-xs uppercase tracking-[0.22em] text-[color:var(--muted2)]">
+                Interface deep dive
+              </p>
+              <h2 class="mt-2 text-xl font-semibold tracking-tight">
+                Exploring design and functional precision.
+              </h2>
+            </div>
+            <span class="hidden text-xs text-[color:var(--muted2)] sm:block">
+              01 — {{ project.screenshots.length | number: '2.0-0' }} Gallery
+            </span>
+          </div>
+
+          <div class="mt-6 grid gap-3 sm:grid-cols-3">
+            @for (shot of visibleScreenshots; track shot; let i = $index) {
+              <div
+                class="group relative cursor-pointer self-start overflow-hidden rounded-2xl border border-[var(--border)] bg-[var(--surface)]"
+                (click)="openImage(shot)"
+                [class.sm:col-span-2]="i === 0"
+              >
+                <div class="inline-block w-full rounded-xl overflow-hidden bg-black/5">
+                  <img
+                    [src]="shot"
+                    [alt]="'Screenshot ' + (i + 1)"
+                    class="block w-full h-auto object-contain transition duration-500 group-hover:scale-[1.015]"
+                  />
+                  <div
+                    class="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition duration-300"
+                  ></div>
+                </div>
+              </div>
+            }
+
+            <!-- view more tile -->
+            @if (project.screenshots.length > 4) {
+              <div
+                class="flex cursor-pointer flex-col items-center justify-center gap-2 rounded-2xl border border-[var(--border)] bg-[var(--surface)] aspect-square transition duration-300 hover:border-[var(--a1-ring)] hover:bg-[var(--a1-soft)]"
+                (click)="showAllScreenshots = !showAllScreenshots"
+              >
+                <span class="text-2xl">🖼</span>
+                <span class="text-xs text-[color:var(--muted2)]">
+                  +{{ project.screenshots.length - 4 }} View Details
+                </span>
+              </div>
+            }
+          </div>
+        </section>
+      }
+
+      <!-- ── CTA ────────────────────────────────────────────────── -->
+      <section class="mt-14">
+        <div
+          class="relative overflow-hidden rounded-[2rem] border border-[var(--border)] bg-[var(--surface)] p-8 text-center sm:p-12"
+        >
+          <div
+            class="pointer-events-none absolute inset-0 bg-[conic-gradient(from_200deg_at_50%_110%,rgba(124,58,237,0.3),transparent_40%,rgba(124,58,237,0.12),transparent_70%)]"
+          ></div>
+
+          <div class="relative">
+            <h2 class="text-3xl font-bold tracking-tight sm:text-4xl">Ready to Deploy?</h2>
+            <p class="mx-auto mt-3 max-w-md text-sm leading-7 text-[color:var(--muted)]">
+              This project is live and production-ready. Explore the source code or see it running.
+            </p>
+
+            <div class="mt-8 flex flex-wrap items-center justify-center gap-3">
+              @for (link of project.links; track link.label) {
+                @if (link.label === 'Website') {
+                  <a
+                    [href]="link.href"
+                    target="_blank"
+                    rel="noreferrer"
+                    class="inline-flex items-center gap-2 rounded-2xl px-6 py-3.5 text-sm font-medium text-white bg-[var(--a1)] transition duration-300 hover:bg-[rgba(124,58,237,0.85)] hover:shadow-[0_0_24px_var(--a1-glow)]"
+                  >
+                    View Live Site
+                    <svg
+                      class="h-4 w-4"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                      />
+                    </svg>
+                  </a>
+                }
+              }
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <!-- /body -->
+  } @else {
+    <!-- not found -->
+    <div class="flex min-h-[60vh] flex-col items-center justify-center gap-4 text-center">
+      <p class="text-4xl">🔍</p>
+      <h2 class="text-xl font-semibold">Project not found</h2>
+      <a routerLink="/" class="text-sm text-[color:var(--lavender)] underline underline-offset-4"
+        >← Back home</a
+      >
+    </div>
+  }
+
+  <app-footer />
+</div>
+
+@if (selectedImage) {
+  <div
+    class="fixed inset-0 z-[10000] flex items-center justify-center bg-black/80 backdrop-blur-sm"
+    (click)="closeImage()"
+  >
+    <!-- image -->
+    <img
+      [src]="selectedImage"
+      class="max-h-[90vh] max-w-[90vw] rounded-xl shadow-2xl"
+      (click)="$event.stopPropagation()"
+    />
+
+    <!-- close button -->
+    <button
+      class="absolute top-6 right-6 text-white text-2xl hover:opacity-70"
+      (click)="closeImage()"
+    >
+      ✕
+    </button>
+  </div>
+}

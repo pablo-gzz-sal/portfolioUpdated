@@ -1,0 +1,344 @@
+<div
+  class="bg-pattern-cross relative min-h-dvh overflow-hidden bg-[color:var(--bg)] text-[color:var(--text)] selection:bg-white selection:text-black"
+>
+  <!-- ambient blooms -->
+  <div
+    class="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(ellipse_65%_50%_at_10%_10%,rgba(124,58,237,0.28),transparent_70%)]"
+  ></div>
+  <div
+    class="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(ellipse_40%_30%_at_88%_78%,rgba(124,58,237,0.10),transparent_70%)]"
+  ></div>
+  <!-- grid -->
+  <div
+    class="pointer-events-none absolute inset-0 -z-10 [background-image:linear-gradient(rgba(255,255,255,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.05)_1px,transparent_1px)] [background-size:48px_48px] [mask-image:linear-gradient(to_bottom,black_0%,black_40%,transparent_75%)]"
+  ></div>
+
+  <main class="mx-auto w-full max-w-6xl px-4 pb-24 pt-10 sm:px-6 lg:px-8">
+    <!-- ── HERO ─────────────────────────────────────────────── -->
+    <section class="grid items-start gap-10 pb-16 pt-4 md:grid-cols-[1.1fr_.9fr]">
+      <!-- left: text -->
+      <div class="order-2 md:order-1 flex flex-col justify-center">
+        <!-- available badge -->
+        <div
+          class="inline-flex w-fit items-center gap-2 rounded-full border border-[var(--border)] bg-[var(--surface)] px-3 py-1 text-[11px] uppercase tracking-[0.22em] text-[color:var(--muted2)]"
+        >
+          <span class="relative flex h-2 w-2">
+            <span
+              class="absolute inline-flex h-full w-full animate-ping rounded-full bg-[var(--a1)] opacity-60"
+            ></span>
+            <span class="relative inline-flex h-2 w-2 rounded-full bg-[var(--a1)]"></span>
+          </span>
+          Available for new projects
+        </div>
+
+        <h1
+          class="mt-5 text-4xl font-semibold leading-[1.1] tracking-tight sm:text-5xl lg:text-6xl"
+        >
+          Pablo Gonzalez —<br />
+          <span class="text-[color:var(--a1)]">Full-Stack</span><br />
+          Architect &amp; Digital Craftsman
+        </h1>
+
+        <p class="mt-5 max-w-lg text-base leading-7 text-[color:var(--muted)] sm:text-lg">
+          I build digital experiences where performance, clarity, and visual polish work together —
+          products that feel premium and scale cleanly.
+        </p>
+
+        <div class="mt-7 flex flex-wrap gap-2.5">
+          <a
+            href="mailto:pablo.gzz.sal@gmail.com"
+            class="rounded-full px-5 py-2.5 text-sm font-medium text-white bg-[var(--a1-soft)] ring-1 ring-[var(--a1-ring)] transition duration-300 hover:bg-[rgba(124,58,237,0.28)] hover:shadow-[0_0_18px_var(--a1-glow)]"
+          >
+            Email me
+          </a>
+          <a
+            href="https://www.linkedin.com/in/pablo-gonzalez-salcido-bb1a491a9/?locale=en_US"
+            target="_blank"
+            rel="noreferrer"
+            class="inline-flex items-center gap-2 rounded-full border border-[var(--border)] bg-[var(--surface)] px-5 py-2.5 text-sm font-medium text-[color:var(--muted)] transition duration-300 hover:text-white hover:bg-[var(--surface2)]"
+          >
+            LinkedIn
+          </a>
+          <a
+            href="https://github.com/pablo-gzz-sal"
+            target="_blank"
+            rel="noreferrer"
+            class="inline-flex items-center gap-2 rounded-full border border-[var(--border)] bg-[var(--surface)] px-5 py-2.5 text-sm font-medium text-[color:var(--muted)] transition duration-300 hover:text-white hover:bg-[var(--surface2)]"
+          >
+            GitHub
+          </a>
+        </div>
+      </div>
+
+      <!-- right: photo card -->
+      <div class="order-1 md:order-2 flex justify-center md:justify-end">
+        <div class="relative w-full max-w-[360px]">
+          <!-- glow halo -->
+          <div
+            class="absolute -inset-4 rounded-[2rem] blur-3xl bg-[radial-gradient(circle,rgba(124,58,237,0.25),transparent_70%)]"
+          ></div>
+
+          <!-- card frame -->
+          <div
+            class="relative rounded-[1.75rem] border border-[var(--border)] bg-[var(--surface)] p-2.5 backdrop-blur-xl"
+          >
+            <div
+              class="aspect-[4/4.6] overflow-hidden rounded-[1.3rem] bg-[linear-gradient(160deg,rgba(255,255,255,0.12),rgba(255,255,255,0.03))]"
+            >
+              <img
+                src="/assets/images/me.jpeg"
+                alt="Pablo Gonzalez"
+                class="h-full w-full object-cover"
+              />
+            </div>
+
+            <!-- floating philosophy chip -->
+            <div
+              class="absolute -bottom-5 left-4 right-4 max-w-[17rem] rounded-2xl border border-[var(--border)] bg-[rgba(8,6,15,0.82)] p-4 backdrop-blur-xl"
+            >
+              <p class="text-[10px] uppercase tracking-[0.22em] text-[color:var(--muted2)]">
+                Philosophy
+              </p>
+              <p class="mt-1.5 text-sm leading-6 text-[color:var(--muted)]">
+                "I care about systems that are fast, elegant, and built to last."
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── VISION + STACK ────────────────────────────────────── -->
+    <section class="mt-10 grid gap-3 md:grid-cols-[.9fr_1.1fr]">
+      <!-- vision card -->
+      <article
+        class="relative overflow-hidden rounded-[1.75rem] border border-[var(--border)] bg-[var(--surface)] p-6 sm:p-8"
+      >
+        <div
+          class="pointer-events-none absolute -top-12 -left-12 h-40 w-40 rounded-full blur-3xl bg-[radial-gradient(circle,rgba(124,58,237,0.15),transparent_70%)]"
+        ></div>
+
+        <p class="text-xs uppercase tracking-[0.24em] text-[color:var(--muted2)]">The vision</p>
+
+        <p class="mt-5 text-2xl leading-snug text-[color:var(--muted)] sm:text-3xl">
+          I design and engineer products where
+          <span class="font-semibold text-[color:var(--text)]">performance</span>
+          meets
+          <span class="font-semibold text-[color:var(--lavender)]">aesthetic precision</span>.
+        </p>
+
+        <p class="mt-5 text-sm leading-7 text-[color:var(--muted)]">
+          My work sits at the intersection of frontend beauty and backend structure. I translate
+          vague ideas into clear systems, elegant interfaces, and maintainable implementation.
+        </p>
+      </article>
+
+      <!-- stack card -->
+      <article
+        class="relative overflow-hidden rounded-[1.75rem] border border-[var(--border)] bg-[var(--surface)] p-6 sm:p-8"
+      >
+        <div class="flex items-end justify-between gap-4">
+          <div>
+            <p class="text-xs uppercase tracking-[0.24em] text-[color:var(--muted2)]">Tech stack</p>
+            <h2 class="mt-3 text-2xl font-semibold tracking-tight">The arsenal</h2>
+          </div>
+          <p
+            class="hidden text-[11px] uppercase tracking-[0.22em] text-[color:var(--muted2)] sm:block"
+          >
+            Interactive cloud
+          </p>
+        </div>
+
+        <div class="mt-6 flex flex-wrap gap-2">
+          @for (item of stack; track item.label) {
+            <span
+              class="rounded-full px-4 py-2 text-sm font-medium ring-1 transition duration-200 cursor-default"
+              [ngClass]="toneClass(item.tone)"
+            >
+              {{ item.label }}
+            </span>
+          }
+        </div>
+      </article>
+    </section>
+
+    <!-- ── WHAT I BRING ──────────────────────────────────────── -->
+    <section class="mt-3">
+      <div
+        class="relative overflow-hidden rounded-[1.75rem] border border-[var(--border)] bg-[var(--surface)] p-6 sm:p-8"
+      >
+        <div
+          class="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_50%_60%_at_100%_0%,rgba(124,58,237,0.08),transparent_65%)]"
+        ></div>
+
+        <div class="relative">
+          <p class="text-xs uppercase tracking-[0.24em] text-[color:var(--muted2)]">What I bring</p>
+          <h2 class="mt-3 text-xl font-semibold tracking-tight sm:text-2xl">
+            Performance meeting personality
+          </h2>
+
+          <div class="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+            @for (card of strengths; track card.title) {
+              <div
+                class="group rounded-2xl border border-[var(--border)] bg-[rgba(0,0,0,0.2)] p-5 transition duration-300 hover:border-[var(--a1-ring)] hover:bg-[var(--a1-soft)]"
+              >
+                <div
+                  class="mb-3 grid h-8 w-8 place-items-center rounded-lg bg-[var(--a1-soft)] ring-1 ring-[var(--a1-ring)]"
+                >
+                  <span class="text-base" [innerHTML]="card.icon"></span>
+                </div>
+                <h3 class="text-sm font-semibold text-[color:var(--text)]">{{ card.title }}</h3>
+                <p class="mt-2 text-sm leading-6 text-[color:var(--muted2)]">{{ card.desc }}</p>
+              </div>
+            }
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── TIMELINE ──────────────────────────────────────────── -->
+    <section class="pt-16 sm:pt-20">
+      <p class="text-xs uppercase tracking-[0.24em] text-[color:var(--muted2)]">
+        Experience timeline
+      </p>
+      <h2 class="mt-3 text-2xl font-semibold tracking-tight sm:text-3xl">Trajectory</h2>
+
+      <div class="relative mt-10 pl-7 sm:pl-9">
+        <!-- vertical line -->
+        <div
+          class="absolute left-[10px] top-2 h-[calc(100%-1rem)] w-px sm:left-[13px] bg-[linear-gradient(180deg,var(--a1-ring),rgba(124,58,237,0.08)_90%,transparent)]"
+        ></div>
+
+        <div class="space-y-4">
+          @for (item of timeline; track item.title) {
+            <article
+              class="group relative overflow-hidden rounded-[1.5rem] border border-[var(--border)] bg-[var(--surface)] p-5 transition duration-300 hover:border-[var(--a1-ring)] hover:bg-[var(--surface2)] sm:p-6"
+            >
+              <!-- dot -->
+              <span
+                class="absolute -left-[2.05rem] top-6 flex h-5 w-5 items-center justify-center rounded-full border-4 border-[color:var(--bg)] sm:-left-[2.35rem]"
+                [ngClass]="dotClass(item.tone)"
+              ></span>
+
+              <!-- corner glow -->
+              <div
+                class="pointer-events-none absolute -top-8 -right-8 h-28 w-28 rounded-full blur-2xl opacity-0 transition duration-500 group-hover:opacity-100 bg-[radial-gradient(circle,rgba(124,58,237,0.18),transparent_65%)]"
+              ></div>
+
+              <div class="sm:flex sm:items-start sm:justify-between sm:gap-6">
+                <div class="flex-1">
+                  <p class="text-xs uppercase tracking-[0.2em] text-[color:var(--lavender)]">
+                    {{ item.period }}
+                  </p>
+                  <h3 class="mt-2 text-xl font-semibold tracking-tight text-[color:var(--text)]">
+                    {{ item.title }}
+                  </h3>
+                  <p class="mt-2 max-w-2xl text-sm leading-7 text-[color:var(--muted)]">
+                    {{ item.description }}
+                  </p>
+                </div>
+
+                @if (item.badge) {
+                  <span
+                    class="mt-3 inline-flex shrink-0 items-center gap-2 rounded-full px-3 py-1 text-xs bg-[var(--a1-soft)] ring-1 ring-[var(--a1-ring)] text-[color:var(--lavender)] sm:mt-0"
+                  >
+                    <span class="h-1.5 w-1.5 rounded-full bg-[color:var(--lavender)]"></span>
+                    {{ item.badge }}
+                  </span>
+                }
+              </div>
+            </article>
+          }
+        </div>
+      </div>
+    </section>
+
+    <!-- ── BOTTOM CTA ────────────────────────────────────────── -->
+    <section class="pt-16 sm:pt-20">
+      <div
+        class="relative overflow-hidden rounded-[2rem] border border-[var(--border)] bg-[var(--surface)] p-8 sm:p-10"
+      >
+        <div
+          class="pointer-events-none absolute inset-0 bg-[conic-gradient(from_200deg_at_25%_90%,rgba(124,58,237,0.25),transparent_45%,rgba(124,58,237,0.1),transparent_70%)]"
+        ></div>
+
+        <div class="relative flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between">
+          <div class="max-w-2xl">
+            <p
+              class="inline-flex items-center gap-2 text-xs uppercase tracking-widest text-[color:var(--muted2)]"
+            >
+              <span class="h-px w-4 bg-[rgba(180,140,255,0.4)]"></span>
+              Let's build
+            </p>
+            <h2 class="mt-3 text-3xl font-semibold leading-tight tracking-tight sm:text-4xl">
+              Let's build the
+              <span class="text-[color:var(--lavender)]">extraordinary</span>.
+            </h2>
+            <p class="mt-3 text-sm leading-7 text-[color:var(--muted)]">
+              I'm open to freelance work, product collaboration, and ambitious builds that need both
+              design sensitivity and engineering depth.
+            </p>
+          </div>
+
+          <div class="flex shrink-0 flex-col gap-2 sm:flex-row lg:flex-col lg:w-44">
+            <a
+              href="mailto:pablo.gzz.sal@gmail.com"
+              class="flex items-center justify-center gap-2.5 rounded-2xl border border-[var(--border)] bg-[rgba(0,0,0,0.25)] px-5 py-3.5 text-sm font-medium text-[color:var(--muted)] transition duration-300 hover:text-white hover:border-[var(--a1-ring)] hover:bg-[var(--a1-soft)]"
+            >
+              <svg
+                class="h-4 w-4 text-[color:var(--lavender)]"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.8"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                />
+              </svg>
+              Email
+            </a>
+            <a
+              href="https://www.linkedin.com/in/pablo-gonzalez-salcido-bb1a491a9/?locale=en_US"
+              target="_blank"
+              rel="noreferrer"
+              class="flex items-center justify-center gap-2.5 rounded-2xl border border-[var(--border)] bg-[rgba(0,0,0,0.25)] px-5 py-3.5 text-sm font-medium text-[color:var(--muted)] transition duration-300 hover:text-white hover:bg-[rgba(255,255,255,0.06)]"
+            >
+              <svg
+                class="h-4 w-4 text-[color:var(--lavender)]"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"
+                />
+              </svg>
+              LinkedIn
+            </a>
+            <a
+              href="https://github.com/pablo-gzz-sal"
+              target="_blank"
+              rel="noreferrer"
+              class="flex items-center justify-center gap-2.5 rounded-2xl border border-[var(--border)] bg-[rgba(0,0,0,0.25)] px-5 py-3.5 text-sm font-medium text-[color:var(--muted)] transition duration-300 hover:text-white hover:bg-[rgba(255,255,255,0.06)]"
+            >
+              <svg
+                class="h-4 w-4 text-[color:var(--lavender)]"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.942.359.31.678.921.678 1.856 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
+                />
+              </svg>
+              GitHub
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <app-footer />
+</div>

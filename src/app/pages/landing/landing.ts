@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Header } from '../../layout/header/header';
 import { Knowledge } from '../../sections/knowledge/knowledge';
 import { Projects } from '../../sections/projects/projects';
@@ -13,4 +13,8 @@ import { Systems } from "../../sections/systems/systems";
   templateUrl: './landing.html',
   styleUrl: './landing.css',
 })
-export class Landing {}
+export class Landing implements OnInit {
+  ngOnInit(): void {
+    window.scroll(0,0)
+  }
+}

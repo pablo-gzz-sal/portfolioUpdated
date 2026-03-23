@@ -21,7 +21,7 @@
   <!-- grid -->
   <div class="mt-10 grid gap-3 sm:grid-cols-2">
     @for (p of projects; track p.id) {
-      <app-project-card [project]="p" />
+      <app-project-card [project]="p" [routerLink]="['/projects', p.id]" class="cursor-pointer" />
     }
   </div>
 

@@ -1,0 +1,5 @@
+.header-glass {
+  background: rgba(7, 5, 14, 0.45);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}

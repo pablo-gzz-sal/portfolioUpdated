@@ -1,47 +1,153 @@
 <header
-  class="sticky top-0 z-50 bg-[rgba(8,6,15,0.60)] backdrop-blur-xl transition-all duration-300"
-  [class.shadow-[0_1px_0_0_rgba(255,255,255,0.06)]]="scrolled"
+  class="sticky top-0 z-[9999] bg-[rgba(7,5,14,0.55)] backdrop-blur-xl supports-[backdrop-filter]:bg-[rgba(7,5,14,0.45)]"
+  [style.background]="scrolled ? 'rgba(7,5,14,0.88)' : 'rgba(7,5,14,0.40)'"
+  [style.box-shadow]="scrolled ? '0 1px 0 rgba(255,255,255,0.08)' : 'none'"
 >
-  <div class="mx-auto flex max-w-6xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
+  <div class="mx-auto flex max-w-6xl items-center justify-between px-4 py-3.5 sm:px-6 lg:px-8">
     <!-- Logo -->
-    <a href="#" class="group inline-flex items-center gap-2.5">
+    <a routerLink="/" (click)="scrollToTop()" class="group inline-flex items-center gap-3 shrink-0">
+      <!-- avatar logo -->
       <span
-        class="grid h-8 w-8 place-items-center rounded-xl bg-[rgba(124,58,237,0.08)] ring-1 ring-[rgba(124,58,237,0.2)] transition duration-300 group-hover:bg-[rgba(124,58,237,0.14)] group-hover:ring-[rgba(124,58,237,0.35)] group-hover:shadow-[0_0_12px_rgba(124,58,237,0.2)]"
+        class="relative h-9 w-9 overflow-hidden rounded-xl ring-1 ring-[var(--a1-ring)] transition duration-300 group-hover:ring-[var(--a1-ring2)] group-hover:shadow-[0_0_18px_var(--a1-glow)]"
       >
-        <span class="text-sm font-semibold text-[rgba(180,140,255,0.8)]">✦</span>
+        <img src="assets/images/me.jpeg" alt="Pablo Gonzalez" class="h-full w-full object-cover" />
+
+        <!-- subtle overlay glow -->
+        <span
+          class="absolute inset-0 bg-[radial-gradient(circle,rgba(124,58,237,0.18),transparent_70%)] opacity-0 transition duration-300 group-hover:opacity-100"
+        ></span>
       </span>
+
+      <!-- name -->
       <span class="text-sm font-semibold tracking-wide text-[color:var(--text)]">
         Pablo Gonzalez
       </span>
     </a>
 
-    <!-- Nav -->
-    <nav class="hidden items-center gap-7 md:flex">
-      <a class="text-sm text-[color:var(--muted2)] transition hover:text-white" href="#projects"
-        >Projects</a
-      >
-
-      <a class="text-sm text-[color:var(--muted2)] transition hover:text-white" href="#systems"
-        >Systems</a
-      >
-
-      <a class="text-sm text-[color:var(--muted2)] transition hover:text-white" href="#tech"
-        >Tech</a
-      >
-
-      <a class="text-sm text-[color:var(--muted2)] transition hover:text-white" href="#contact"
-        >Contact</a
-      >
+    <!-- Desktop nav -->
+    <nav class="hidden items-center gap-0.5 md:flex">
+      @for (link of navLinks; track link.label) {
+        @if (link.route) {
+          <a
+            [routerLink]="link.route"
+            routerLinkActive="!text-[color:var(--text)] !bg-[var(--surface2)]"
+            class="relative rounded-lg px-3.5 py-1.5 text-sm text-[color:var(--muted2)] transition duration-200 hover:text-[color:var(--text)] hover:bg-[var(--surface)]"
+            >{{ link.label }}</a
+          >
+        } @else {
+          <a
+            [href]="link.href"
+            class="relative rounded-lg px-3.5 py-1.5 text-sm text-[color:var(--muted2)] transition duration-200 hover:text-[color:var(--text)] hover:bg-[var(--surface)]"
+            >{{ link.label }}</a
+          >
+        }
+      }
     </nav>
 
-    <!-- CTA -->
-    <div class="flex items-center gap-3">
+    <!-- Right side -->
+    <div class="flex items-center gap-2 shrink-0">
+      <!-- CTA — hidden on very small screens -->
       <a
         href="#contact"
-        class="rounded-full bg-[rgba(100,60,200,0.35)] px-5 py-2 text-sm font-medium text-[rgba(255,255,255,0.9)] ring-1 ring-[rgba(124,58,237,0.25)] transition duration-300 hover:bg-[rgba(100,60,200,0.5)] hover:shadow-[0_0_16px_rgba(124,58,237,0.25)]"
+        class="hidden sm:inline-flex rounded-full px-5 py-2 text-sm font-medium text-white bg-[rgba(100,60,200,0.32)] ring-1 ring-[var(--a1-ring)] transition duration-300 hover:bg-[rgba(100,60,200,0.52)] hover:shadow-[0_0_20px_var(--a1-glow2)]"
       >
         Let's talk
       </a>
+
+      <!-- Hamburger — animated bars -->
+      <button
+        class="relative grid h-9 w-9 place-items-center rounded-xl md:hidden bg-[var(--surface)] ring-1 ring-[var(--border)] transition duration-300 hover:bg-[var(--surface2)] hover:ring-[var(--border2)]"
+        (click)="toggleMenu()"
+        [attr.aria-expanded]="menuOpen"
+        aria-label="Toggle navigation"
+      >
+        <!-- bar 1 -->
+        <span
+          class="absolute block h-[1.5px] w-4 rounded-full bg-[color:var(--muted)] transition-all duration-300 ease-[cubic-bezier(.4,0,.2,1)]"
+          [class]="menuOpen ? 'translate-y-0 rotate-45' : '-translate-y-[5px]'"
+        ></span>
+        <!-- bar 2 -->
+        <span
+          class="absolute block h-[1.5px] rounded-full bg-[color:var(--muted)] transition-all duration-200 ease-[cubic-bezier(.4,0,.2,1)]"
+          [class]="menuOpen ? 'w-0 opacity-0' : 'w-4 opacity-100'"
+        ></span>
+        <!-- bar 3 -->
+        <span
+          class="absolute block h-[1.5px] w-4 rounded-full bg-[color:var(--muted)] transition-all duration-300 ease-[cubic-bezier(.4,0,.2,1)]"
+          [class]="menuOpen ? 'translate-y-0 -rotate-45' : 'translate-y-[5px]'"
+        ></span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile drawer — CSS-driven smooth slide -->
+  <div
+    class="overflow-hidden md:hidden transition-all duration-500 ease-[cubic-bezier(.4,0,.2,1)]"
+    [style.max-height]="menuOpen ? mobileMenuHeight : '0px'"
+    [style.opacity]="menuOpen ? '1' : '0'"
+    #mobileMenu
+  >
+    <!-- inner border + glass -->
+    <div class="border-t border-[var(--border)] bg-[rgba(7,5,14,0.94)] backdrop-blur-2xl">
+      <nav class="mx-auto flex max-w-6xl flex-col px-4 py-2 sm:px-6">
+        @for (link of navLinks; track link.label; let i = $index) {
+          @if (link.route) {
+            <a
+              [routerLink]="link.route"
+              (click)="closeMenu()"
+              class="flex items-center justify-between rounded-xl px-3 py-3 text-sm text-[color:var(--muted)] transition duration-200 hover:text-white hover:bg-[var(--surface)]"
+              [style.transition-delay]="menuOpen ? i * 40 + 'ms' : '0ms'"
+              [style.transform]="menuOpen ? 'translateY(0)' : 'translateY(-6px)'"
+              [style.opacity]="menuOpen ? '1' : '0'"
+            >
+              {{ link.label }}
+              <svg
+                class="h-3.5 w-3.5 text-[color:var(--muted2)]"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                viewBox="0 0 24 24"
+              >
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+              </svg>
+            </a>
+          } @else {
+            <a
+              [href]="link.href"
+              (click)="closeMenu()"
+              class="flex items-center justify-between rounded-xl px-3 py-3 text-sm text-[color:var(--muted)] transition duration-200 hover:text-white hover:bg-[var(--surface)]"
+              [style.transition-delay]="menuOpen ? i * 40 + 'ms' : '0ms'"
+              [style.transform]="menuOpen ? 'translateY(0)' : 'translateY(-6px)'"
+              [style.opacity]="menuOpen ? '1' : '0'"
+            >
+              {{ link.label }}
+              <svg
+                class="h-3.5 w-3.5 text-[color:var(--muted2)]"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                viewBox="0 0 24 24"
+              >
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+              </svg>
+            </a>
+          }
+        }
+
+        <!-- mobile CTA -->
+        <div class="px-3 py-3">
+          <a
+            href="#contact"
+            (click)="closeMenu()"
+            class="flex w-full items-center justify-center rounded-xl px-5 py-2.5 text-sm font-medium text-white bg-[rgba(100,60,200,0.35)] ring-1 ring-[var(--a1-ring)] transition duration-300 hover:bg-[rgba(100,60,200,0.52)]"
+            [style.transition-delay]="menuOpen ? navLinks.length * 40 + 'ms' : '0ms'"
+            [style.transform]="menuOpen ? 'translateY(0)' : 'translateY(-6px)'"
+            [style.opacity]="menuOpen ? '1' : '0'"
+          >
+            Let's talk
+          </a>
+        </div>
+      </nav>
     </div>
   </div>
 </header>

@@ -1,27 +1,54 @@
 @import 'tailwindcss';
 
 :root {
-  --bg: #08060f;
+  /* ── Base ─────────────────────────────────────────────────────── */
+  --bg:      #07050e;          /* slightly deeper, truer dark */
+  --bg-alt:  #0d0a18;          /* cards, panels — a touch lifted */
 
-  --surface:  rgba(255, 255, 255, 0.04);
-  --surface2: rgba(255, 255, 255, 0.06);
-  --border:   rgba(255, 255, 255, 0.08); /* slightly softer than 0.1 */
+  /* ── Surfaces ─────────────────────────────────────────────────── */
+  --surface:   rgba(255, 255, 255, 0.04);
+  --surface2:  rgba(255, 255, 255, 0.065);
+  --surface3:  rgba(255, 255, 255, 0.09);  /* hover / active states */
 
-  --text:   rgba(255, 255, 255, 0.92);
-  --muted:  rgba(255, 255, 255, 0.65);
-  --muted2: rgba(255, 255, 255, 0.45);
+  /* ── Borders ──────────────────────────────────────────────────── */
+  --border:    rgba(255, 255, 255, 0.08);
+  --border2:   rgba(255, 255, 255, 0.13);  /* stronger dividers */
 
-  /* purple scale — the only accent you're using */
-  --a1:      #7c3aed;               /* violet — buttons, rings */
-  --a1-soft: rgba(124, 58, 237, 0.15); /* tinted surfaces */
-  --a1-ring: rgba(124, 58, 237, 0.25); /* ring borders */
-  --a1-glow: rgba(124, 58, 237, 0.20); /* box-shadow glows */
-  --lavender: rgba(180, 140, 255, 0.75); /* labels, icons, dots */
+  /* ── Text ─────────────────────────────────────────────────────── */
+  --text:      rgba(255, 255, 255, 0.93);
+  --muted:     rgba(255, 255, 255, 0.62);
+  --muted2:    rgba(255, 255, 255, 0.40);
+  --muted3:    rgba(255, 255, 255, 0.25);  /* placeholders, disabled */
+
+  /* ── Purple scale ─────────────────────────────────────────────── */
+  --a0:        #5b21b6;                    /* deep — hover sinks      */
+  --a1:        #7c3aed;                    /* base — buttons, rings   */
+  --a2:        #9d5cf5;                    /* mid — active states     */
+  --a3:        #b98fff;                    /* light — labels, accents */
+
+  /* Functional aliases */
+  --a1-soft:   rgba(124, 58, 237, 0.12);
+  --a1-soft2:  rgba(124, 58, 237, 0.20);  /* stronger tint           */
+  --a1-ring:   rgba(124, 58, 237, 0.28);
+  --a1-ring2:  rgba(124, 58, 237, 0.45);  /* focus rings             */
+  --a1-glow:   rgba(124, 58, 237, 0.22);
+  --a1-glow2:  rgba(124, 58, 237, 0.40);  /* stronger glow           */
+
+  /* ── Lavender (lighter purple for labels/icons) ───────────────── */
+  --lavender:      rgba(185, 143, 255, 0.80);
+  --lavender-dim:  rgba(185, 143, 255, 0.45);
+  --lavender-line: rgba(185, 143, 255, 0.20);  /* decorative lines  */
+
+  /* ── Semantic ─────────────────────────────────────────────────── */
+  --success:   rgba( 74, 222, 128, 0.80);  /* green — live badge     */
+  --warning:   rgba(251, 191,  36, 0.80);  /* amber                  */
+  --danger:    rgba(248,  113, 113, 0.80); /* red                    */
 }
 
+/* ── Globals ────────────────────────────────────────────────────── */
 html {
   scroll-behavior: smooth;
-  interpolate-size: allow-keywords; /* smooth height: auto transitions */
+  interpolate-size: allow-keywords;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -29,6 +56,8 @@ html {
 }
 
 body {
+  background-color: var(--bg);
+  color: var(--text);
   text-rendering: geometricPrecision;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -36,4 +65,53 @@ body {
 
 section[id] {
   scroll-margin-top: 96px;
+}
+
+/* ── Selection ──────────────────────────────────────────────────── */
+::selection {
+  background: var(--a1);
+  color: #fff;
+}
+
+.bg-pattern-grid::before {
+  background-image: var(--pattern-grid);
+  background-size: var(--pattern-grid-size);
+  mask-image: var(--pattern-grid-fade);
+  -webkit-mask-image: var(--pattern-grid-fade);
+}
+ 
+/* 2. Dots */
+.bg-pattern-dots::before {
+  background-image: var(--pattern-dots);
+  background-size: var(--pattern-dots-size);
+  mask-image: var(--pattern-dots-fade);
+  -webkit-mask-image: var(--pattern-dots-fade);
+}
+ 
+/* 3. Cross-hatch */
+.bg-pattern-cross::before {
+  background-image: var(--pattern-cross);
+  background-size: var(--pattern-cross-size);
+  mask-image: var(--pattern-cross-fade);
+  -webkit-mask-image: var(--pattern-cross-fade);
+}
+ 
+/* 4. Diagonal */
+.bg-pattern-diagonal::before {
+  background-image: var(--pattern-diagonal);
+  mask-image: var(--pattern-diagonal-fade);
+  -webkit-mask-image: var(--pattern-diagonal-fade);
+}
+ 
+/* Make sure children sit above the pattern pseudo-element */
+.bg-pattern-grid > *,
+.bg-pattern-dots > *,
+.bg-pattern-cross > *,
+.bg-pattern-diagonal > * {
+  position: relative;
+  z-index: 1;
+}
+
+html {
+  scroll-behavior: smooth;
 }
