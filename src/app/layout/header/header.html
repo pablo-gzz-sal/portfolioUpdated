@@ -30,7 +30,7 @@
         @if (link.route) {
           <a
             [routerLink]="link.route"
-            routerLinkActive="!text-[color:var(--text)] !bg-[var(--surface2)]"
+            routerLinkActive="!text-[color:var(--text)] !bg-[var(--surface2)] !ring-1 !ring-[var(--border2)]"
             class="relative rounded-lg px-3.5 py-1.5 text-sm text-[color:var(--muted2)] transition duration-200 hover:text-[color:var(--text)] hover:bg-[var(--surface)]"
             >{{ link.label }}</a
           >
@@ -51,7 +51,7 @@
         href="#contact"
         class="hidden sm:inline-flex rounded-full px-5 py-2 text-sm font-medium text-white bg-[rgba(100,60,200,0.32)] ring-1 ring-[var(--a1-ring)] transition duration-300 hover:bg-[rgba(100,60,200,0.52)] hover:shadow-[0_0_20px_var(--a1-glow2)]"
       >
-        Let's talk
+        Work together
       </a>
 
       <!-- Hamburger — animated bars -->

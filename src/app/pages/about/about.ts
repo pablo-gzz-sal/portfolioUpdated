@@ -46,39 +46,39 @@ export class About implements OnInit {
     {
       icon: '◈',
       title: 'Frontend systems',
-      desc: 'Angular, React, scalable UI, reusable patterns, and polished interaction details.',
+      desc: 'Angular and React applications built to be maintained. Component architecture, RxJS patterns, and interaction detail.',
     },
     {
       icon: '◈',
       title: 'Backend structure',
-      desc: 'APIs, auth, schemas, integrations, operational clarity, and long-term maintainability.',
+      desc: 'REST APIs, auth, database schemas, and third-party integrations. Clear contracts, clean separation.',
     },
     {
       icon: '◈',
       title: 'Product thinking',
-      desc: 'Translating real requirements into shippable scopes and user-centered decisions.',
+      desc: 'I scope before I build. Requirements → MVP → iteration. Engineering decisions with product outcomes in mind.',
     },
     {
       icon: '◈',
-      title: 'Execution',
-      desc: 'Fast iteration, readable code, and delivery without sacrificing visual quality.',
+      title: 'Delivery',
+      desc: 'Fast iteration without slop. Readable code, documented APIs, and production deployments that stick.',
     },
   ];
 
   timeline: TimelineItem[] = [
     {
       period: '2022 — Present',
-      title: 'Software Developer · Munich, Germany',
+      title: 'Full-Stack Developer · Munich, Germany',
       description:
-        'Working as a full-stack consultant delivering scalable web applications and digital solutions. Delivered high-impact solutions for enterprise clients including Airbus and Bosch , focusing on performance, architecture, and refined user experience.',
+        'Consulting on large-scale web applications for enterprise clients. Delivered production systems for Airbus and Bosch — performance-critical frontends, backend API layers, and CI/CD pipelines.',
       tone: 'lavender',
       badge: 'Current',
     },
     {
       period: '2024 — Present',
-      title: 'Freelance Developer',
+      title: 'Independent / Freelance',
       description:
-        'Independently building and launching digital products and client solutions across web. Focused on high-quality UI/UX, scalable systems, and end-to-end product development.',
+        'Building products end-to-end for clients across the US and Mexico. Salon booking platforms, lead generation apps, content subscription platforms, and logistics sites.',
       tone: 'primary',
     },
   ];

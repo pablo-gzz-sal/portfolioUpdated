@@ -34,7 +34,7 @@
         <!-- year + tags -->
         <div class="flex flex-wrap items-center gap-2">
           <span class="text-xs uppercase tracking-[0.22em] text-[color:var(--muted2)]">
-            Case Study {{ project.year }}
+            {{ project.year }} — Case Study
           </span>
           @for (tag of project.tags; track tag) {
             <span
@@ -49,7 +49,7 @@
           {{ project.title }}
         </h1>
         <p
-          class="mt-1 text-3xl font-bold tracking-tight text-[color:var(--a1)] sm:text-5xl lg:text-6xl"
+          class="mt-1 text-3xl font-bold tracking-tight text-[color:var(--a3)] sm:text-5xl lg:text-6xl"
         >
           {{ project.subtitle }}
         </p>
@@ -72,13 +72,9 @@
         <div class="mt-4 flex flex-wrap gap-2">
           @for (tech of project.stack; track tech) {
             <div
-              class="flex items-center gap-2 rounded-2xl border border-[var(--border)] bg-[var(--surface)] px-4 py-2.5"
+              class="flex items-center rounded-2xl border border-[var(--border)] bg-[var(--surface)] px-4 py-2.5"
             >
-              <span
-                class="grid h-6 w-6 place-items-center rounded-md text-xs font-bold bg-[var(--a1-soft)] text-[color:var(--lavender)]"
-                >{{ tech[0] }}</span
-              >
-              <span class="text-sm font-medium text-[color:var(--muted)]">{{ tech }}</span>
+              <span class="font-[family-name:var(--font-mono)] text-xs text-[color:var(--muted)]">{{ tech }}</span>
             </div>
           }
         </div>
@@ -93,7 +89,7 @@
           <div
             class="pointer-events-none absolute -bottom-10 -left-10 h-36 w-36 rounded-full blur-3xl bg-[radial-gradient(circle,rgba(255,255,255,0.04),transparent_70%)]"
           ></div>
-          <h2 class="text-xl font-semibold tracking-tight">The Challenge</h2>
+          <h2 class="text-xl font-semibold tracking-tight">What needed solving.</h2>
           <p class="mt-4 text-sm leading-7 text-[color:var(--muted)]">{{ project.challenge }}</p>
           <div class="mt-6 h-px w-12 bg-[rgba(255,255,255,0.12)]"></div>
         </article>
@@ -106,7 +102,7 @@
             class="pointer-events-none absolute -top-10 -right-10 h-36 w-36 rounded-full blur-3xl bg-[radial-gradient(circle,rgba(124,58,237,0.2),transparent_70%)]"
           ></div>
           <h2 class="text-xl font-semibold tracking-tight text-[color:var(--lavender)]">
-            The Solution
+            How I solved it.
           </h2>
           <p class="mt-4 text-sm leading-7 text-[color:var(--muted)]">{{ project.solution }}</p>
           <div class="mt-6 h-px w-12 bg-[var(--a1-ring)]"></div>
@@ -116,7 +112,7 @@
       <!-- ── FEATURES ───────────────────────────────────────────── -->
       <section class="mt-10">
         <p class="text-xs uppercase tracking-[0.22em] text-[color:var(--muted2)]">
-          Key architectures
+          Technical decisions.
         </p>
 
         <div class="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
@@ -147,10 +143,10 @@
           <div class="flex items-end justify-between gap-4">
             <div>
               <p class="text-xs uppercase tracking-[0.22em] text-[color:var(--muted2)]">
-                Interface deep dive
+                In the product.
               </p>
               <h2 class="mt-2 text-xl font-semibold tracking-tight">
-                Exploring design and functional precision.
+                Screenshots from the live application.
               </h2>
             </div>
             <span class="hidden text-xs text-[color:var(--muted2)] sm:block">
@@ -204,9 +200,9 @@
           ></div>
 
           <div class="relative">
-            <h2 class="text-3xl font-bold tracking-tight sm:text-4xl">Ready to Deploy?</h2>
+            <h2 class="text-3xl font-bold tracking-tight sm:text-4xl">See it live.</h2>
             <p class="mx-auto mt-3 max-w-md text-sm leading-7 text-[color:var(--muted)]">
-              This project is live and production-ready. Explore the source code or see it running.
+              The project is live. View it in the browser.
             </p>
 
             <div class="mt-8 flex flex-wrap items-center justify-center gap-3">

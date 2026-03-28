@@ -15,7 +15,7 @@ export class Systems {
       icon: '◎',
       title: 'Discovery & scope',
       description:
-        'I clarify the problem, user flows, constraints, and success criteria. Then I define the smallest version that ships value fast.',
+        'I define the problem, user flows, and success criteria — then the smallest version that ships value.',
       badge: 'Clarity first',
       tags: ['Requirements → MVP', 'UX flows', 'Risks & constraints'],
       miniCards: null,
@@ -26,7 +26,7 @@ export class Systems {
       icon: '◫',
       title: 'Architecture & data design',
       description:
-        'I define API contracts, data models, auth, and service boundaries. Clear architecture prevents expensive rewrites later.',
+        'API contracts, data models, auth, and service boundaries defined before a line of implementation is written.',
       badge: 'Plan the system',
       tags: null,
       miniCards: [
@@ -40,7 +40,7 @@ export class Systems {
       icon: '✦',
       title: 'Build & iterate',
       description:
-        'I ship in thin vertical slices: UI → API → data → integration. Clean components, predictable state, and readable code.',
+        'Thin vertical slices from UI to API to data. Clean components, predictable state, readable code.',
       badge: 'Ship slices',
       tags: ['Component system', 'Integrations (Stripe / APIs)', 'Performance hygiene'],
       miniCards: null,
@@ -51,7 +51,7 @@ export class Systems {
       icon: '✓',
       title: 'Testing, docs & QA',
       description:
-        'I document APIs, add guardrails, and validate edge cases before release. Stable releases build trust.',
+        'Swagger docs, edge case coverage, and validation before every release. Stable code builds trust.',
       badge: 'Reduce risk',
       tags: null,
       miniCards: [
@@ -65,7 +65,7 @@ export class Systems {
       icon: '↗',
       title: 'Deployment & hosting',
       description:
-        'I containerize services, define environments, and automate deployments. Then I monitor, iterate, and keep the system healthy.',
+        'Containerized services, automated deployments, monitoring. The system stays healthy after launch.',
       badge: 'Ship to prod',
       tags: ['Dockerized services', 'CI/CD pipelines', 'Monitoring & logs'],
       miniCards: null,

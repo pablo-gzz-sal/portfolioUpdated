@@ -38,7 +38,7 @@ export class Knowledge {
       items: ['Docker', 'Swagger/OpenAPI', 'Stripe', 'CI/CD', 'Azure'],
     },
     {
-      title: 'Cybersecurity',
+      title: 'Security & Pentesting',
       icon: '◎',
       items: ['Kali', 'PortSwigger', 'Red/Blue Team', 'Pentesting'],
     },

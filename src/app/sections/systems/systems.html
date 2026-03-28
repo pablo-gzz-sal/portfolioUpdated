@@ -3,15 +3,15 @@
   <!-- header -->
   <p class="inline-flex items-center gap-2 text-xs uppercase tracking-widest text-[color:var(--muted2)]">
     <span class="h-px w-4 bg-[color:var(--lavender)]/40"></span>
-    Process
+    How I work
   </p>
 
   <div class="mt-3 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
     <h2 class="text-2xl font-semibold tracking-tight sm:text-3xl">
-      How I build systems
+      From brief to production.
     </h2>
     <p class="max-w-sm text-sm leading-relaxed text-[color:var(--muted2)]">
-      From scope to production — with clean architecture, maintainability, and product UX in mind.
+      A disciplined process across every project — clarity first, architecture second, then shipping.
     </p>
   </div>
 
@@ -29,7 +29,7 @@
                  bg-[conic-gradient(from_var(--angle,180deg)_at_50%_50%,var(--a1-ring),rgba(255,255,255,0.04),var(--a1-ring))]"
         ></div>
 
-        <div class="relative rounded-[15px] bg-[#0b0912] p-5 sm:p-6">
+        <div class="relative rounded-xl bg-[var(--bg-alt)] p-5 sm:p-6">
 
           <!-- corner glow -->
           <div
@@ -45,7 +45,7 @@
 
               <!-- step number -->
               <span
-                class="grid h-9 w-9 place-items-center rounded-xl text-xs font-semibold
+                class="grid h-10 w-10 place-items-center rounded-xl text-xs font-semibold
                        bg-[var(--a1-soft)] ring-1 ring-[var(--a1-ring)]
                        text-[color:var(--lavender)]"
               >
@@ -106,7 +106,7 @@
                   @for (card of step.miniCards; track card.label) {
                     <div
                       class="rounded-xl p-3
-                             bg-[var(--surface)] ring-1 ring-[var(--border)]"
+                             bg-[var(--bg-raised)] ring-1 ring-[var(--border)]"
                     >
                       <p class="text-[11px] uppercase tracking-widest text-[color:var(--muted2)]">
                         {{ card.label }}
