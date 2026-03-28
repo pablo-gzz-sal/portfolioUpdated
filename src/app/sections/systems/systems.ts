@@ -15,7 +15,7 @@ export class Systems {
       icon: '◎',
       title: 'Discovery & scope',
       description:
-        'I clarify the problem, user flows, constraints, and success criteria. Then I define the smallest version that ships value fast.',
+        'I define the problem, user flows, and success criteria — then the smallest version that ships value.',
       badge: 'Clarity first',
       tags: ['Requirements → MVP', 'UX flows', 'Risks & constraints'],
       miniCards: null,

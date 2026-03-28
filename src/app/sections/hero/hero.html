@@ -1,4 +1,4 @@
-<section #heroSection class="relative py-20 px-4 sm:py-28 text-center">
+<section #heroSection class="relative py-24 px-4 sm:py-36 lg:py-40 text-center">
   <!-- background blobs -->
   <div class="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
     <svg
@@ -9,8 +9,8 @@
     >
       <defs>
         <radialGradient id="g1">
-          <stop offset="0%" stop-color="rgba(124,58,237,1)" stop-opacity="0.55" />
-          <stop offset="60%" stop-color="rgba(100,40,200,1)" stop-opacity="0.25" />
+          <stop offset="0%" stop-color="rgba(109,40,217,1)" stop-opacity="0.55" />
+          <stop offset="60%" stop-color="rgba(76,29,149,1)" stop-opacity="0.25" />
           <stop offset="100%" stop-color="transparent" />
         </radialGradient>
       </defs>
@@ -40,7 +40,7 @@
   <div class="flex justify-center">
     <div
       #heroPill
-      class="inline-flex items-center gap-2 rounded-full px-3 py-1 text-xs bg-[rgba(124,58,237,0.08)] ring-1 ring-[rgba(124,58,237,0.2)] text-[rgba(180,140,255,0.8)]"
+      class="inline-flex items-center gap-2 rounded-full px-3 py-1 text-xs bg-[var(--a1-soft)] ring-1 ring-[var(--lavender-line)] text-[color:var(--lavender)]"
     >
       <span class="relative flex h-1.5 w-1.5">
         <span
@@ -48,7 +48,7 @@
         ></span>
         <span class="relative h-1.5 w-1.5 rounded-full bg-[rgba(180,140,255,0.9)]"></span>
       </span>
-      Full-Stack · Mobile · Product-minded
+      Available for new projects
     </div>
   </div>
 
@@ -57,9 +57,9 @@
     <div class="overflow-hidden">
       <h1
         #heroTitle
-        class="text-5xl font-bold leading-[1.06] tracking-tight sm:text-7xl lg:text-8xl bg-[linear-gradient(135deg,#fff_0%,rgba(200,170,255,0.95)_45%,rgba(124,58,237,0.9)_100%)] bg-clip-text text-transparent"
+        class="text-5xl font-bold leading-[1.06] tracking-tight sm:text-7xl lg:text-8xl bg-[linear-gradient(135deg,var(--text)_0%,var(--a4)_50%,var(--a2)_100%)] bg-clip-text text-transparent"
       >
-        Build sleek web apps that ship fast and scale.
+        Engineering the gap between great design and solid backend.
       </h1>
     </div>
 
@@ -67,8 +67,8 @@
       #heroText
       class="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-[color:var(--muted)] sm:text-lg"
     >
-      I'm a full-stack developer focused on Angular, backend APIs, and modern UX. Here's a selection
-      of my work and the tech I use daily.
+      I'm Pablo — a full-stack developer based in Munich. I build Angular frontends, backend APIs,
+      and the systems that connect them. From Airbus to indie startups.
     </p>
 
     <!-- CTAs -->
@@ -77,13 +77,13 @@
         href="#projects"
         class="rounded-full px-6 py-2.5 text-sm font-medium text-white bg-[rgba(100,60,200,0.45)] ring-1 ring-[rgba(124,58,237,0.3)] transition duration-300 hover:bg-[rgba(100,60,200,0.6)] hover:shadow-[0_0_22px_rgba(124,58,237,0.3)]"
       >
-        View projects
+        See the work
       </a>
       <a
         href="#contact"
         class="rounded-full px-6 py-2.5 text-sm font-medium text-[color:var(--muted)] bg-[rgba(255,255,255,0.05)] ring-1 ring-[rgba(255,255,255,0.09)] transition duration-300 hover:text-white hover:bg-[rgba(255,255,255,0.09)]"
       >
-        Contact
+        Get in touch
       </a>
     </div>
   </div>
@@ -98,7 +98,7 @@
         <div
           class="pointer-events-none absolute inset-0 rounded-2xl opacity-0 transition duration-500 group-hover:opacity-100 bg-[conic-gradient(from_180deg_at_50%_50%,rgba(124,58,237,0.3),rgba(255,255,255,0.04),rgba(124,58,237,0.3))]"
         ></div>
-        <div class="relative rounded-[15px] bg-[#0b0912] p-5">
+        <div class="relative rounded-[15px] bg-[var(--bg-alt)] p-5">
           <div
             class="pointer-events-none absolute -top-8 -right-8 h-24 w-24 rounded-full blur-xl opacity-0 transition duration-500 group-hover:opacity-100 bg-[radial-gradient(circle,rgba(124,58,237,0.2),transparent_65%)]"
           ></div>
