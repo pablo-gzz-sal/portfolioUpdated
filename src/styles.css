@@ -31,17 +31,17 @@
   --a4:        #c4b5fd;                      /* pale — subtle decorative   */
 
   /* Functional aliases */
-  --a1-soft:   rgba(109, 40, 217, 0.10);
-  --a1-soft2:  rgba(109, 40, 217, 0.18);    /* stronger tint              */
-  --a1-ring:   rgba(109, 40, 217, 0.25);
-  --a1-ring2:  rgba(139, 92, 246, 0.42);    /* focus rings                */
-  --a1-glow:   rgba(109, 40, 217, 0.20);
-  --a1-glow2:  rgba(139, 92, 246, 0.38);    /* stronger glow              */
+  --a1-soft:   rgba(109, 40, 217, 0.14);
+  --a1-soft2:  rgba(109, 40, 217, 0.22);    /* stronger tint              */
+  --a1-ring:   rgba(109, 40, 217, 0.38);
+  --a1-ring2:  rgba(139, 92, 246, 0.55);    /* focus rings                */
+  --a1-glow:   rgba(109, 40, 217, 0.30);
+  --a1-glow2:  rgba(139, 92, 246, 0.50);    /* stronger glow              */
 
   /* ── Lavender (lighter violet for labels/icons) ───────────────── */
-  --lavender:      rgba(196, 181, 253, 0.85);
-  --lavender-dim:  rgba(196, 181, 253, 0.45);
-  --lavender-line: rgba(196, 181, 253, 0.18);   /* decorative lines       */
+  --lavender:      rgba(196, 181, 253, 0.90);
+  --lavender-dim:  rgba(196, 181, 253, 0.55);
+  --lavender-line: rgba(196, 181, 253, 0.28);   /* decorative lines       */
 
   /* ── Typography ───────────────────────────────────────────────── */
   --font-sans: 'Geist', 'Inter', ui-sans-serif, system-ui, sans-serif;
@@ -53,24 +53,24 @@
   --danger:    rgba(239,  68,  68, 0.80);   /* red                        */
 
   /* ── Patterns ─────────────────────────────────────────────────── */
-  --pattern-grid: linear-gradient(rgba(255,255,255,0.045) 1px, transparent 1px),
-                  linear-gradient(90deg, rgba(255,255,255,0.045) 1px, transparent 1px);
+  --pattern-grid: linear-gradient(rgba(255,255,255,0.075) 1px, transparent 1px),
+                  linear-gradient(90deg, rgba(255,255,255,0.075) 1px, transparent 1px);
   --pattern-grid-size: 48px 48px;
   --pattern-grid-fade: linear-gradient(to bottom, black 0%, black 35%, transparent 72%);
 
-  --pattern-dots: radial-gradient(rgba(196,181,253,0.18) 1px, transparent 1px);
+  --pattern-dots: radial-gradient(rgba(196,181,253,0.30) 1px, transparent 1px);
   --pattern-dots-size: 22px 22px;
   --pattern-dots-fade: linear-gradient(to bottom, black 0%, black 45%, transparent 88%);
 
-  --pattern-cross: linear-gradient(rgba(255,255,255,0.035) 1px, transparent 1px),
-                   linear-gradient(90deg, rgba(255,255,255,0.035) 1px, transparent 1px);
+  --pattern-cross: linear-gradient(rgba(255,255,255,0.07) 1px, transparent 1px),
+                   linear-gradient(90deg, rgba(255,255,255,0.07) 1px, transparent 1px);
   --pattern-cross-size: 32px 32px;
-  --pattern-cross-fade: linear-gradient(180deg, rgba(0,0,0,0.5) 0%, black 15%, black 65%, transparent 100%);
+  --pattern-cross-fade: linear-gradient(180deg, rgba(0,0,0,0.5) 0%, black 15%, black 60%, transparent 100%);
 
   --pattern-diagonal: repeating-linear-gradient(
     45deg,
-    rgba(255,255,255,0.022) 0px,
-    rgba(255,255,255,0.022) 1px,
+    rgba(255,255,255,0.045) 0px,
+    rgba(255,255,255,0.045) 1px,
     transparent 1px,
     transparent 14px
   );
@@ -155,4 +155,64 @@ section[id] {
   -webkit-mask-image: var(--pattern-diagonal-fade);
 }
 
+/* ── Animated conic border — CSS custom property angle ──────── */
+@property --angle {
+  syntax: '<angle>';
+  inherits: false;
+  initial-value: 0deg;
+}
+
+/* ── Keyframes ──────────────────────────────────────────────────── */
+@keyframes rotate-border {
+  to { --angle: 360deg; }
+}
+
+@keyframes glow-pulse {
+  0%, 100% { opacity: 0.55; transform: scale(1);    }
+  50%       { opacity: 1;    transform: scale(1.15); }
+}
+
+@keyframes shimmer-x {
+  0%   { transform: scaleX(0.5) translateX(0);   opacity: 0.35; }
+  50%  { transform: scaleX(1.6) translateX(0);   opacity: 1;    }
+  100% { transform: scaleX(0.5) translateX(0);   opacity: 0.35; }
+}
+
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(18px); }
+  to   { opacity: 1; transform: translateY(0);    }
+}
+
+@keyframes bloom-breathe {
+  0%, 100% { opacity: var(--bloom-lo, 0.40); }
+  50%       { opacity: var(--bloom-hi, 0.60); }
+}
+
+/* ── Animation utilities ─────────────────────────────────────── */
+.animate-glow-pulse {
+  animation: glow-pulse 2.4s ease-in-out infinite;
+}
+
+.animate-shimmer-x {
+  animation: shimmer-x 3.5s ease-in-out infinite;
+  transform-origin: left center;
+}
+
+.animate-rotate-border {
+  animation: rotate-border 5s linear infinite;
+}
+
+.animate-bloom-breathe {
+  animation: bloom-breathe 7s ease-in-out infinite;
+}
+
+/* ── Reduced-motion overrides ────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  .animate-glow-pulse,
+  .animate-shimmer-x,
+  .animate-rotate-border,
+  .animate-bloom-breathe {
+    animation: none;
+  }
+}
 
