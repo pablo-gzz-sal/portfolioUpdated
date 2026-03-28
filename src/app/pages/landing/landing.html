@@ -1,22 +1,28 @@
 <div
-  class="bg-pattern-grid relative min-h-dvh bg-[color:var(--bg)] text-[color:var(--text)] selection:bg-white selection:text-black"
+  class="relative min-h-dvh bg-[color:var(--bg)] text-[color:var(--text)] selection:bg-white selection:text-black"
 >
   <!-- primary bloom — upper centre -->
   <div
     class="pointer-events-none absolute inset-0 -z-10
-           bg-[radial-gradient(ellipse_60%_50%_at_50%_0%,rgba(110,35,190,0.45),transparent_70%)]"
+           bg-[radial-gradient(ellipse_60%_50%_at_50%_0%,rgba(109,40,217,0.40),transparent_70%)]"
   ></div>
 
   <!-- secondary bloom — lower right -->
   <div
     class="pointer-events-none absolute inset-0 -z-10
-           bg-[radial-gradient(ellipse_40%_35%_at_85%_80%,rgba(70,15,130,0.18),transparent_65%)]"
+           bg-[radial-gradient(ellipse_40%_35%_at_85%_80%,rgba(76,29,149,0.18),transparent_65%)]"
+  ></div>
+
+  <!-- tertiary bloom — left mid -->
+  <div
+    class="pointer-events-none absolute inset-0 -z-10
+           bg-[radial-gradient(ellipse_30%_25%_at_5%_55%,rgba(109,40,217,0.10),transparent_70%)]"
   ></div>
 
   <!-- grid -->
   <div
     class="pointer-events-none absolute inset-0 -z-10
-           [background-image:linear-gradient(rgba(255,255,255,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.05)_1px,transparent_1px)]
+           [background-image:linear-gradient(rgba(255,255,255,0.04)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.04)_1px,transparent_1px)]
            [background-size:48px_48px]
            [mask-image:linear-gradient(to_bottom,black_0%,black_35%,transparent_68%)]"
   ></div>
@@ -42,7 +48,7 @@
         class="relative overflow-hidden rounded-[2rem] border border-[var(--border)] bg-[var(--surface)] p-8 sm:p-10"
       >
         <div
-          class="pointer-events-none absolute inset-0 bg-[conic-gradient(from_200deg_at_25%_90%,rgba(124,58,237,0.25),transparent_45%,rgba(124,58,237,0.1),transparent_70%)]"
+          class="pointer-events-none absolute inset-0 bg-[conic-gradient(from_200deg_at_25%_90%,rgba(109,40,217,0.25),transparent_45%,rgba(109,40,217,0.10),transparent_70%)]"
         ></div>
 
         <div class="relative flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between">

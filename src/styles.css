@@ -51,6 +51,30 @@
   --success:   rgba( 52, 211, 153, 0.85);   /* green — live badge         */
   --warning:   rgba(245, 158,  11, 0.80);   /* amber                      */
   --danger:    rgba(239,  68,  68, 0.80);   /* red                        */
+
+  /* ── Patterns ─────────────────────────────────────────────────── */
+  --pattern-grid: linear-gradient(rgba(255,255,255,0.045) 1px, transparent 1px),
+                  linear-gradient(90deg, rgba(255,255,255,0.045) 1px, transparent 1px);
+  --pattern-grid-size: 48px 48px;
+  --pattern-grid-fade: linear-gradient(to bottom, black 0%, black 35%, transparent 72%);
+
+  --pattern-dots: radial-gradient(rgba(196,181,253,0.18) 1px, transparent 1px);
+  --pattern-dots-size: 22px 22px;
+  --pattern-dots-fade: linear-gradient(to bottom, black 0%, black 45%, transparent 88%);
+
+  --pattern-cross: linear-gradient(rgba(255,255,255,0.035) 1px, transparent 1px),
+                   linear-gradient(90deg, rgba(255,255,255,0.035) 1px, transparent 1px);
+  --pattern-cross-size: 32px 32px;
+  --pattern-cross-fade: linear-gradient(180deg, rgba(0,0,0,0.5) 0%, black 15%, black 65%, transparent 100%);
+
+  --pattern-diagonal: repeating-linear-gradient(
+    45deg,
+    rgba(255,255,255,0.022) 0px,
+    rgba(255,255,255,0.022) 1px,
+    transparent 1px,
+    transparent 14px
+  );
+  --pattern-diagonal-fade: linear-gradient(to bottom, black 0%, black 45%, transparent 90%);
 }
 
 /* ── Globals ────────────────────────────────────────────────────── */
@@ -88,13 +112,26 @@ section[id] {
   color: #fff;
 }
 
+/* ── Pattern base — shared pseudo-element setup ─────────────── */
+.bg-pattern-grid::before,
+.bg-pattern-dots::before,
+.bg-pattern-cross::before,
+.bg-pattern-diagonal::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* 1. Grid */
 .bg-pattern-grid::before {
   background-image: var(--pattern-grid);
   background-size: var(--pattern-grid-size);
   mask-image: var(--pattern-grid-fade);
   -webkit-mask-image: var(--pattern-grid-fade);
 }
- 
+
 /* 2. Dots */
 .bg-pattern-dots::before {
   background-image: var(--pattern-dots);
@@ -102,31 +139,20 @@ section[id] {
   mask-image: var(--pattern-dots-fade);
   -webkit-mask-image: var(--pattern-dots-fade);
 }
- 
-/* 3. Cross-hatch */
+
+/* 3. Cross */
 .bg-pattern-cross::before {
   background-image: var(--pattern-cross);
   background-size: var(--pattern-cross-size);
   mask-image: var(--pattern-cross-fade);
   -webkit-mask-image: var(--pattern-cross-fade);
 }
- 
+
 /* 4. Diagonal */
 .bg-pattern-diagonal::before {
   background-image: var(--pattern-diagonal);
   mask-image: var(--pattern-diagonal-fade);
   -webkit-mask-image: var(--pattern-diagonal-fade);
 }
- 
-/* Make sure children sit above the pattern pseudo-element */
-.bg-pattern-grid > *,
-.bg-pattern-dots > *,
-.bg-pattern-cross > *,
-.bg-pattern-diagonal > * {
-  position: relative;
-  z-index: 1;
-}
 
-html {
-  scroll-behavior: smooth;
-}
+

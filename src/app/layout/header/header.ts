@@ -1,7 +1,7 @@
 import { Component, ElementRef, HostListener, ViewChild } from '@angular/core';
-import { RouterLink, RouterLinkActive } from '@angular/router';
+import { Router, RouterLink, RouterLinkActive } from '@angular/router';
 
-type NavLink = { label: string; href?: string; route?: string };
+type NavLink = { label: string; fragment?: string; route?: string };
 
 @Component({
   selector: 'app-header',
@@ -16,28 +16,34 @@ export class Header {
   scrolled  = false;
   menuOpen  = false;
 
-  // Fixed height used for the CSS max-height transition.
-  // Tall enough to never clip; transition still feels snappy.
   readonly mobileMenuHeight = '360px';
 
   navLinks: NavLink[] = [
-    { label: 'Projects', href: '#projects' },
-    { label: 'Systems',  href: '#systems'  },
-    { label: 'Tech',     href: '#tech'     },
-    { label: 'About',    route: '/about'   },
-    { label: 'Contact',  href: '#contact'  },
+    { label: 'Projects', fragment: 'projects' },
+    { label: 'Systems',  fragment: 'systems'  },
+    { label: 'Tech',     fragment: 'tech'     },
+    { label: 'About',    route: '/about'      },
+    { label: 'Contact',  fragment: 'contact'  },
   ];
+
+  constructor(private router: Router) {}
+
+  navigateToSection(fragment: string): void {
+    const onHome = this.router.url === '/' || this.router.url.startsWith('/#') || this.router.url.startsWith('/?');
+    if (onHome) {
+      document.getElementById(fragment)?.scrollIntoView({ behavior: 'smooth' });
+    } else {
+      this.router.navigate(['/'], { fragment });
+    }
+  }
 
   toggleMenu(): void {
     this.menuOpen = !this.menuOpen;
   }
 
-  scrollToTop() {
-  window.scrollTo({
-    top: 0,
-    behavior: 'smooth',
-  });
-}
+  scrollToTop(): void {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
 
   closeMenu(): void {
     this.menuOpen = false;
