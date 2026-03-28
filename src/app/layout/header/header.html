@@ -1,7 +1,7 @@
 <header
-  class="sticky top-0 z-[9999] bg-[rgba(7,5,14,0.55)] backdrop-blur-xl supports-[backdrop-filter]:bg-[rgba(7,5,14,0.45)]"
-  [style.background]="scrolled ? 'rgba(7,5,14,0.88)' : 'rgba(7,5,14,0.40)'"
-  [style.box-shadow]="scrolled ? '0 1px 0 rgba(255,255,255,0.08)' : 'none'"
+  class="sticky top-0 z-[9999] backdrop-blur-xl"
+  [style.background]="scrolled ? 'rgba(6,6,9,0.92)' : 'rgba(6,6,9,0.45)'"
+  [style.box-shadow]="scrolled ? '0 1px 0 rgba(255,255,255,0.07)' : 'none'"
 >
   <div class="mx-auto flex max-w-6xl items-center justify-between px-4 py-3.5 sm:px-6 lg:px-8">
     <!-- Logo -->
@@ -36,7 +36,8 @@
           >
         } @else {
           <a
-            [href]="link.href"
+            href="javascript:void(0)"
+            (click)="navigateToSection(link.fragment!)"
             class="relative rounded-lg px-3.5 py-1.5 text-sm text-[color:var(--muted2)] transition duration-200 hover:text-[color:var(--text)] hover:bg-[var(--surface)]"
             >{{ link.label }}</a
           >
@@ -48,7 +49,8 @@
     <div class="flex items-center gap-2 shrink-0">
       <!-- CTA — hidden on very small screens -->
       <a
-        href="#contact"
+        href="javascript:void(0)"
+        (click)="navigateToSection('contact')"
         class="hidden sm:inline-flex rounded-full px-5 py-2 text-sm font-medium text-white bg-[rgba(100,60,200,0.32)] ring-1 ring-[var(--a1-ring)] transition duration-300 hover:bg-[rgba(100,60,200,0.52)] hover:shadow-[0_0_20px_var(--a1-glow2)]"
       >
         Work together
@@ -113,8 +115,8 @@
             </a>
           } @else {
             <a
-              [href]="link.href"
-              (click)="closeMenu()"
+              href="javascript:void(0)"
+              (click)="navigateToSection(link.fragment!); closeMenu()"
               class="flex items-center justify-between rounded-xl px-3 py-3 text-sm text-[color:var(--muted)] transition duration-200 hover:text-white hover:bg-[var(--surface)]"
               [style.transition-delay]="menuOpen ? i * 40 + 'ms' : '0ms'"
               [style.transform]="menuOpen ? 'translateY(0)' : 'translateY(-6px)'"
@@ -137,8 +139,8 @@
         <!-- mobile CTA -->
         <div class="px-3 py-3">
           <a
-            href="#contact"
-            (click)="closeMenu()"
+            href="javascript:void(0)"
+            (click)="navigateToSection('contact'); closeMenu()"
             class="flex w-full items-center justify-center rounded-xl px-5 py-2.5 text-sm font-medium text-white bg-[rgba(100,60,200,0.35)] ring-1 ring-[var(--a1-ring)] transition duration-300 hover:bg-[rgba(100,60,200,0.52)]"
             [style.transition-delay]="menuOpen ? navLinks.length * 40 + 'ms' : '0ms'"
             [style.transform]="menuOpen ? 'translateY(0)' : 'translateY(-6px)'"
