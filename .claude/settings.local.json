@@ -24,7 +24,8 @@
       "Bash(py .claude/skills/ui-ux-pro-max/scripts/search.py \"creative developer portfolio glassmorphism dark premium\" --design-system -p \"Pablo Gonzalez Portfolio\")",
       "Bash(py .claude/skills/ui-ux-pro-max/scripts/search.py \"glassmorphism dark luxury premium violet\" --domain style)",
       "Bash(py .claude/skills/ui-ux-pro-max/scripts/search.py \"bold dramatic creative developer\" --domain typography)",
-      "Bash(py .claude/skills/ui-ux-pro-max/scripts/search.py \"hero background animation infinite loop creative premium dark\" --domain style -n 5)"
+      "Bash(py .claude/skills/ui-ux-pro-max/scripts/search.py \"hero background animation infinite loop creative premium dark\" --domain style -n 5)",
+      "mcp__Claude_Preview__preview_start"
     ]
   }
 }
