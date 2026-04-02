@@ -1,6 +1,51 @@
 <div
-  class="bg-pattern-cross relative min-h-dvh overflow-hidden bg-[color:var(--bg)] text-[color:var(--text)] selection:bg-white selection:text-black"
+  class="relative min-h-dvh overflow-hidden bg-[color:var(--bg)] text-[color:var(--text)] selection:bg-white selection:text-black"
 >
+  <!-- ── Aurora mesh — drifting orbs across the full page ─────── -->
+  <div class="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
+    <!-- orb 1: violet, top-centre (bleeds into hero) -->
+    <div
+      class="absolute rounded-full blur-[140px] opacity-28
+             bg-[radial-gradient(circle,rgba(109,40,217,0.85),rgba(76,29,149,0.38),transparent_65%)]"
+      style="width:720px;height:720px;top:-220px;left:calc(50% - 360px);
+             animation:aurora-drift-1 16s ease-in-out infinite;"
+    ></div>
+    <!-- orb 2: fuchsia, top-right -->
+    <div
+      class="absolute rounded-full blur-[130px] opacity-16
+             bg-[radial-gradient(circle,rgba(232,121,249,0.75),rgba(219,39,119,0.28),transparent_65%)]"
+      style="width:560px;height:560px;top:-60px;right:-160px;
+             animation:aurora-drift-2 20s ease-in-out infinite;animation-delay:-8s;"
+    ></div>
+    <!-- orb 3: indigo, mid-left -->
+    <div
+      class="absolute rounded-full blur-[155px] opacity-15
+             bg-[radial-gradient(circle,rgba(129,140,248,0.70),rgba(79,70,229,0.28),transparent_65%)]"
+      style="width:660px;height:660px;top:42%;left:-180px;
+             animation:aurora-drift-3 24s ease-in-out infinite;animation-delay:-11s;"
+    ></div>
+    <!-- orb 4: deep violet, mid-right -->
+    <div
+      class="absolute rounded-full blur-[150px] opacity-13
+             bg-[radial-gradient(circle,rgba(109,40,217,0.65),transparent_65%)]"
+      style="width:600px;height:600px;top:50%;right:-150px;
+             animation:aurora-drift-4 22s ease-in-out infinite;animation-delay:-5s;"
+    ></div>
+    <!-- orb 5: fuchsia, bottom area -->
+    <div
+      class="absolute rounded-full blur-[145px] opacity-11
+             bg-[radial-gradient(circle,rgba(232,121,249,0.60),rgba(109,40,217,0.22),transparent_65%)]"
+      style="width:580px;height:580px;bottom:5%;left:calc(50% - 290px);
+             animation:aurora-drift-5 26s ease-in-out infinite;animation-delay:-14s;"
+    ></div>
+  </div>
+
+  <!-- subtle dot texture -->
+  <div
+    class="pointer-events-none absolute inset-0 -z-10
+           [background-image:radial-gradient(rgba(196,181,253,0.06)_1px,transparent_1px)]
+           [background-size:28px_28px]"
+  ></div>
   @if (project) {
     <!-- ── HERO ──────────────────────────────────────────────────── -->
     <section class="relative h-[55vh] min-h-[380px] overflow-hidden sm:h-[65vh]">
