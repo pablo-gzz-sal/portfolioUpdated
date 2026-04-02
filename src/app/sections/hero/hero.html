@@ -1,4 +1,5 @@
-<section #heroSection class="relative pt-12 pb-20 px-4 sm:pt-16 sm:pb-28 lg:pt-20 lg:pb-36 text-center">
+<section #heroSection class="noise-overlay relative pt-12 pb-20 px-4 sm:pt-16 sm:pb-28 lg:pt-20 lg:pb-36 text-center">
+
   <!-- dot pattern overlay -->
   <div
     class="pointer-events-none absolute inset-0 -z-10
@@ -9,16 +10,18 @@
 
   <!-- background blobs -->
   <div class="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
+
+    <!-- blob 1 — main violet centre-top (GSAP controlled) -->
     <svg
       #blobOne
-      class="absolute -top-24 left-1/2 h-[600px] w-[600px] -translate-x-1/2 opacity-65 blur-3xl"
+      class="absolute -top-24 left-1/2 h-[680px] w-[680px] -translate-x-1/2 opacity-70 blur-3xl"
       viewBox="0 0 600 600"
       aria-hidden="true"
     >
       <defs>
         <radialGradient id="g1">
-          <stop offset="0%" stop-color="rgba(109,40,217,1)" stop-opacity="0.55" />
-          <stop offset="60%" stop-color="rgba(76,29,149,1)" stop-opacity="0.25" />
+          <stop offset="0%"   stop-color="rgba(109,40,217,1)"  stop-opacity="0.65" />
+          <stop offset="55%"  stop-color="rgba(76,29,149,1)"   stop-opacity="0.30" />
           <stop offset="100%" stop-color="transparent" />
         </radialGradient>
       </defs>
@@ -28,33 +31,52 @@
       />
     </svg>
 
+    <!-- blob 2 — indigo right (GSAP controlled) -->
     <svg
       #blobTwo
-      class="absolute top-20 right-[-120px] h-[380px] w-[380px] opacity-25 blur-3xl"
+      class="absolute top-20 right-[-140px] h-[420px] w-[420px] opacity-35 blur-3xl"
       viewBox="0 0 600 600"
       aria-hidden="true"
     >
       <defs>
         <radialGradient id="g2">
-          <stop offset="0%" stop-color="rgba(160,100,255,1)" stop-opacity="0.4" />
+          <stop offset="0%"   stop-color="rgba(129,140,248,1)" stop-opacity="0.55" />
           <stop offset="100%" stop-color="transparent" />
         </radialGradient>
       </defs>
       <ellipse fill="url(#g2)" cx="300" cy="300" rx="280" ry="260" />
     </svg>
+
+    <!-- blob 3 — fuchsia left accent (static) -->
+    <svg
+      class="absolute -top-8 -left-28 h-[360px] w-[360px] opacity-28 blur-3xl"
+      viewBox="0 0 600 600"
+      aria-hidden="true"
+    >
+      <defs>
+        <radialGradient id="g3">
+          <stop offset="0%"   stop-color="rgba(232,121,249,1)" stop-opacity="0.40" />
+          <stop offset="100%" stop-color="transparent" />
+        </radialGradient>
+      </defs>
+      <ellipse fill="url(#g3)" cx="300" cy="300" rx="260" ry="240" />
+    </svg>
+
   </div>
 
   <!-- available pill -->
   <div class="flex justify-center">
     <div
       #heroPill
-      class="inline-flex items-center gap-2 rounded-full px-3 py-1 text-xs bg-[var(--a1-soft)] ring-1 ring-[var(--lavender-line)] text-[color:var(--lavender)]"
+      class="inline-flex items-center gap-2 rounded-full px-3.5 py-1.5 text-xs
+             bg-[rgba(109,40,217,0.15)] text-[color:var(--lavender)]"
+      style="box-shadow: 0 0 0 1px rgba(196,181,253,0.30), 0 0 24px rgba(109,40,217,0.25);"
     >
       <span class="relative flex h-1.5 w-1.5">
         <span
-          class="absolute inline-flex h-full w-full animate-ping rounded-full bg-[rgba(180,140,255,0.7)] opacity-75"
+          class="absolute inline-flex h-full w-full animate-ping rounded-full bg-[var(--fuchsia)] opacity-70"
         ></span>
-        <span class="relative h-1.5 w-1.5 rounded-full bg-[rgba(180,140,255,0.9)]"></span>
+        <span class="relative h-1.5 w-1.5 rounded-full bg-[var(--fuchsia)]"></span>
       </span>
       Available for new projects
     </div>
@@ -65,7 +87,9 @@
     <div class="overflow-hidden">
       <h1
         #heroTitle
-        class="text-5xl font-bold leading-[1.06] tracking-tight sm:text-7xl lg:text-8xl bg-[linear-gradient(135deg,var(--text)_0%,var(--a4)_50%,var(--a2)_100%)] bg-clip-text text-transparent"
+        class="animate-gradient-pan text-5xl font-bold leading-[1.06] tracking-tight sm:text-7xl lg:text-8xl
+               bg-[linear-gradient(135deg,#e8e4ff_0%,#a78bfa_22%,#818cf8_48%,#e879f9_72%,#a78bfa_100%)]
+               bg-clip-text text-transparent"
       >
         Engineering the gap between great design and solid backend.
       </h1>
@@ -83,13 +107,17 @@
     <div #heroCtas class="mt-8 flex flex-wrap justify-center gap-3">
       <a
         href="#projects"
-        class="rounded-full px-6 py-2.5 text-sm font-medium text-white bg-[rgba(100,60,200,0.45)] ring-1 ring-[rgba(124,58,237,0.3)] transition duration-300 hover:bg-[rgba(100,60,200,0.6)] hover:shadow-[0_0_22px_rgba(124,58,237,0.3)]"
+        class="shimmer-btn relative overflow-hidden rounded-full px-7 py-3 text-sm font-semibold text-white transition duration-300
+               hover:shadow-[0_0_32px_rgba(109,40,217,0.5)]"
+        style="background: linear-gradient(135deg, rgba(109,40,217,0.8), rgba(79,70,229,0.8)); box-shadow: 0 0 0 1px rgba(139,92,246,0.4), 0 0 18px rgba(109,40,217,0.3);"
       >
         See the work
       </a>
       <a
         href="#contact"
-        class="rounded-full px-6 py-2.5 text-sm font-medium text-[color:var(--muted)] bg-[rgba(255,255,255,0.05)] ring-1 ring-[rgba(255,255,255,0.09)] transition duration-300 hover:text-white hover:bg-[rgba(255,255,255,0.09)]"
+        class="rounded-full px-7 py-3 text-sm font-medium text-[color:var(--muted)] transition duration-300
+               hover:text-white hover:shadow-[0_0_16px_rgba(232,121,249,0.2)]"
+        style="background: rgba(255,255,255,0.05); box-shadow: 0 0 0 1px rgba(255,255,255,0.09);"
       >
         Get in touch
       </a>
@@ -97,20 +125,28 @@
   </div>
 
   <!-- stat cards -->
-  <div class="mx-auto mt-14 grid max-w-3xl gap-3 sm:grid-cols-3">
+  <div class="mx-auto mt-16 grid max-w-3xl gap-3 sm:grid-cols-3">
     @for (card of statCards; track card.label) {
       <div
         #statCard
-        class="group relative overflow-hidden rounded-2xl p-px bg-[rgba(255,255,255,0.04)] transition duration-300 hover:bg-[rgba(255,255,255,0.06)] text-left"
+        class="group relative overflow-hidden rounded-2xl p-px text-left transition duration-300"
+        style="background: rgba(255,255,255,0.04);"
       >
+        <!-- iridescent rotating border on hover -->
         <div
-          class="pointer-events-none absolute inset-0 rounded-2xl opacity-0 transition duration-500 group-hover:opacity-100 bg-[conic-gradient(from_180deg_at_50%_50%,rgba(124,58,237,0.3),rgba(255,255,255,0.04),rgba(124,58,237,0.3))]"
+          class="animate-iridescent pointer-events-none absolute inset-0 rounded-2xl opacity-0 transition duration-500 group-hover:opacity-100
+                 bg-[conic-gradient(from_var(--angle,0deg)_at_50%_50%,#7c3aed,#4f46e5,#db2777,#7c3aed,#4f46e5,#7c3aed)]"
         ></div>
+
         <div class="relative rounded-[15px] bg-[var(--bg-alt)] p-5">
+          <!-- corner glow — always faint, full on hover -->
           <div
-            class="pointer-events-none absolute -top-8 -right-8 h-24 w-24 rounded-full blur-xl opacity-0 transition duration-500 group-hover:opacity-100 bg-[radial-gradient(circle,rgba(124,58,237,0.2),transparent_65%)]"
+            class="pointer-events-none absolute -top-8 -right-8 h-28 w-28 rounded-full blur-xl
+                   opacity-10 transition duration-500 group-hover:opacity-100
+                   bg-[radial-gradient(circle,rgba(232,121,249,0.4),transparent_65%)]"
           ></div>
-          <p class="text-[10px] uppercase tracking-widest text-[rgba(180,140,255,0.6)]">
+
+          <p class="text-[10px] uppercase tracking-widest text-[rgba(196,181,253,0.6)]">
             {{ card.label }}
           </p>
           <p class="mt-2 text-sm leading-snug text-[color:var(--text)]">{{ card.value }}</p>
@@ -118,4 +154,5 @@
       </div>
     }
   </div>
+
 </section>

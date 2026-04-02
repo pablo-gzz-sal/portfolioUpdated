@@ -44,8 +44,16 @@
   --lavender-line: rgba(196, 181, 253, 0.28);   /* decorative lines       */
 
   /* ── Typography ───────────────────────────────────────────────── */
+  --font-display: 'Syne', 'Geist', ui-sans-serif, sans-serif;
   --font-sans: 'Geist', 'Inter', ui-sans-serif, system-ui, sans-serif;
   --font-mono: 'Geist Mono', 'Fira Code', ui-monospace, monospace;
+
+  /* ── Fuchsia / indigo extended palette ────────────────────────── */
+  --fuchsia:        #e879f9;
+  --fuchsia-dim:    rgba(232, 121, 249, 0.55);
+  --fuchsia-glow:   rgba(232, 121, 249, 0.22);
+  --indigo-accent:  #818cf8;
+  --indigo-glow:    rgba(129, 140, 248, 0.20);
 
   /* ── Semantic ─────────────────────────────────────────────────── */
   --success:   rgba( 52, 211, 153, 0.85);   /* green — live badge         */
@@ -98,6 +106,7 @@ body {
 }
 
 h1, h2, h3 {
+  font-family: var(--font-display);
   letter-spacing: -0.03em;
   font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
 }
@@ -206,13 +215,63 @@ section[id] {
   animation: bloom-breathe 7s ease-in-out infinite;
 }
 
+/* ── Gradient pan (animated heading gradient) ────────────────── */
+@keyframes gradient-pan {
+  0%, 100% { background-position: 0% 50%;   }
+  50%       { background-position: 100% 50%; }
+}
+
+.animate-gradient-pan {
+  background-size: 250% 250%;
+  animation: gradient-pan 7s ease infinite;
+}
+
+/* ── Iridescent sweep (card hover border) ────────────────────── */
+@keyframes iridescent-spin {
+  to { --angle: 360deg; }
+}
+
+.animate-iridescent {
+  animation: iridescent-spin 4s linear infinite;
+}
+
+/* ── Shimmer sweep (button shine) ───────────────────────────── */
+@keyframes shimmer-sweep {
+  0%   { transform: translateX(-100%) skewX(-12deg); }
+  100% { transform: translateX(200%)  skewX(-12deg); }
+}
+
+.shimmer-btn::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.15) 50%, transparent 100%);
+  transform: translateX(-100%) skewX(-12deg);
+  pointer-events: none;
+}
+
+.shimmer-btn:hover::after {
+  animation: shimmer-sweep 0.6s ease forwards;
+}
+
+/* ── Noise grain overlay ─────────────────────────────────────── */
+.noise-overlay::before {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+  background-size: 300px 300px;
+  opacity: 0.038;
+  mix-blend-mode: overlay;
+}
+
 /* ── Reduced-motion overrides ────────────────────────────────── */
 @media (prefers-reduced-motion: reduce) {
   .animate-glow-pulse,
   .animate-shimmer-x,
   .animate-rotate-border,
-  .animate-bloom-breathe {
+  .animate-bloom-breathe,
+  .animate-gradient-pan,
+  .animate-iridescent {
     animation: none;
   }
+  .shimmer-btn::after { display: none; }
 }
 
