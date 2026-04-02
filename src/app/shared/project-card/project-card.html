@@ -1,23 +1,21 @@
 <article
-  class="group relative overflow-hidden rounded-2xl p-px
-         bg-[rgba(255,255,255,0.04)]
-         transition duration-300
-         hover:bg-[rgba(255,255,255,0.06)]"
+  class="group relative overflow-hidden rounded-2xl p-px transition duration-300 cursor-pointer"
+  style="background: rgba(255,255,255,0.045);"
 >
-  <!-- animated border gradient on hover -->
+  <!-- iridescent rotating border on hover -->
   <div
-    class="pointer-events-none absolute inset-0 rounded-2xl opacity-0 transition duration-500 group-hover:opacity-100
-           bg-[conic-gradient(from_180deg_at_50%_50%,rgba(124,58,237,0.4),rgba(255,255,255,0.06),rgba(124,58,237,0.4))]"
+    class="animate-iridescent pointer-events-none absolute inset-0 rounded-2xl opacity-0 transition duration-700 group-hover:opacity-100
+           bg-[conic-gradient(from_var(--angle,0deg)_at_50%_50%,#7c3aed,#4f46e5,#db2777,#7c3aed,#4f46e5,#7c3aed)]"
   ></div>
 
   <!-- inner panel -->
   <div class="relative flex h-full flex-col rounded-[15px] bg-[var(--bg-alt)] overflow-hidden">
 
-    <!-- corner glow -->
+    <!-- ambient glow — always on at low opacity, intensifies on hover -->
     <div
-      class="pointer-events-none absolute -top-12 -right-12 h-36 w-36 rounded-full blur-2xl
-             opacity-0 transition duration-500 group-hover:opacity-100
-             bg-[radial-gradient(circle,rgba(109,40,217,0.3),transparent_65%)]"
+      class="pointer-events-none absolute -top-16 -right-16 h-48 w-48 rounded-full blur-2xl
+             opacity-5 transition duration-500 group-hover:opacity-100
+             bg-[radial-gradient(circle,rgba(139,92,246,0.5),rgba(232,121,249,0.2),transparent_65%)]"
     ></div>
 
     <!-- preview image -->
@@ -30,13 +28,18 @@
         />
         <!-- image fade-to-card -->
         <div class="absolute inset-0 bg-[linear-gradient(to_bottom,transparent_40%,var(--bg-alt)_100%)]"></div>
+        <!-- iridescent tint on hover -->
+        <div
+          class="pointer-events-none absolute inset-0 opacity-0 transition duration-500 group-hover:opacity-100
+                 bg-[linear-gradient(135deg,rgba(109,40,217,0.15)_0%,rgba(79,70,229,0.10)_50%,rgba(232,121,249,0.08)_100%)]"
+        ></div>
 
         <!-- highlight badge floated on image -->
         @if (project.highlight) {
           <span
             class="absolute left-4 bottom-3 rounded-full px-2.5 py-1 text-xs
-                   bg-[rgba(6,6,9,0.82)] ring-1 ring-[var(--a1-ring)]
-                   text-[color:var(--lavender)]"
+                   bg-[rgba(6,6,9,0.82)] text-[color:var(--lavender)]"
+            style="box-shadow: 0 0 0 1px rgba(139,92,246,0.45);"
           >
             {{ project.highlight }}
           </span>
@@ -47,10 +50,10 @@
     <!-- content -->
     <div class="flex flex-1 flex-col p-5">
 
-      <!-- top row: title + badge (when no image) -->
+      <!-- top row: title + badge -->
       <div class="flex items-start justify-between gap-4">
         <div class="flex-1">
-          <h3 class="text-base font-semibold tracking-tight text-[color:var(--text)]">
+          <h3 class="text-base font-semibold tracking-tight text-[color:var(--text)] transition duration-200 group-hover:text-white">
             {{ project.title }}
           </h3>
           <p class="mt-1.5 text-sm leading-relaxed text-[color:var(--muted)]">
@@ -60,9 +63,8 @@
 
         @if (project.highlight && !project.previewImage) {
           <span
-            class="shrink-0 rounded-full px-2.5 py-1 text-xs
-                   bg-[rgba(124,58,237,0.12)] ring-1 ring-[rgba(124,58,237,0.25)]
-                   text-[rgba(180,140,255,0.9)]"
+            class="shrink-0 rounded-full px-2.5 py-1 text-xs text-[rgba(196,181,253,0.9)]"
+            style="background: rgba(124,58,237,0.14); box-shadow: 0 0 0 1px rgba(124,58,237,0.30);"
           >
             {{ project.highlight }}
           </span>
@@ -74,19 +76,19 @@
         <div class="mt-4 flex flex-wrap gap-1.5">
           @for (t of project.tags; track t) {
             <span
-              class="rounded-md px-2.5 py-1 text-xs
-                     bg-[rgba(255,255,255,0.04)] ring-1 ring-[rgba(255,255,255,0.08)]
-                     text-[color:var(--muted2)]"
+              class="rounded-md px-2.5 py-1 text-xs transition duration-200
+                     text-[color:var(--muted2)] hover:text-[color:var(--lavender)]"
+              style="background: rgba(255,255,255,0.04); box-shadow: 0 0 0 1px rgba(255,255,255,0.08);"
             >{{ t }}</span>
           }
         </div>
       }
 
-      <!-- spacer pushes links to bottom -->
+      <!-- spacer -->
       <div class="flex-1"></div>
 
       @if (project.links?.length) {
-        <div class="mt-4 h-px bg-[rgba(255,255,255,0.05)]"></div>
+        <div class="mt-4 h-px bg-[rgba(255,255,255,0.06)]"></div>
         <div class="mt-3 flex flex-wrap gap-4">
           @for (l of project.links; track l.label) {
             <a

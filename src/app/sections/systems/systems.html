@@ -23,19 +23,19 @@
                bg-[var(--surface)] transition duration-300
                hover:bg-[var(--surface2)]"
       >
-        <!-- animated conic border -->
+        <!-- iridescent rotating border on hover -->
         <div
-          class="animate-rotate-border pointer-events-none absolute inset-0 rounded-2xl opacity-0 transition duration-500 group-hover:opacity-100
-                 bg-[conic-gradient(from_var(--angle,180deg)_at_50%_50%,var(--a1-ring),rgba(255,255,255,0.04),var(--a1-ring))]"
+          class="animate-iridescent pointer-events-none absolute inset-0 rounded-2xl opacity-0 transition duration-500 group-hover:opacity-100
+                 bg-[conic-gradient(from_var(--angle,0deg)_at_50%_50%,#7c3aed,#4f46e5,#db2777,#7c3aed,#4f46e5,#7c3aed)]"
         ></div>
 
         <div class="relative rounded-xl bg-[var(--bg-alt)] p-5 sm:p-6">
 
-          <!-- corner glow -->
+          <!-- corner glow — faint always, vivid on hover -->
           <div
-            class="pointer-events-none absolute -top-10 -right-10 h-32 w-32 rounded-full blur-2xl
-                   opacity-0 transition duration-500 group-hover:opacity-100
-                   bg-[radial-gradient(circle,var(--a1-glow),transparent_65%)]"
+            class="pointer-events-none absolute -top-10 -right-10 h-36 w-36 rounded-full blur-2xl
+                   opacity-5 transition duration-500 group-hover:opacity-100
+                   bg-[radial-gradient(circle,rgba(139,92,246,0.5),rgba(232,121,249,0.2),transparent_65%)]"
           ></div>
 
           <div class="flex flex-col gap-5  sm:items-start sm:gap-6">

@@ -1,23 +1,29 @@
 <div
   class="relative min-h-dvh bg-[color:var(--bg)] text-[color:var(--text)] selection:bg-white selection:text-black"
 >
-  <!-- primary bloom — upper centre -->
+  <!-- primary bloom — upper centre, violet -->
   <div
     class="animate-bloom-breathe pointer-events-none absolute inset-0 -z-10
-           bg-[radial-gradient(ellipse_65%_55%_at_50%_0%,rgba(109,40,217,0.55),transparent_70%)]"
-    style="--bloom-lo:0.45;--bloom-hi:0.65"
+           bg-[radial-gradient(ellipse_70%_55%_at_50%_0%,rgba(109,40,217,0.60),transparent_70%)]"
+    style="--bloom-lo:0.50;--bloom-hi:0.70"
   ></div>
 
-  <!-- secondary bloom — lower right -->
+  <!-- secondary bloom — lower right, deep indigo -->
   <div
     class="pointer-events-none absolute inset-0 -z-10
-           bg-[radial-gradient(ellipse_45%_38%_at_85%_80%,rgba(76,29,149,0.28),transparent_65%)]"
+           bg-[radial-gradient(ellipse_50%_40%_at_88%_82%,rgba(79,70,229,0.32),transparent_65%)]"
   ></div>
 
-  <!-- tertiary bloom — left mid -->
+  <!-- tertiary bloom — left mid, violet -->
   <div
     class="pointer-events-none absolute inset-0 -z-10
-           bg-[radial-gradient(ellipse_35%_28%_at_5%_55%,rgba(109,40,217,0.18),transparent_70%)]"
+           bg-[radial-gradient(ellipse_38%_30%_at_4%_55%,rgba(109,40,217,0.22),transparent_70%)]"
+  ></div>
+
+  <!-- quaternary bloom — fuchsia accent top-right -->
+  <div
+    class="pointer-events-none absolute inset-0 -z-10
+           bg-[radial-gradient(ellipse_32%_26%_at_92%_18%,rgba(232,121,249,0.16),transparent_70%)]"
   ></div>
 
   <!-- grid -->
@@ -46,10 +52,17 @@
 
     <section id="contact" class="pt-16 px-4 lg:px-4 sm:pt-20">
       <div
-        class="relative overflow-hidden rounded-[2rem] border border-[var(--border)] bg-[var(--surface)] p-8 sm:p-10"
+        class="noise-overlay relative overflow-hidden rounded-[2rem] p-8 sm:p-10"
+        style="background: rgba(255,255,255,0.03); box-shadow: 0 0 0 1px rgba(139,92,246,0.22), 0 0 60px rgba(109,40,217,0.12);"
       >
+        <!-- iridescent gradient wash -->
         <div
-          class="pointer-events-none absolute inset-0 bg-[conic-gradient(from_200deg_at_25%_90%,rgba(109,40,217,0.25),transparent_45%,rgba(109,40,217,0.10),transparent_70%)]"
+          class="pointer-events-none absolute inset-0 bg-[conic-gradient(from_200deg_at_20%_110%,rgba(109,40,217,0.30),rgba(79,70,229,0.15),rgba(232,121,249,0.12),transparent_55%)]"
+        ></div>
+        <!-- top-right fuchsia accent -->
+        <div
+          class="pointer-events-none absolute -top-16 -right-16 h-48 w-48 rounded-full blur-2xl
+                 bg-[radial-gradient(circle,rgba(232,121,249,0.20),transparent_70%)]"
         ></div>
 
         <div class="relative flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between">
