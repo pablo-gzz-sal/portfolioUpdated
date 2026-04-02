@@ -15,7 +15,15 @@
       "Bash(npx claude:*)",
       "Read(//mnt/c/Users/BOOK/**)",
       "Read(//c/Users/BOOK/.claude/**)",
-      "Bash(find ~/.claude -name *.json)"
+      "Bash(find ~/.claude -name *.json)",
+      "Bash(python3 .claude/skills/ui-ux-pro-max/scripts/search.py \"creative developer portfolio glassmorphism dark premium\" --design-system -p \"Pablo Gonzalez Portfolio\")",
+      "Bash(python .claude/skills/ui-ux-pro-max/scripts/search.py \"creative developer portfolio glassmorphism dark premium\" --design-system -p \"Pablo Gonzalez Portfolio\")",
+      "Bash(py --version)",
+      "Bash(py3 --version)",
+      "Bash(where python*)",
+      "Bash(py .claude/skills/ui-ux-pro-max/scripts/search.py \"creative developer portfolio glassmorphism dark premium\" --design-system -p \"Pablo Gonzalez Portfolio\")",
+      "Bash(py .claude/skills/ui-ux-pro-max/scripts/search.py \"glassmorphism dark luxury premium violet\" --domain style)",
+      "Bash(py .claude/skills/ui-ux-pro-max/scripts/search.py \"bold dramatic creative developer\" --domain typography)"
     ]
   }
 }
