@@ -1,7 +1,21 @@
 {
   "permissions": {
     "allow": [
-      "Bash(gh pr:*)"
+      "Bash(gh pr:*)",
+      "Bash(gh api:*)",
+      "WebFetch(domain:github.com)",
+      "Bash(npm install:*)",
+      "Bash(uipro init:*)",
+      "Bash(claude mcp:*)",
+      "Bash(where.exe claude:*)",
+      "Read(//mnt/c/Users/BOOK/AppData/Roaming/**)",
+      "Bash(find /usr /opt /home -name claude -type f)",
+      "Read(//c/Users/BOOK/.nvm/versions/**)",
+      "Read(//usr/local/bin/**)",
+      "Bash(npx claude:*)",
+      "Read(//mnt/c/Users/BOOK/**)",
+      "Read(//c/Users/BOOK/.claude/**)",
+      "Bash(find ~/.claude -name *.json)"
     ]
   }
 }
