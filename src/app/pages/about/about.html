@@ -1,20 +1,57 @@
 <div
-  class="bg-pattern-cross relative min-h-dvh overflow-hidden bg-[color:var(--bg)] text-[color:var(--text)] selection:bg-white selection:text-black"
+  class="relative min-h-dvh overflow-hidden bg-[color:var(--bg)] text-[color:var(--text)] selection:bg-white selection:text-black"
 >
-  <!-- ambient blooms -->
+  <!-- ── Aurora mesh — 6 drifting orbs, full-page coverage ────── -->
+  <div class="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
+    <!-- orb 1: violet, top-left -->
+    <div
+      class="absolute rounded-full blur-[140px] opacity-30
+             bg-[radial-gradient(circle,rgba(109,40,217,0.85),rgba(76,29,149,0.40),transparent_65%)]"
+      style="width:700px;height:700px;top:-180px;left:-120px;
+             animation:aurora-drift-1 18s ease-in-out infinite;"
+    ></div>
+    <!-- orb 2: fuchsia, top-right -->
+    <div
+      class="absolute rounded-full blur-[130px] opacity-18
+             bg-[radial-gradient(circle,rgba(232,121,249,0.80),rgba(219,39,119,0.30),transparent_65%)]"
+      style="width:580px;height:580px;top:-100px;right:-140px;
+             animation:aurora-drift-2 22s ease-in-out infinite;animation-delay:-7s;"
+    ></div>
+    <!-- orb 3: indigo, mid-right -->
+    <div
+      class="absolute rounded-full blur-[150px] opacity-16
+             bg-[radial-gradient(circle,rgba(129,140,248,0.75),rgba(79,70,229,0.30),transparent_65%)]"
+      style="width:640px;height:640px;top:40%;right:-200px;
+             animation:aurora-drift-3 26s ease-in-out infinite;animation-delay:-12s;"
+    ></div>
+    <!-- orb 4: violet, mid-left -->
+    <div
+      class="absolute rounded-full blur-[160px] opacity-14
+             bg-[radial-gradient(circle,rgba(109,40,217,0.70),transparent_65%)]"
+      style="width:720px;height:720px;top:35%;left:-220px;
+             animation:aurora-drift-4 20s ease-in-out infinite;animation-delay:-4s;"
+    ></div>
+    <!-- orb 5: fuchsia, lower-centre -->
+    <div
+      class="absolute rounded-full blur-[145px] opacity-12
+             bg-[radial-gradient(circle,rgba(232,121,249,0.65),rgba(109,40,217,0.25),transparent_65%)]"
+      style="width:620px;height:620px;bottom:10%;left:calc(50% - 310px);
+             animation:aurora-drift-5 24s ease-in-out infinite;animation-delay:-9s;"
+    ></div>
+    <!-- orb 6: indigo, bottom-right -->
+    <div
+      class="absolute rounded-full blur-[135px] opacity-13
+             bg-[radial-gradient(circle,rgba(79,70,229,0.70),transparent_65%)]"
+      style="width:580px;height:580px;bottom:-150px;right:-100px;
+             animation:aurora-drift-6 28s ease-in-out infinite;animation-delay:-15s;"
+    ></div>
+  </div>
+
+  <!-- subtle dot texture overlay -->
   <div
-    class="animate-bloom-breathe pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(ellipse_70%_55%_at_10%_10%,rgba(109,40,217,0.38),transparent_70%)]"
-    style="--bloom-lo:0.32;--bloom-hi:0.48"
-  ></div>
-  <div
-    class="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(ellipse_45%_35%_at_88%_78%,rgba(139,92,246,0.20),transparent_70%)]"
-  ></div>
-  <div
-    class="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(ellipse_55%_45%_at_55%_50%,rgba(109,40,217,0.12),transparent_70%)]"
-  ></div>
-  <!-- grid -->
-  <div
-    class="pointer-events-none absolute inset-0 -z-10 [background-image:linear-gradient(rgba(255,255,255,0.07)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.07)_1px,transparent_1px)] [background-size:48px_48px] [mask-image:linear-gradient(to_bottom,black_0%,black_40%,transparent_75%)]"
+    class="pointer-events-none absolute inset-0 -z-10
+           [background-image:radial-gradient(rgba(196,181,253,0.07)_1px,transparent_1px)]
+           [background-size:28px_28px]"
   ></div>
 
   <main class="mx-auto w-full max-w-6xl px-4 pb-24 pt-10 sm:px-6 lg:px-8">
