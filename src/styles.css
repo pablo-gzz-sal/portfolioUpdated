@@ -262,37 +262,36 @@ section[id] {
   mix-blend-mode: overlay;
 }
 
-/* ── Aurora background drift keyframes ───────────────────────── */
-@keyframes aurora-drift-1 {
-  0%, 100% { transform: translate(0px,    0px)   scale(1.00); }
-  25%       { transform: translate(65px,  -50px)  scale(1.09); }
-  50%       { transform: translate(22px,   42px)  scale(0.94); }
-  75%       { transform: translate(-55px,  16px)  scale(1.06); }
+/* ── Aurora shimmer keyframes (opacity + hue-rotate, no transform) ── */
+/* Uses inset-0 blobs like proven landing blooms — guaranteed visible  */
+@keyframes aurora-shimmer-1 {
+  0%, 100% { opacity: 0.80; filter: hue-rotate(0deg);   }
+  33%       { opacity: 1.00; filter: hue-rotate(22deg);  }
+  66%       { opacity: 0.65; filter: hue-rotate(-12deg); }
 }
-@keyframes aurora-drift-2 {
-  0%, 100% { transform: translate(0px,    0px)   scale(1.00); }
-  30%       { transform: translate(-70px,  32px)  scale(1.11); }
-  65%       { transform: translate(42px,  -52px)  scale(0.91); }
+@keyframes aurora-shimmer-2 {
+  0%, 100% { opacity: 0.70; filter: hue-rotate(0deg);   }
+  40%       { opacity: 0.90; filter: hue-rotate(-28deg); }
+  75%       { opacity: 0.55; filter: hue-rotate(18deg);  }
 }
-@keyframes aurora-drift-3 {
-  0%, 100% { transform: translate(0px,    0px)   scale(1.00); }
-  40%       { transform: translate(48px,   58px)  scale(1.07); }
-  80%       { transform: translate(-42px, -32px)  scale(0.95); }
+@keyframes aurora-shimmer-3 {
+  0%, 100% { opacity: 0.65; filter: hue-rotate(0deg);   }
+  30%       { opacity: 0.85; filter: hue-rotate(35deg);  }
+  70%       { opacity: 0.50; filter: hue-rotate(-20deg); }
 }
-@keyframes aurora-drift-4 {
-  0%, 100% { transform: translate(0px,    0px)   scale(1.00); }
-  20%       { transform: translate(-32px,  52px)  scale(0.89); }
-  60%       { transform: translate(58px,  -22px)  scale(1.13); }
+@keyframes aurora-shimmer-4 {
+  0%, 100% { opacity: 0.55; filter: hue-rotate(0deg);   }
+  50%       { opacity: 0.80; filter: hue-rotate(-30deg); }
 }
-@keyframes aurora-drift-5 {
-  0%, 100% { transform: translate(0px,    0px)   scale(1.00); }
-  35%       { transform: translate(38px,  -65px)  scale(0.93); }
-  70%       { transform: translate(-58px,  40px)  scale(1.08); }
+@keyframes aurora-shimmer-5 {
+  0%, 100% { opacity: 0.50; filter: hue-rotate(0deg);   }
+  45%       { opacity: 0.72; filter: hue-rotate(25deg);  }
+  80%       { opacity: 0.38; filter: hue-rotate(-15deg); }
 }
-@keyframes aurora-drift-6 {
-  0%, 100% { transform: translate(0px,    0px)   scale(1.00); }
-  45%       { transform: translate(-44px, -30px)  scale(1.05); }
-  85%       { transform: translate(62px,   48px)  scale(0.96); }
+@keyframes aurora-shimmer-6 {
+  0%, 100% { opacity: 0.45; filter: hue-rotate(0deg);   }
+  35%       { opacity: 0.65; filter: hue-rotate(-22deg); }
+  75%       { opacity: 0.35; filter: hue-rotate(14deg);  }
 }
 
 /* ── Reduced-motion overrides ────────────────────────────────── */
@@ -306,6 +305,6 @@ section[id] {
     animation: none;
   }
   .shimmer-btn::after { display: none; }
-  [style*="aurora-drift"] { animation: none !important; }
+  [style*="aurora-shimmer"] { animation: none !important; }
 }
 
