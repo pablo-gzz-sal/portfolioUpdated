@@ -1,25 +1,25 @@
-<section id="projects" class="mx-auto max-w-6xl py-16 px-4 sm:px-6 lg:px-8 sm:py-24">
+<section id="projects" class="mx-auto max-w-6xl py-20 px-4 sm:px-6 lg:px-8 sm:py-32">
 
   <!-- section header -->
   <div class="projects-header flex items-end justify-between gap-6">
     <div>
       <p class="inline-flex items-center gap-2 text-xs uppercase tracking-widest text-[color:var(--muted2)]">
         <span class="animate-shimmer-x h-px w-6 bg-[rgba(180,140,255,0.7)]"></span>
-        Projects
+        Work
       </p>
 
-      <h2 class="mt-3 text-2xl font-semibold tracking-tight sm:text-3xl">
-        Selected work
+      <h2 class="mt-3 text-3xl font-bold tracking-tight sm:text-4xl">
+        Projects that shipped.
       </h2>
 
-      <p class="mt-2 max-w-xl text-sm leading-relaxed text-[color:var(--muted2)]">
-        A few pieces that reflect my recent focus: product UI, backend integrations, and clean architectures.
+      <p class="mt-2 max-w-sm text-sm leading-relaxed text-[color:var(--muted2)]">
+        Four products. End-to-end.
       </p>
     </div>
   </div>
 
   <!-- grid -->
-  <div class="mt-10 grid gap-3 sm:grid-cols-2">
+  <div class="mt-12 grid gap-4 sm:grid-cols-2">
     @for (p of projects; track p.id) {
       <app-project-card [project]="p" [routerLink]="['/projects', p.id]" class="cursor-pointer" />
     }

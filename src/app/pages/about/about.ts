@@ -52,22 +52,22 @@ export class About implements OnInit, AfterViewInit {
     {
       icon: '◈',
       title: 'Frontend systems',
-      desc: 'Angular and React applications built to be maintained. Component architecture, RxJS patterns, and interaction detail.',
+      desc: 'Angular + React. Component architecture built to be maintained.',
     },
     {
       icon: '◈',
       title: 'Backend structure',
-      desc: 'REST APIs, auth, database schemas, and third-party integrations. Clear contracts, clean separation.',
+      desc: 'REST APIs, auth, schemas. Clean contracts, clear separation.',
     },
     {
       icon: '◈',
       title: 'Product thinking',
-      desc: 'I scope before I build. Requirements → MVP → iteration. Engineering decisions with product outcomes in mind.',
+      desc: 'Requirements → MVP → iteration. Build what ships value.',
     },
     {
       icon: '◈',
       title: 'Delivery',
-      desc: 'Fast iteration without slop. Readable code, documented APIs, and production deployments that stick.',
+      desc: 'Fast without slop. Documented, deployed, and production-ready.',
     },
   ];
 

@@ -25,9 +25,9 @@ export class Hero {
   @ViewChild('blobTwo', { static: true }) blobTwo!: ElementRef<SVGElement>;
  @ViewChildren('statCard') statCardEls!: QueryList<ElementRef<HTMLElement>>;
     statCards = [
-    { label: 'Clients',  value: 'Airbus, Bosch, startups, and indie founders' },
-    { label: 'Craft',    value: 'Angular · Node.js · systems that last' },
-    { label: 'Based in', value: 'Munich, Germany — working globally' },
+    { label: 'Clients',  value: 'Airbus · Bosch · indie founders' },
+    { label: 'Stack',    value: 'Angular · Node.js · clean systems' },
+    { label: 'Based in', value: 'Munich, DE — remote-first' },
   ];
 
   ngAfterViewInit(): void {
