@@ -51,7 +51,7 @@
         <!-- back link -->
         <a
           routerLink="/"
-          class="inline-flex items-center gap-1.5 text-xs text-[color:var(--muted2)] transition duration-200 hover:text-[color:var(--lavender)]"
+          class="cs-hero-back inline-flex items-center gap-1.5 text-xs text-[color:var(--muted2)] transition duration-200 hover:text-[color:var(--lavender)]"
         >
           <svg class="h-3.5 w-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
@@ -60,7 +60,7 @@
         </a>
 
         <!-- meta row -->
-        <div class="mt-6 flex flex-wrap items-center gap-2">
+        <div class="cs-hero-meta mt-6 flex flex-wrap items-center gap-2">
           <span class="font-[family-name:var(--font-mono)] text-[11px] uppercase tracking-[0.22em] text-[color:var(--muted2)]">
             {{ project.year }}
           </span>
@@ -75,20 +75,20 @@
         </div>
 
         <!-- title -->
-        <h1 class="mt-5 text-4xl font-bold leading-none tracking-tight sm:text-6xl lg:text-7xl">
+        <h1 class="cs-hero-title mt-5 text-4xl font-bold leading-none tracking-tight sm:text-6xl lg:text-7xl">
           {{ project.title }}
         </h1>
-        <p class="mt-2 text-2xl font-semibold tracking-tight text-[color:var(--text-dim)] sm:text-4xl lg:text-5xl">
+        <p class="cs-hero-subtitle mt-2 text-2xl font-semibold tracking-tight text-[color:var(--text-dim)] sm:text-4xl lg:text-5xl">
           {{ project.subtitle }}
         </p>
 
         <!-- summary -->
-        <p class="mt-5 max-w-2xl text-sm leading-7 text-[color:var(--muted)] sm:text-base">
+        <p class="cs-hero-summary mt-5 max-w-2xl text-sm leading-7 text-[color:var(--muted)] sm:text-base">
           {{ project.summary }}
         </p>
 
         <!-- divider line -->
-        <div class="mt-8 h-px w-full bg-[linear-gradient(to_right,rgba(255,255,255,0.12),transparent_60%)]"></div>
+        <div class="cs-hero-divider mt-8 h-px w-full bg-[linear-gradient(to_right,rgba(255,255,255,0.12),transparent_60%)]"></div>
       </div>
     </section>
 
@@ -114,10 +114,10 @@
       </section>
 
       <!-- ── CHALLENGE + SOLUTION ───────────────────────────────── -->
-      <section class="cs-body-section mt-12 grid gap-4 md:grid-cols-2">
+      <section class="cs-challenge-solution mt-12 grid gap-4 md:grid-cols-2">
 
         <!-- challenge -->
-        <article class="group relative overflow-hidden rounded-[1.5rem] border border-[var(--border)] bg-[var(--surface)] p-7 sm:p-9">
+        <article class="cs-challenge group relative overflow-hidden rounded-[1.5rem] border border-[var(--border)] bg-[var(--surface)] p-7 sm:p-9">
           <!-- corner bloom -->
           <div class="pointer-events-none absolute -bottom-12 -left-12 h-40 w-40 rounded-full blur-3xl opacity-40
                       bg-[radial-gradient(circle,rgba(255,255,255,0.06),transparent_70%)]"></div>
@@ -129,7 +129,7 @@
         </article>
 
         <!-- solution -->
-        <article class="group relative overflow-hidden rounded-[1.5rem] border border-[var(--border)] bg-[var(--surface)] p-7 sm:p-9">
+        <article class="cs-solution group relative overflow-hidden rounded-[1.5rem] border border-[var(--border)] bg-[var(--surface)] p-7 sm:p-9">
           <!-- corner bloom — subtle violet -->
           <div class="pointer-events-none absolute -top-12 -right-12 h-40 w-40 rounded-full blur-3xl opacity-30
                       bg-[radial-gradient(circle,rgba(124,58,237,0.25),transparent_70%)]"></div>
@@ -252,7 +252,7 @@
       }
 
       <!-- ── CTA ────────────────────────────────────────────────── -->
-      <section class="mt-16">
+      <section class="cs-cta mt-16">
         <div
           class="relative overflow-hidden rounded-[2rem] p-8 sm:p-12"
           style="background: linear-gradient(135deg, rgba(109,40,217,0.14), rgba(79,70,229,0.08));
