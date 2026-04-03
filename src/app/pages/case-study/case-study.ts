@@ -228,16 +228,30 @@ export class CaseStudy implements OnInit, AfterViewInit {
   ngAfterViewInit(): void {
     const root = this._host.nativeElement;
 
-    // ── Hero content springs up ────────────────────────────────────
-    const heroContent = root.querySelector<HTMLElement>('.cs-hero-content');
-    if (heroContent) {
-      gsap.set(heroContent, { opacity: 0, y: 40 });
-      setTimeout(() => {
-        gsap.to(heroContent, { opacity: 1, y: 0, duration: 0.85, ease: 'power3.out' });
-      }, 120);
-    }
+    // ── Hero — cinematic line-by-line reveal ──────────────────────
+    const heroBack    = root.querySelector<HTMLElement>('.cs-hero-back');
+    const heroMeta    = root.querySelector<HTMLElement>('.cs-hero-meta');
+    const heroTitle   = root.querySelector<HTMLElement>('.cs-hero-title');
+    const heroSub     = root.querySelector<HTMLElement>('.cs-hero-subtitle');
+    const heroSum     = root.querySelector<HTMLElement>('.cs-hero-summary');
+    const heroDivider = root.querySelector<HTMLElement>('.cs-hero-divider');
 
-    // ── Body sections fade up on scroll ───────────────────────────
+    if (heroBack)    gsap.set(heroBack,    { opacity: 0, y: -10 });
+    if (heroMeta)    gsap.set(heroMeta,    { opacity: 0, y: 16 });
+    if (heroTitle)   gsap.set(heroTitle,   { opacity: 0, y: 44 });
+    if (heroSub)     gsap.set(heroSub,     { opacity: 0, y: 32 });
+    if (heroSum)     gsap.set(heroSum,     { opacity: 0, y: 20 });
+    if (heroDivider) gsap.set(heroDivider, { opacity: 0, scaleX: 0, transformOrigin: 'left center' });
+
+    const heroTl = gsap.timeline({ delay: 0.18 });
+    if (heroBack)    heroTl.to(heroBack,    { opacity: 1, y: 0,      duration: 0.5,  ease: 'power2.out' }, 0);
+    if (heroMeta)    heroTl.to(heroMeta,    { opacity: 1, y: 0,      duration: 0.65, ease: 'power3.out' }, 0.12);
+    if (heroTitle)   heroTl.to(heroTitle,   { opacity: 1, y: 0,      duration: 1.0,  ease: 'power3.out' }, 0.26);
+    if (heroSub)     heroTl.to(heroSub,     { opacity: 1, y: 0,      duration: 0.75, ease: 'power3.out' }, 0.42);
+    if (heroSum)     heroTl.to(heroSum,     { opacity: 1, y: 0,      duration: 0.65, ease: 'power3.out' }, 0.56);
+    if (heroDivider) heroTl.to(heroDivider, { opacity: 1, scaleX: 1, duration: 0.85, ease: 'power3.out' }, 0.68);
+
+    // ── Stack section — fade up on scroll ────────────────────────
     const bodySections = root.querySelectorAll<HTMLElement>('.cs-body-section');
     bodySections.forEach((section) => {
       gsap.set(section, { opacity: 0, y: 32 });
@@ -248,7 +262,24 @@ export class CaseStudy implements OnInit, AfterViewInit {
       });
     });
 
-    // ── Feature cards stagger in ───────────────────────────────────
+    // ── Challenge + Solution — from opposite sides ────────────────
+    const challenge               = root.querySelector<HTMLElement>('.cs-challenge');
+    const solution                = root.querySelector<HTMLElement>('.cs-solution');
+    const challengeSolutionSection = root.querySelector<HTMLElement>('.cs-challenge-solution');
+    if (challenge) gsap.set(challenge, { opacity: 0, x: -44 });
+    if (solution)  gsap.set(solution,  { opacity: 0, x: 44 });
+    if (challengeSolutionSection) {
+      ScrollTrigger.create({
+        trigger: challengeSolutionSection,
+        start: 'top 86%',
+        onEnter: () => {
+          if (challenge) gsap.to(challenge, { opacity: 1, x: 0, duration: 0.75, ease: 'power3.out' });
+          if (solution)  gsap.to(solution,  { opacity: 1, x: 0, duration: 0.75, ease: 'power3.out', delay: 0.1 });
+        },
+      });
+    }
+
+    // ── Feature cards stagger in ──────────────────────────────────
     const featureSection = root.querySelector<HTMLElement>('.cs-features');
     const featureCards   = root.querySelectorAll<HTMLElement>('.cs-feature-card');
     if (featureSection && featureCards.length) {
@@ -260,15 +291,26 @@ export class CaseStudy implements OnInit, AfterViewInit {
       });
     }
 
-    // ── Screenshots stagger in ─────────────────────────────────────
+    // ── Screenshots stagger in ────────────────────────────────────
     const screenshotSection = root.querySelector<HTMLElement>('.cs-screenshots');
-    const shots = root.querySelectorAll<HTMLElement>('.cs-screenshot');
+    const shots             = root.querySelectorAll<HTMLElement>('.cs-screenshot');
     if (screenshotSection && shots.length) {
       gsap.set(shots, { opacity: 0, scale: 0.96 });
       ScrollTrigger.create({
         trigger: screenshotSection,
         start: 'top 85%',
         onEnter: () => gsap.to(shots, { opacity: 1, scale: 1, duration: 0.65, ease: 'power3.out', stagger: 0.1, delay: 0.05 }),
+      });
+    }
+
+    // ── CTA section — fade up ─────────────────────────────────────
+    const cta = root.querySelector<HTMLElement>('.cs-cta');
+    if (cta) {
+      gsap.set(cta, { opacity: 0, y: 36 });
+      ScrollTrigger.create({
+        trigger: cta,
+        start: 'top 90%',
+        onEnter: () => gsap.to(cta, { opacity: 1, y: 0, duration: 0.75, ease: 'power3.out' }),
       });
     }
   }

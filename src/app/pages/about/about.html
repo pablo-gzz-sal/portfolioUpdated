@@ -46,7 +46,7 @@
       <div class="about-hero order-2 md:order-1 flex flex-col justify-center">
         <!-- available badge -->
         <div
-          class="inline-flex w-fit items-center gap-2 rounded-full border border-[var(--border)] bg-[var(--surface)] px-3 py-1 text-[11px] uppercase tracking-[0.22em] text-[color:var(--muted2)]"
+          class="about-hero-badge inline-flex w-fit items-center gap-2 rounded-full border border-[var(--border)] bg-[var(--surface)] px-3 py-1 text-[11px] uppercase tracking-[0.22em] text-[color:var(--muted2)]"
         >
           <span class="relative flex h-2 w-2">
             <span
@@ -58,19 +58,19 @@
         </div>
 
         <h1
-          class="mt-5 text-4xl font-semibold leading-[1.1] tracking-tight sm:text-5xl lg:text-6xl"
+          class="about-hero-title mt-5 text-4xl font-semibold leading-[1.1] tracking-tight sm:text-5xl lg:text-6xl"
         >
           Pablo Gonzalez.<br />
           <span class="text-[color:var(--a3)]">Full-stack developer</span><br />
           building things that last.
         </h1>
 
-        <p class="mt-5 max-w-lg text-base leading-7 text-[color:var(--muted)] sm:text-lg">
+        <p class="about-hero-body mt-5 max-w-lg text-base leading-7 text-[color:var(--muted)] sm:text-lg">
           I build digital experiences where performance, clarity, and visual polish work together —
           products that feel premium and scale cleanly.
         </p>
 
-        <div class="mt-7 flex flex-wrap gap-2.5">
+        <div class="about-hero-ctas mt-7 flex flex-wrap gap-2.5">
           <a
             href="mailto:pablo.gzz.sal@gmail.com"
             class="rounded-full px-5 py-2.5 text-sm font-medium text-white bg-[var(--a1-soft)] ring-1 ring-[var(--a1-ring)] transition duration-300 hover:bg-[rgba(124,58,237,0.28)] hover:shadow-[0_0_18px_var(--a1-glow)]"
@@ -106,7 +106,7 @@
 
           <!-- card frame -->
           <div
-            class="relative rounded-[1.75rem] border border-[var(--border)] bg-[var(--surface)] p-2.5 backdrop-blur-xl"
+            class="about-avatar-card relative rounded-[1.75rem] border border-[var(--border)] bg-[var(--surface)] p-2.5 backdrop-blur-xl"
           >
             <div
               class="aspect-[4/4.6] overflow-hidden rounded-[1.3rem] bg-[linear-gradient(160deg,rgba(255,255,255,0.12),rgba(255,255,255,0.03))]"
@@ -120,7 +120,7 @@
 
             <!-- floating philosophy chip -->
             <div
-              class="absolute -bottom-5 left-4 right-4 max-w-[17rem] rounded-2xl border border-[var(--border)] bg-[rgba(8,6,15,0.82)] p-4 backdrop-blur-xl"
+              class="about-avatar-chip absolute -bottom-5 left-4 right-4 max-w-[17rem] rounded-2xl border border-[var(--border)] bg-[rgba(8,6,15,0.82)] p-4 backdrop-blur-xl"
             >
               <p class="text-[10px] uppercase tracking-[0.22em] text-[color:var(--muted2)]">
                 Philosophy
@@ -138,7 +138,7 @@
     <section class="stack-section mt-10 grid gap-3 md:grid-cols-[.9fr_1.1fr]">
       <!-- vision card -->
       <article
-        class="relative overflow-hidden rounded-[1.75rem] border border-[var(--border)] bg-[var(--surface)] p-6 sm:p-8"
+        class="about-vision-card relative overflow-hidden rounded-[1.75rem] border border-[var(--border)] bg-[var(--surface)] p-6 sm:p-8"
       >
         <div
           class="pointer-events-none absolute -top-12 -left-12 h-40 w-40 rounded-full blur-3xl bg-[radial-gradient(circle,rgba(124,58,237,0.15),transparent_70%)]"
@@ -161,7 +161,7 @@
 
       <!-- stack card -->
       <article
-        class="relative overflow-hidden rounded-[1.75rem] border border-[var(--border)] bg-[var(--surface)] p-6 sm:p-8"
+        class="about-stack-card relative overflow-hidden rounded-[1.75rem] border border-[var(--border)] bg-[var(--surface)] p-6 sm:p-8"
       >
         <div class="flex items-end justify-between gap-4">
           <div>
@@ -198,10 +198,12 @@
         ></div>
 
         <div class="relative">
-          <p class="text-xs uppercase tracking-[0.24em] text-[color:var(--muted2)]">What I bring</p>
-          <h2 class="mt-3 text-xl font-semibold tracking-tight sm:text-2xl">
-            What I actually do well.
-          </h2>
+          <div class="strengths-heading">
+            <p class="text-xs uppercase tracking-[0.24em] text-[color:var(--muted2)]">What I bring</p>
+            <h2 class="mt-3 text-xl font-semibold tracking-tight sm:text-2xl">
+              What I actually do well.
+            </h2>
+          </div>
 
           <div class="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
             @for (card of strengths; track card.title) {
@@ -224,10 +226,12 @@
 
     <!-- ── TIMELINE ──────────────────────────────────────────── -->
     <section class="timeline-section pt-16 sm:pt-20">
-      <p class="text-xs uppercase tracking-[0.24em] text-[color:var(--muted2)]">
-        Experience timeline
-      </p>
-      <h2 class="mt-3 text-2xl font-semibold tracking-tight sm:text-3xl">Trajectory</h2>
+      <div class="timeline-heading">
+        <p class="text-xs uppercase tracking-[0.24em] text-[color:var(--muted2)]">
+          Experience timeline
+        </p>
+        <h2 class="mt-3 text-2xl font-semibold tracking-tight sm:text-3xl">Trajectory</h2>
+      </div>
 
       <div class="relative mt-10 pl-7 sm:pl-9">
         <!-- vertical line -->
@@ -280,7 +284,7 @@
     </section>
 
     <!-- ── BOTTOM CTA ────────────────────────────────────────── -->
-    <section class="pt-16 sm:pt-20">
+    <section class="about-cta pt-16 sm:pt-20">
       <div
         class="relative overflow-hidden rounded-[2rem] border border-[var(--border)] bg-[var(--surface)] p-8 sm:p-10"
       >
