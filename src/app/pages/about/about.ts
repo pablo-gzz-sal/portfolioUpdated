@@ -1,7 +1,11 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, OnInit } from '@angular/core';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { Header } from '../../layout/header/header';
 import { Footer } from '../../layout/footer/footer';
+
+gsap.registerPlugin(ScrollTrigger);
 
 type StackItem = {
   label: string;
@@ -29,7 +33,9 @@ type Strength = {
   templateUrl: './about.html',
   styleUrl: './about.css',
 })
-export class About implements OnInit {
+export class About implements OnInit, AfterViewInit {
+  constructor(private host: ElementRef<HTMLElement>) {}
+
   stack: StackItem[] = [
     { label: 'Angular', tone: 'primary' },
     { label: 'React', tone: 'neutral' },
@@ -85,6 +91,57 @@ export class About implements OnInit {
 
   ngOnInit(): void {
     window.scroll(0, 0);
+  }
+
+  ngAfterViewInit(): void {
+    const root = this.host.nativeElement;
+
+    // ── Hero section (page load) ───────────────────────────────────
+    const heroText = root.querySelector<HTMLElement>('.about-hero');
+    const avatar   = root.querySelector<HTMLElement>('.about-avatar');
+    if (heroText) gsap.set(heroText, { opacity: 0, y: 32 });
+    if (avatar)   gsap.set(avatar,   { opacity: 0, scale: 0.9 });
+
+    setTimeout(() => {
+      if (heroText) gsap.to(heroText, { opacity: 1, y: 0, duration: 0.8, ease: 'power3.out' });
+      if (avatar)   gsap.to(avatar,   { opacity: 1, scale: 1, duration: 0.7, ease: 'back.out(1.4)' });
+    }, 80);
+
+    // ── Stack badges ──────────────────────────────────────────────
+    const stackBadges = root.querySelectorAll<HTMLElement>('.stack-badge');
+    const stackSection = root.querySelector<HTMLElement>('.stack-section');
+    if (stackBadges.length && stackSection) {
+      gsap.set(stackBadges, { opacity: 0, scale: 0.85 });
+      ScrollTrigger.create({
+        trigger: stackSection,
+        start: 'top 85%',
+        onEnter: () => gsap.to(stackBadges, { opacity: 1, scale: 1, duration: 0.45, ease: 'back.out(1.6)', stagger: 0.05, delay: 0.1 }),
+      });
+    }
+
+    // ── Strength cards ────────────────────────────────────────────
+    const strengthCards = root.querySelectorAll<HTMLElement>('.strength-card');
+    const strengthsSection = root.querySelector<HTMLElement>('.strengths-section');
+    if (strengthCards.length && strengthsSection) {
+      gsap.set(strengthCards, { opacity: 0, y: 28 });
+      ScrollTrigger.create({
+        trigger: strengthsSection,
+        start: 'top 85%',
+        onEnter: () => gsap.to(strengthCards, { opacity: 1, y: 0, duration: 0.65, ease: 'power3.out', stagger: 0.1, delay: 0.08 }),
+      });
+    }
+
+    // ── Timeline items ────────────────────────────────────────────
+    const timelineItems = root.querySelectorAll<HTMLElement>('.timeline-item');
+    const timelineSection = root.querySelector<HTMLElement>('.timeline-section');
+    if (timelineItems.length && timelineSection) {
+      gsap.set(timelineItems, { opacity: 0, x: -28 });
+      ScrollTrigger.create({
+        trigger: timelineSection,
+        start: 'top 85%',
+        onEnter: () => gsap.to(timelineItems, { opacity: 1, x: 0, duration: 0.7, ease: 'power3.out', stagger: 0.15, delay: 0.08 }),
+      });
+    }
   }
 
   toneClass(tone: StackItem['tone']): string {

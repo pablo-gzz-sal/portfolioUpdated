@@ -1,4 +1,8 @@
-import { Component } from '@angular/core';
+import { AfterViewInit, Component, ElementRef } from '@angular/core';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
 
 @Component({
   selector: 'app-systems',
@@ -7,7 +11,9 @@ import { Component } from '@angular/core';
   templateUrl: './systems.html',
   styleUrl: './systems.css',
 })
-export class Systems {
+export class Systems implements AfterViewInit {
+  constructor(private host: ElementRef<HTMLElement>) {}
+
   steps = [
     {
       id: 1,
@@ -71,4 +77,22 @@ export class Systems {
       miniCards: null,
     },
   ];
+
+  ngAfterViewInit(): void {
+    const root = this.host.nativeElement;
+    const header = root.querySelector<HTMLElement>('.systems-header');
+    const cards  = root.querySelectorAll<HTMLElement>('article');
+
+    if (header) gsap.set(header, { opacity: 0, y: 24 });
+    if (cards.length) gsap.set(cards, { opacity: 0, x: -32 });
+
+    ScrollTrigger.create({
+      trigger: root,
+      start: 'top 80%',
+      onEnter: () => {
+        if (header) gsap.to(header, { opacity: 1, y: 0, duration: 0.6, ease: 'power3.out' });
+        if (cards.length) gsap.to(cards, { opacity: 1, x: 0, duration: 0.65, ease: 'power3.out', stagger: 0.10, delay: 0.12 });
+      },
+    });
+  }
 }
