@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, OnInit } from '@angular/core';
+import { animate, inView, stagger } from 'motion';
 import { Header } from '../../layout/header/header';
 import { Footer } from '../../layout/footer/footer';
 
@@ -29,7 +30,9 @@ type Strength = {
   templateUrl: './about.html',
   styleUrl: './about.css',
 })
-export class About implements OnInit {
+export class About implements OnInit, AfterViewInit {
+  constructor(private host: ElementRef<HTMLElement>) {}
+
   stack: StackItem[] = [
     { label: 'Angular', tone: 'primary' },
     { label: 'React', tone: 'neutral' },
@@ -85,6 +88,60 @@ export class About implements OnInit {
 
   ngOnInit(): void {
     window.scroll(0, 0);
+  }
+
+  ngAfterViewInit(): void {
+    const root = this.host.nativeElement;
+
+    // ── Hero section ──────────────────────────────────────────────
+    const heroText = root.querySelector<HTMLElement>('.about-hero');
+    const avatar   = root.querySelector<HTMLElement>('.about-avatar');
+    if (heroText) animate(heroText, { opacity: 0, y: 32 }, { duration: 0 });
+    if (avatar)   animate(avatar,   { opacity: 0, scale: 0.9 }, { duration: 0 });
+
+    setTimeout(() => {
+      if (heroText) animate(heroText, { opacity: 1, y: 0 }, { duration: 0.8, easing: [0.22, 1, 0.36, 1] });
+      if (avatar)   animate(avatar,   { opacity: 1, scale: 1 }, { duration: 0.7, easing: [0.34, 1.56, 0.64, 1] });
+    }, 80);
+
+    // ── Stack badges ──────────────────────────────────────────────
+    const stackBadges = root.querySelectorAll<HTMLElement>('.stack-badge');
+    if (stackBadges.length) {
+      animate(stackBadges, { opacity: 0, scale: 0.85 }, { duration: 0 });
+      inView(root.querySelector<HTMLElement>('.stack-section') ?? root, () => {
+        animate(stackBadges, { opacity: 1, scale: 1 }, {
+          delay: stagger(0.05, { start: 0.1 }),
+          duration: 0.45,
+          easing: [0.34, 1.56, 0.64, 1],
+        });
+      }, { margin: '-40px 0px' });
+    }
+
+    // ── Strength cards ────────────────────────────────────────────
+    const strengthCards = root.querySelectorAll<HTMLElement>('.strength-card');
+    if (strengthCards.length) {
+      animate(strengthCards, { opacity: 0, y: 28 }, { duration: 0 });
+      inView(root.querySelector<HTMLElement>('.strengths-section') ?? root, () => {
+        animate(strengthCards, { opacity: 1, y: 0 }, {
+          delay: stagger(0.1, { start: 0.08 }),
+          duration: 0.65,
+          easing: [0.22, 1, 0.36, 1],
+        });
+      }, { margin: '-40px 0px' });
+    }
+
+    // ── Timeline items ────────────────────────────────────────────
+    const timelineItems = root.querySelectorAll<HTMLElement>('.timeline-item');
+    if (timelineItems.length) {
+      animate(timelineItems, { opacity: 0, x: -28 }, { duration: 0 });
+      inView(root.querySelector<HTMLElement>('.timeline-section') ?? root, () => {
+        animate(timelineItems, { opacity: 1, x: 0 }, {
+          delay: stagger(0.15, { start: 0.08 }),
+          duration: 0.7,
+          easing: [0.22, 1, 0.36, 1],
+        });
+      }, { margin: '-40px 0px' });
+    }
   }
 
   toneClass(tone: StackItem['tone']): string {

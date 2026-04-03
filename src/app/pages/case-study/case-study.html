@@ -46,7 +46,7 @@
       <div class="absolute inset-0 bg-[linear-gradient(to_top,rgba(6,6,9,1)_25%,rgba(6,6,9,0.80)_52%,transparent_78%)]"></div>
 
       <!-- hero content — pinned to bottom -->
-      <div class="relative mx-auto w-full max-w-6xl px-4 pb-14 pt-28 sm:px-6 lg:px-8">
+      <div class="cs-hero-content relative mx-auto w-full max-w-6xl px-4 pb-14 pt-28 sm:px-6 lg:px-8">
 
         <!-- back link -->
         <a
@@ -96,7 +96,7 @@
     <div class="mx-auto max-w-6xl px-4 pb-28 sm:px-6 lg:px-8">
 
       <!-- ── STACK ──────────────────────────────────────────────── -->
-      <section class="pt-10">
+      <section class="cs-body-section pt-10">
         <p class="inline-flex items-center gap-2 text-[10px] uppercase tracking-[0.25em] text-[color:var(--muted2)]">
           <span class="h-px w-4 bg-[color:var(--lavender-line)]"></span>
           Engineered with
@@ -114,7 +114,7 @@
       </section>
 
       <!-- ── CHALLENGE + SOLUTION ───────────────────────────────── -->
-      <section class="mt-12 grid gap-4 md:grid-cols-2">
+      <section class="cs-body-section mt-12 grid gap-4 md:grid-cols-2">
 
         <!-- challenge -->
         <article class="group relative overflow-hidden rounded-[1.5rem] border border-[var(--border)] bg-[var(--surface)] p-7 sm:p-9">
@@ -142,7 +142,7 @@
       </section>
 
       <!-- ── FEATURES ───────────────────────────────────────────── -->
-      <section class="mt-14">
+      <section class="cs-features mt-14">
         <div class="flex items-end justify-between gap-4">
           <div>
             <p class="inline-flex items-center gap-2 text-[10px] uppercase tracking-[0.25em] text-[color:var(--muted2)]">
@@ -159,7 +159,7 @@
         <div class="mt-5 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
           @for (f of project.features; track f.title; let i = $index) {
             <article
-              class="group relative overflow-hidden rounded-[1.5rem] p-px transition-all duration-300 hover:shadow-[0_0_28px_rgba(109,40,217,0.20),0_0_0_1px_rgba(139,92,246,0.30)]"
+              class="cs-feature-card group relative overflow-hidden rounded-[1.5rem] p-px transition-all duration-300 hover:shadow-[0_0_28px_rgba(109,40,217,0.20),0_0_0_1px_rgba(139,92,246,0.30)]"
               style="background: rgba(255,255,255,0.04);"
             >
               <!-- iridescent border on hover -->
@@ -194,7 +194,7 @@
 
       <!-- ── SCREENSHOTS ────────────────────────────────────────── -->
       @if (project.screenshots.length) {
-        <section class="mt-16">
+        <section class="cs-screenshots mt-16">
           <div class="flex items-end justify-between gap-4">
             <div>
               <p class="inline-flex items-center gap-2 text-[10px] uppercase tracking-[0.25em] text-[color:var(--muted2)]">
@@ -213,7 +213,7 @@
           <div class="mt-5 grid gap-3 sm:grid-cols-3">
             @for (shot of visibleScreenshots; track shot; let i = $index) {
               <div
-                class="group relative cursor-pointer self-start overflow-hidden rounded-2xl border border-[var(--border)] bg-[var(--surface)] transition duration-300 hover:border-[var(--a1-ring)]"
+                class="cs-screenshot group relative cursor-pointer self-start overflow-hidden rounded-2xl border border-[var(--border)] bg-[var(--surface)] transition duration-300 hover:border-[var(--a1-ring)]"
                 (click)="openImage(shot)"
                 [class.sm:col-span-2]="i === 0"
               >

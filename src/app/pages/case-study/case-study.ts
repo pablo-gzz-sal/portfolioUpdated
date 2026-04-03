@@ -1,6 +1,7 @@
 import { CommonModule, DecimalPipe } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, OnInit } from '@angular/core';
 import { ActivatedRoute, RouterLink } from '@angular/router';
+import { animate, inView, stagger } from 'motion';
 import { Header } from '../../layout/header/header';
 import { Footer } from '../../layout/footer/footer';
 import { CaseStudyProject } from '../../shared/models/study.model';
@@ -12,7 +13,9 @@ import { CaseStudyProject } from '../../shared/models/study.model';
   templateUrl: './case-study.html',
   styleUrl: './case-study.css',
 })
-export class CaseStudy implements OnInit {
+export class CaseStudy implements OnInit, AfterViewInit {
+  constructor(private host: ElementRef<HTMLElement>) {}
+
   project: CaseStudyProject | undefined;
   showAllScreenshots = false;
   selectedImage: string | null = null;
@@ -209,12 +212,71 @@ export class CaseStudy implements OnInit {
     },
   ];
 
-  constructor(private route: ActivatedRoute) {}
+  constructor(
+    private route: ActivatedRoute,
+    private _host: ElementRef<HTMLElement>,
+  ) {}
 
   ngOnInit(): void {
     window.scroll(0, 0);
     const id = this.route.snapshot.paramMap.get('id');
     this.project = this.projects.find((p) => p.id === id);
+  }
+
+  ngAfterViewInit(): void {
+    const root = this._host.nativeElement;
+
+    // ── Hero content springs up ────────────────────────────────────
+    const heroContent = root.querySelector<HTMLElement>('.cs-hero-content');
+    if (heroContent) {
+      animate(heroContent, { opacity: 0, y: 40 }, { duration: 0 });
+      setTimeout(() => {
+        animate(heroContent, { opacity: 1, y: 0 }, {
+          duration: 0.85,
+          easing: [0.22, 1, 0.36, 1],
+        });
+      }, 120);
+    }
+
+    // ── Body sections fade up on scroll ───────────────────────────
+    const bodySections = root.querySelectorAll<HTMLElement>('.cs-body-section');
+    bodySections.forEach((section) => {
+      animate(section, { opacity: 0, y: 32 }, { duration: 0 });
+      inView(section, () => {
+        animate(section, { opacity: 1, y: 0 }, {
+          duration: 0.7,
+          easing: [0.22, 1, 0.36, 1],
+        });
+      }, { margin: '-40px 0px' });
+    });
+
+    // ── Feature cards stagger in ───────────────────────────────────
+    const featureSection = root.querySelector<HTMLElement>('.cs-features');
+    const featureCards   = root.querySelectorAll<HTMLElement>('.cs-feature-card');
+    if (featureSection && featureCards.length) {
+      animate(featureCards, { opacity: 0, y: 28 }, { duration: 0 });
+      inView(featureSection, () => {
+        animate(featureCards, { opacity: 1, y: 0 }, {
+          delay: stagger(0.09, { start: 0.1 }),
+          duration: 0.6,
+          easing: [0.22, 1, 0.36, 1],
+        });
+      }, { margin: '-40px 0px' });
+    }
+
+    // ── Screenshots stagger in ─────────────────────────────────────
+    const screenshotSection = root.querySelector<HTMLElement>('.cs-screenshots');
+    const shots = root.querySelectorAll<HTMLElement>('.cs-screenshot');
+    if (screenshotSection && shots.length) {
+      animate(shots, { opacity: 0, scale: 0.96 }, { duration: 0 });
+      inView(screenshotSection, () => {
+        animate(shots, { opacity: 1, scale: 1 }, {
+          delay: stagger(0.1, { start: 0.05 }),
+          duration: 0.65,
+          easing: [0.22, 1, 0.36, 1],
+        });
+      }, { margin: '-40px 0px' });
+    }
   }
 
   openImage(img: string) {

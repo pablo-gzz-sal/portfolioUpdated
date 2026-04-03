@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { AfterViewInit, Component, ElementRef } from '@angular/core';
+import { animate, inView, stagger } from 'motion';
 
 @Component({
   selector: 'app-systems',
@@ -7,7 +8,9 @@ import { Component } from '@angular/core';
   templateUrl: './systems.html',
   styleUrl: './systems.css',
 })
-export class Systems {
+export class Systems implements AfterViewInit {
+  constructor(private host: ElementRef<HTMLElement>) {}
+
   steps = [
     {
       id: 1,
@@ -71,4 +74,29 @@ export class Systems {
       miniCards: null,
     },
   ];
+
+  ngAfterViewInit(): void {
+    const root = this.host.nativeElement;
+    const header = root.querySelector<HTMLElement>('.systems-header');
+    const cards  = root.querySelectorAll<HTMLElement>('article');
+
+    if (header) animate(header, { opacity: 0, y: 24 }, { duration: 0 });
+    if (cards.length) animate(cards, { opacity: 0, x: -32 }, { duration: 0 });
+
+    inView(root, () => {
+      if (header) {
+        animate(header, { opacity: 1, y: 0 }, {
+          duration: 0.6,
+          easing: [0.22, 1, 0.36, 1],
+        });
+      }
+      if (cards.length) {
+        animate(cards, { opacity: 1, x: 0 }, {
+          delay: stagger(0.10, { start: 0.12 }),
+          duration: 0.65,
+          easing: [0.22, 1, 0.36, 1],
+        });
+      }
+    }, { margin: '-60px 0px' });
+  }
 }

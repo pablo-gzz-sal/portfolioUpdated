@@ -43,7 +43,7 @@
     <!-- ── HERO ─────────────────────────────────────────────── -->
     <section class="grid items-start gap-10 pb-16 pt-4 md:grid-cols-2">
       <!-- left: text -->
-      <div class="order-2 md:order-1 flex flex-col justify-center">
+      <div class="about-hero order-2 md:order-1 flex flex-col justify-center">
         <!-- available badge -->
         <div
           class="inline-flex w-fit items-center gap-2 rounded-full border border-[var(--border)] bg-[var(--surface)] px-3 py-1 text-[11px] uppercase tracking-[0.22em] text-[color:var(--muted2)]"
@@ -97,7 +97,7 @@
       </div>
 
       <!-- right: photo card -->
-      <div class="order-1 md:order-2 flex justify-center md:justify-end">
+      <div class="about-avatar order-1 md:order-2 flex justify-center md:justify-end">
         <div class="relative w-full max-w-[360px]">
           <!-- glow halo -->
           <div
@@ -135,7 +135,7 @@
     </section>
 
     <!-- ── VISION + STACK ────────────────────────────────────── -->
-    <section class="mt-10 grid gap-3 md:grid-cols-[.9fr_1.1fr]">
+    <section class="stack-section mt-10 grid gap-3 md:grid-cols-[.9fr_1.1fr]">
       <!-- vision card -->
       <article
         class="relative overflow-hidden rounded-[1.75rem] border border-[var(--border)] bg-[var(--surface)] p-6 sm:p-8"
@@ -178,7 +178,7 @@
         <div class="mt-6 flex flex-wrap gap-2">
           @for (item of stack; track item.label) {
             <span
-              class="rounded-full px-4 py-2 text-sm font-medium ring-1 transition duration-200 cursor-default"
+              class="stack-badge rounded-full px-4 py-2 text-sm font-medium ring-1 transition duration-200 cursor-default"
               [ngClass]="toneClass(item.tone)"
             >
               {{ item.label }}
@@ -189,7 +189,7 @@
     </section>
 
     <!-- ── WHAT I BRING ──────────────────────────────────────── -->
-    <section class="mt-3">
+    <section class="strengths-section mt-3">
       <div
         class="relative overflow-hidden rounded-[1.75rem] border border-[var(--border)] bg-[var(--surface)] p-6 sm:p-8"
       >
@@ -206,7 +206,7 @@
           <div class="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
             @for (card of strengths; track card.title) {
               <div
-                class="group rounded-2xl border border-[var(--border)] bg-[rgba(0,0,0,0.2)] p-5 transition duration-300 hover:border-[var(--a1-ring)] hover:bg-[var(--a1-soft)]"
+                class="strength-card group rounded-2xl border border-[var(--border)] bg-[rgba(0,0,0,0.2)] p-5 transition duration-300 hover:border-[var(--a1-ring)] hover:bg-[var(--a1-soft)]"
               >
                 <div
                   class="mb-3 grid h-8 w-8 place-items-center rounded-lg bg-[var(--a1-soft)] ring-1 ring-[var(--a1-ring)]"
@@ -223,7 +223,7 @@
     </section>
 
     <!-- ── TIMELINE ──────────────────────────────────────────── -->
-    <section class="pt-16 sm:pt-20">
+    <section class="timeline-section pt-16 sm:pt-20">
       <p class="text-xs uppercase tracking-[0.24em] text-[color:var(--muted2)]">
         Experience timeline
       </p>
@@ -238,7 +238,7 @@
         <div class="space-y-4">
           @for (item of timeline; track item.title) {
             <article
-              class="group relative overflow-hidden rounded-[1.5rem] border border-[var(--border)] bg-[var(--surface)] p-5 transition duration-300 hover:border-[var(--a1-ring)] hover:bg-[var(--surface2)] sm:p-6"
+              class="timeline-item group relative overflow-hidden rounded-[1.5rem] border border-[var(--border)] bg-[var(--surface)] p-5 transition duration-300 hover:border-[var(--a1-ring)] hover:bg-[var(--surface2)] sm:p-6"
             >
               <!-- dot -->
               <span

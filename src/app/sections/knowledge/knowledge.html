@@ -1,6 +1,7 @@
 <section id="tech" class="mx-auto max-w-6xl py-16 px-4 sm:px-6 lg:px-8 sm:py-24">
 
   <!-- header -->
+  <div class="knowledge-header">
   <p class="inline-flex items-center gap-2 text-xs uppercase tracking-widest text-[color:var(--muted2)]">
     <span class="animate-shimmer-x h-px w-6 bg-[color:var(--lavender)]"></span>
     Stack
@@ -13,12 +14,14 @@
     </p>
   </div>
 
+  </div><!-- /knowledge-header -->
+
   <!-- tech grid -->
   <div class="mt-8 grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
     @for (g of groups; track g.title) {
 
       <div
-        class="group relative overflow-hidden rounded-2xl p-px
+        class="tech-card group relative overflow-hidden rounded-2xl p-px
                bg-[var(--surface)] transition-all duration-300
                hover:bg-[var(--surface2)] hover:shadow-[0_0_28px_rgba(109,40,217,0.20),0_0_0_1px_rgba(139,92,246,0.30)]"
       >
