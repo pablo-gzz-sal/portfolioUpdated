@@ -26,7 +26,7 @@ export class Hero {
  @ViewChildren('statCard') statCardEls!: QueryList<ElementRef<HTMLElement>>;
     statCards = [
     { label: 'Clients',  value: 'Airbus · Bosch · indie founders' },
-    { label: 'Stack',    value: 'Angular · Node.js · clean systems' },
+    { label: 'Stack',    value: 'Frontend · Backend · CyberSec' },
     { label: 'Based in', value: 'Munich, DE — remote-first' },
   ];
 
