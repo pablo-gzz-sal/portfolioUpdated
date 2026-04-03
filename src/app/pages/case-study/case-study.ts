@@ -1,10 +1,13 @@
 import { CommonModule, DecimalPipe } from '@angular/common';
 import { AfterViewInit, Component, ElementRef, OnInit } from '@angular/core';
 import { ActivatedRoute, RouterLink } from '@angular/router';
-import { animate, inView, stagger } from 'motion';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { Header } from '../../layout/header/header';
 import { Footer } from '../../layout/footer/footer';
 import { CaseStudyProject } from '../../shared/models/study.model';
+
+gsap.registerPlugin(ScrollTrigger);
 
 @Component({
   selector: 'app-case-study',
@@ -14,7 +17,6 @@ import { CaseStudyProject } from '../../shared/models/study.model';
   styleUrl: './case-study.css',
 })
 export class CaseStudy implements OnInit, AfterViewInit {
-  constructor(private host: ElementRef<HTMLElement>) {}
 
   project: CaseStudyProject | undefined;
   showAllScreenshots = false;
@@ -229,53 +231,45 @@ export class CaseStudy implements OnInit, AfterViewInit {
     // ── Hero content springs up ────────────────────────────────────
     const heroContent = root.querySelector<HTMLElement>('.cs-hero-content');
     if (heroContent) {
-      animate(heroContent, { opacity: 0, y: 40 }, { duration: 0 });
+      gsap.set(heroContent, { opacity: 0, y: 40 });
       setTimeout(() => {
-        animate(heroContent, { opacity: 1, y: 0 }, {
-          duration: 0.85,
-          easing: [0.22, 1, 0.36, 1],
-        });
+        gsap.to(heroContent, { opacity: 1, y: 0, duration: 0.85, ease: 'power3.out' });
       }, 120);
     }
 
     // ── Body sections fade up on scroll ───────────────────────────
     const bodySections = root.querySelectorAll<HTMLElement>('.cs-body-section');
     bodySections.forEach((section) => {
-      animate(section, { opacity: 0, y: 32 }, { duration: 0 });
-      inView(section, () => {
-        animate(section, { opacity: 1, y: 0 }, {
-          duration: 0.7,
-          easing: [0.22, 1, 0.36, 1],
-        });
-      }, { margin: '-40px 0px' });
+      gsap.set(section, { opacity: 0, y: 32 });
+      ScrollTrigger.create({
+        trigger: section,
+        start: 'top 88%',
+        onEnter: () => gsap.to(section, { opacity: 1, y: 0, duration: 0.7, ease: 'power3.out' }),
+      });
     });
 
     // ── Feature cards stagger in ───────────────────────────────────
     const featureSection = root.querySelector<HTMLElement>('.cs-features');
     const featureCards   = root.querySelectorAll<HTMLElement>('.cs-feature-card');
     if (featureSection && featureCards.length) {
-      animate(featureCards, { opacity: 0, y: 28 }, { duration: 0 });
-      inView(featureSection, () => {
-        animate(featureCards, { opacity: 1, y: 0 }, {
-          delay: stagger(0.09, { start: 0.1 }),
-          duration: 0.6,
-          easing: [0.22, 1, 0.36, 1],
-        });
-      }, { margin: '-40px 0px' });
+      gsap.set(featureCards, { opacity: 0, y: 28 });
+      ScrollTrigger.create({
+        trigger: featureSection,
+        start: 'top 85%',
+        onEnter: () => gsap.to(featureCards, { opacity: 1, y: 0, duration: 0.6, ease: 'power3.out', stagger: 0.09, delay: 0.1 }),
+      });
     }
 
     // ── Screenshots stagger in ─────────────────────────────────────
     const screenshotSection = root.querySelector<HTMLElement>('.cs-screenshots');
     const shots = root.querySelectorAll<HTMLElement>('.cs-screenshot');
     if (screenshotSection && shots.length) {
-      animate(shots, { opacity: 0, scale: 0.96 }, { duration: 0 });
-      inView(screenshotSection, () => {
-        animate(shots, { opacity: 1, scale: 1 }, {
-          delay: stagger(0.1, { start: 0.05 }),
-          duration: 0.65,
-          easing: [0.22, 1, 0.36, 1],
-        });
-      }, { margin: '-40px 0px' });
+      gsap.set(shots, { opacity: 0, scale: 0.96 });
+      ScrollTrigger.create({
+        trigger: screenshotSection,
+        start: 'top 85%',
+        onEnter: () => gsap.to(shots, { opacity: 1, scale: 1, duration: 0.65, ease: 'power3.out', stagger: 0.1, delay: 0.05 }),
+      });
     }
   }
 

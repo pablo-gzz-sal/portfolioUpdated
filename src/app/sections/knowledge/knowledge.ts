@@ -1,6 +1,9 @@
 import { CommonModule } from '@angular/common';
 import { AfterViewInit, Component, ElementRef } from '@angular/core';
-import { animate, inView, stagger } from 'motion';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
 
 type TechGroup = { title: string; icon: string; items: string[] };
 
@@ -52,23 +55,16 @@ export class Knowledge implements AfterViewInit {
     const header = root.querySelector<HTMLElement>('.knowledge-header');
     const cards  = root.querySelectorAll<HTMLElement>('.tech-card');
 
-    if (header) animate(header, { opacity: 0, y: 24 }, { duration: 0 });
-    if (cards.length) animate(cards, { opacity: 0, scale: 0.92, y: 20 }, { duration: 0 });
+    if (header) gsap.set(header, { opacity: 0, y: 24 });
+    if (cards.length) gsap.set(cards, { opacity: 0, scale: 0.92, y: 20 });
 
-    inView(root, () => {
-      if (header) {
-        animate(header, { opacity: 1, y: 0 }, {
-          duration: 0.6,
-          easing: [0.22, 1, 0.36, 1],
-        });
-      }
-      if (cards.length) {
-        animate(cards, { opacity: 1, scale: 1, y: 0 }, {
-          delay: stagger(0.08, { start: 0.14 }),
-          duration: 0.6,
-          easing: [0.22, 1, 0.36, 1],
-        });
-      }
-    }, { margin: '-60px 0px' });
+    ScrollTrigger.create({
+      trigger: root,
+      start: 'top 80%',
+      onEnter: () => {
+        if (header) gsap.to(header, { opacity: 1, y: 0, duration: 0.6, ease: 'power3.out' });
+        if (cards.length) gsap.to(cards, { opacity: 1, scale: 1, y: 0, duration: 0.6, ease: 'power3.out', stagger: 0.08, delay: 0.14 });
+      },
+    });
   }
 }

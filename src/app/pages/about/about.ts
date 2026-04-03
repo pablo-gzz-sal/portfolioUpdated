@@ -1,8 +1,11 @@
 import { CommonModule } from '@angular/common';
 import { AfterViewInit, Component, ElementRef, OnInit } from '@angular/core';
-import { animate, inView, stagger } from 'motion';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { Header } from '../../layout/header/header';
 import { Footer } from '../../layout/footer/footer';
+
+gsap.registerPlugin(ScrollTrigger);
 
 type StackItem = {
   label: string;
@@ -93,54 +96,51 @@ export class About implements OnInit, AfterViewInit {
   ngAfterViewInit(): void {
     const root = this.host.nativeElement;
 
-    // ── Hero section ──────────────────────────────────────────────
+    // ── Hero section (page load) ───────────────────────────────────
     const heroText = root.querySelector<HTMLElement>('.about-hero');
     const avatar   = root.querySelector<HTMLElement>('.about-avatar');
-    if (heroText) animate(heroText, { opacity: 0, y: 32 }, { duration: 0 });
-    if (avatar)   animate(avatar,   { opacity: 0, scale: 0.9 }, { duration: 0 });
+    if (heroText) gsap.set(heroText, { opacity: 0, y: 32 });
+    if (avatar)   gsap.set(avatar,   { opacity: 0, scale: 0.9 });
 
     setTimeout(() => {
-      if (heroText) animate(heroText, { opacity: 1, y: 0 }, { duration: 0.8, easing: [0.22, 1, 0.36, 1] });
-      if (avatar)   animate(avatar,   { opacity: 1, scale: 1 }, { duration: 0.7, easing: [0.34, 1.56, 0.64, 1] });
+      if (heroText) gsap.to(heroText, { opacity: 1, y: 0, duration: 0.8, ease: 'power3.out' });
+      if (avatar)   gsap.to(avatar,   { opacity: 1, scale: 1, duration: 0.7, ease: 'back.out(1.4)' });
     }, 80);
 
     // ── Stack badges ──────────────────────────────────────────────
     const stackBadges = root.querySelectorAll<HTMLElement>('.stack-badge');
-    if (stackBadges.length) {
-      animate(stackBadges, { opacity: 0, scale: 0.85 }, { duration: 0 });
-      inView(root.querySelector<HTMLElement>('.stack-section') ?? root, () => {
-        animate(stackBadges, { opacity: 1, scale: 1 }, {
-          delay: stagger(0.05, { start: 0.1 }),
-          duration: 0.45,
-          easing: [0.34, 1.56, 0.64, 1],
-        });
-      }, { margin: '-40px 0px' });
+    const stackSection = root.querySelector<HTMLElement>('.stack-section');
+    if (stackBadges.length && stackSection) {
+      gsap.set(stackBadges, { opacity: 0, scale: 0.85 });
+      ScrollTrigger.create({
+        trigger: stackSection,
+        start: 'top 85%',
+        onEnter: () => gsap.to(stackBadges, { opacity: 1, scale: 1, duration: 0.45, ease: 'back.out(1.6)', stagger: 0.05, delay: 0.1 }),
+      });
     }
 
     // ── Strength cards ────────────────────────────────────────────
     const strengthCards = root.querySelectorAll<HTMLElement>('.strength-card');
-    if (strengthCards.length) {
-      animate(strengthCards, { opacity: 0, y: 28 }, { duration: 0 });
-      inView(root.querySelector<HTMLElement>('.strengths-section') ?? root, () => {
-        animate(strengthCards, { opacity: 1, y: 0 }, {
-          delay: stagger(0.1, { start: 0.08 }),
-          duration: 0.65,
-          easing: [0.22, 1, 0.36, 1],
-        });
-      }, { margin: '-40px 0px' });
+    const strengthsSection = root.querySelector<HTMLElement>('.strengths-section');
+    if (strengthCards.length && strengthsSection) {
+      gsap.set(strengthCards, { opacity: 0, y: 28 });
+      ScrollTrigger.create({
+        trigger: strengthsSection,
+        start: 'top 85%',
+        onEnter: () => gsap.to(strengthCards, { opacity: 1, y: 0, duration: 0.65, ease: 'power3.out', stagger: 0.1, delay: 0.08 }),
+      });
     }
 
     // ── Timeline items ────────────────────────────────────────────
     const timelineItems = root.querySelectorAll<HTMLElement>('.timeline-item');
-    if (timelineItems.length) {
-      animate(timelineItems, { opacity: 0, x: -28 }, { duration: 0 });
-      inView(root.querySelector<HTMLElement>('.timeline-section') ?? root, () => {
-        animate(timelineItems, { opacity: 1, x: 0 }, {
-          delay: stagger(0.15, { start: 0.08 }),
-          duration: 0.7,
-          easing: [0.22, 1, 0.36, 1],
-        });
-      }, { margin: '-40px 0px' });
+    const timelineSection = root.querySelector<HTMLElement>('.timeline-section');
+    if (timelineItems.length && timelineSection) {
+      gsap.set(timelineItems, { opacity: 0, x: -28 });
+      ScrollTrigger.create({
+        trigger: timelineSection,
+        start: 'top 85%',
+        onEnter: () => gsap.to(timelineItems, { opacity: 1, x: 0, duration: 0.7, ease: 'power3.out', stagger: 0.15, delay: 0.08 }),
+      });
     }
   }
 

@@ -1,5 +1,8 @@
 import { AfterViewInit, Component, ElementRef } from '@angular/core';
-import { animate, inView, stagger } from 'motion';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
 
 @Component({
   selector: 'app-systems',
@@ -80,23 +83,16 @@ export class Systems implements AfterViewInit {
     const header = root.querySelector<HTMLElement>('.systems-header');
     const cards  = root.querySelectorAll<HTMLElement>('article');
 
-    if (header) animate(header, { opacity: 0, y: 24 }, { duration: 0 });
-    if (cards.length) animate(cards, { opacity: 0, x: -32 }, { duration: 0 });
+    if (header) gsap.set(header, { opacity: 0, y: 24 });
+    if (cards.length) gsap.set(cards, { opacity: 0, x: -32 });
 
-    inView(root, () => {
-      if (header) {
-        animate(header, { opacity: 1, y: 0 }, {
-          duration: 0.6,
-          easing: [0.22, 1, 0.36, 1],
-        });
-      }
-      if (cards.length) {
-        animate(cards, { opacity: 1, x: 0 }, {
-          delay: stagger(0.10, { start: 0.12 }),
-          duration: 0.65,
-          easing: [0.22, 1, 0.36, 1],
-        });
-      }
-    }, { margin: '-60px 0px' });
+    ScrollTrigger.create({
+      trigger: root,
+      start: 'top 80%',
+      onEnter: () => {
+        if (header) gsap.to(header, { opacity: 1, y: 0, duration: 0.6, ease: 'power3.out' });
+        if (cards.length) gsap.to(cards, { opacity: 1, x: 0, duration: 0.65, ease: 'power3.out', stagger: 0.10, delay: 0.12 });
+      },
+    });
   }
 }
