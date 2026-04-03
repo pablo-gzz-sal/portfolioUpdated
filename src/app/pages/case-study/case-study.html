@@ -78,7 +78,7 @@
         <h1 class="mt-5 text-4xl font-bold leading-none tracking-tight sm:text-6xl lg:text-7xl">
           {{ project.title }}
         </h1>
-        <p class="mt-2 text-2xl font-bold tracking-tight text-[color:var(--a3)] sm:text-4xl lg:text-5xl">
+        <p class="mt-2 text-2xl font-semibold tracking-tight text-[color:var(--text-dim)] sm:text-4xl lg:text-5xl">
           {{ project.subtitle }}
         </p>
 
@@ -88,7 +88,7 @@
         </p>
 
         <!-- divider line -->
-        <div class="mt-8 h-px w-full bg-[linear-gradient(to_right,var(--a1-ring),transparent_60%)]"></div>
+        <div class="mt-8 h-px w-full bg-[linear-gradient(to_right,rgba(255,255,255,0.12),transparent_60%)]"></div>
       </div>
     </section>
 
@@ -129,15 +129,14 @@
         </article>
 
         <!-- solution -->
-        <article class="group relative overflow-hidden rounded-[1.5rem] border border-[var(--a1-ring)] p-7 sm:p-9"
-                 style="background: linear-gradient(135deg, rgba(109,40,217,0.10), rgba(79,70,229,0.06));">
-          <!-- corner bloom -->
-          <div class="pointer-events-none absolute -top-12 -right-12 h-40 w-40 rounded-full blur-3xl opacity-60
-                      bg-[radial-gradient(circle,rgba(124,58,237,0.20),transparent_70%)]"></div>
+        <article class="group relative overflow-hidden rounded-[1.5rem] border border-[var(--border)] bg-[var(--surface)] p-7 sm:p-9">
+          <!-- corner bloom — subtle violet -->
+          <div class="pointer-events-none absolute -top-12 -right-12 h-40 w-40 rounded-full blur-3xl opacity-30
+                      bg-[radial-gradient(circle,rgba(124,58,237,0.25),transparent_70%)]"></div>
 
-          <p class="font-[family-name:var(--font-mono)] text-[10px] uppercase tracking-[0.25em] text-[color:var(--lavender-dim)]">02 — Solution</p>
-          <h2 class="mt-3 text-xl font-semibold tracking-tight text-[color:var(--lavender)]">How I solved it.</h2>
-          <div class="mt-4 h-px w-8 bg-[var(--a1-ring)]"></div>
+          <p class="font-[family-name:var(--font-mono)] text-[10px] uppercase tracking-[0.25em] text-[color:var(--muted2)]">02 — Solution</p>
+          <h2 class="mt-3 text-xl font-semibold tracking-tight">How I solved it.</h2>
+          <div class="mt-4 h-px w-8 bg-[var(--border2)]"></div>
           <p class="mt-4 text-sm leading-7 text-[color:var(--muted)]">{{ project.solution }}</p>
         </article>
       </section>
