@@ -266,32 +266,32 @@ section[id] {
 /* Uses inset-0 blobs like proven landing blooms — guaranteed visible  */
 @keyframes aurora-shimmer-1 {
   0%, 100% { opacity: 0.80; filter: hue-rotate(0deg);   }
-  33%       { opacity: 1.00; filter: hue-rotate(22deg);  }
-  66%       { opacity: 0.65; filter: hue-rotate(-12deg); }
+  33%       { opacity: 1.00; filter: hue-rotate(10deg);  }
+  66%       { opacity: 0.65; filter: hue-rotate(-6deg);  }
 }
 @keyframes aurora-shimmer-2 {
   0%, 100% { opacity: 0.70; filter: hue-rotate(0deg);   }
-  40%       { opacity: 0.90; filter: hue-rotate(-28deg); }
-  75%       { opacity: 0.55; filter: hue-rotate(18deg);  }
+  40%       { opacity: 0.90; filter: hue-rotate(-12deg); }
+  75%       { opacity: 0.55; filter: hue-rotate(8deg);   }
 }
 @keyframes aurora-shimmer-3 {
   0%, 100% { opacity: 0.65; filter: hue-rotate(0deg);   }
-  30%       { opacity: 0.85; filter: hue-rotate(35deg);  }
-  70%       { opacity: 0.50; filter: hue-rotate(-20deg); }
+  30%       { opacity: 0.85; filter: hue-rotate(14deg);  }
+  70%       { opacity: 0.50; filter: hue-rotate(-8deg);  }
 }
 @keyframes aurora-shimmer-4 {
   0%, 100% { opacity: 0.55; filter: hue-rotate(0deg);   }
-  50%       { opacity: 0.80; filter: hue-rotate(-30deg); }
+  50%       { opacity: 0.80; filter: hue-rotate(-10deg); }
 }
 @keyframes aurora-shimmer-5 {
   0%, 100% { opacity: 0.50; filter: hue-rotate(0deg);   }
-  45%       { opacity: 0.72; filter: hue-rotate(25deg);  }
-  80%       { opacity: 0.38; filter: hue-rotate(-15deg); }
+  45%       { opacity: 0.72; filter: hue-rotate(10deg);  }
+  80%       { opacity: 0.38; filter: hue-rotate(-6deg);  }
 }
 @keyframes aurora-shimmer-6 {
   0%, 100% { opacity: 0.45; filter: hue-rotate(0deg);   }
-  35%       { opacity: 0.65; filter: hue-rotate(-22deg); }
-  75%       { opacity: 0.35; filter: hue-rotate(14deg);  }
+  35%       { opacity: 0.65; filter: hue-rotate(-8deg);  }
+  75%       { opacity: 0.35; filter: hue-rotate(6deg);   }
 }
 
 /* ── Reduced-motion overrides ────────────────────────────────── */
