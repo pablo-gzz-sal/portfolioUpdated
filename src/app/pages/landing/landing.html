@@ -1,7 +1,7 @@
 <div
-  class="relative min-h-dvh bg-[color:var(--bg)] text-[color:var(--text)] selection:bg-white selection:text-black"
+  class="isolate relative min-h-dvh text-[color:var(--text)] selection:bg-white selection:text-black"
 >
-  <!-- primary bloom — upper centre, violet -->
+  <!-- primary bloom — upper centre, violet, animated -->
   <div
     class="animate-bloom-breathe pointer-events-none absolute inset-0 -z-10
            bg-[radial-gradient(ellipse_70%_55%_at_50%_0%,rgba(109,40,217,0.60),transparent_70%)]"
@@ -11,34 +11,36 @@
   <!-- secondary bloom — lower right, deep indigo -->
   <div
     class="pointer-events-none absolute inset-0 -z-10
-           bg-[radial-gradient(ellipse_50%_40%_at_88%_82%,rgba(79,70,229,0.32),transparent_65%)]"
+           bg-[radial-gradient(ellipse_55%_45%_at_90%_85%,rgba(79,70,229,0.38),transparent_65%)]"
+    style="animation:aurora-shimmer-3 20s ease-in-out infinite;animation-delay:-6s;"
   ></div>
 
   <!-- tertiary bloom — left mid, violet -->
   <div
     class="pointer-events-none absolute inset-0 -z-10
-           bg-[radial-gradient(ellipse_38%_30%_at_4%_55%,rgba(109,40,217,0.22),transparent_70%)]"
+           bg-[radial-gradient(ellipse_42%_35%_at_2%_52%,rgba(109,40,217,0.28),transparent_70%)]"
+    style="animation:aurora-shimmer-5 24s ease-in-out infinite;animation-delay:-10s;"
   ></div>
 
   <!-- quaternary bloom — fuchsia accent top-right -->
   <div
     class="pointer-events-none absolute inset-0 -z-10
-           bg-[radial-gradient(ellipse_32%_26%_at_92%_18%,rgba(232,121,249,0.16),transparent_70%)]"
+           bg-[radial-gradient(ellipse_36%_28%_at_94%_16%,rgba(232,121,249,0.22),transparent_70%)]"
+    style="animation:aurora-shimmer-2 18s ease-in-out infinite;animation-delay:-4s;"
   ></div>
 
-  <!-- grid -->
+  <!-- quinary bloom — indigo lower-left -->
   <div
     class="pointer-events-none absolute inset-0 -z-10
-           [background-image:linear-gradient(rgba(255,255,255,0.07)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.07)_1px,transparent_1px)]
-           [background-size:48px_48px]
-           [mask-image:linear-gradient(to_bottom,black_0%,black_35%,transparent_68%)]"
+           bg-[radial-gradient(ellipse_40%_30%_at_8%_88%,rgba(129,140,248,0.18),transparent_70%)]"
+    style="animation:aurora-shimmer-4 22s ease-in-out infinite;animation-delay:-14s;"
   ></div>
-  <main class="relative mx-auto w-full max-w-6xl sm:px-6 lg:px-8">
+  <main class="relative mx-auto w-full">
 
     <app-hero />
 
     <!-- trust strip -->
-    <div class="py-8 px-4 text-center">
+    <div class="mx-auto max-w-6xl py-8 px-4 text-center sm:px-6 lg:px-8">
       <p class="text-xs uppercase tracking-widest text-[color:var(--muted3)]">Worked with</p>
       <p class="mt-3 text-sm text-[color:var(--muted2)]">
         Airbus &nbsp;·&nbsp; Bosch &nbsp;·&nbsp; Independent clients across the US and Mexico
@@ -50,7 +52,7 @@
     <app-systems />
     <app-knowledge />
 
-    <section id="contact" class="pt-16 px-4 lg:px-4 sm:pt-20">
+    <section id="contact" class="mx-auto max-w-6xl pt-16 px-4 sm:px-6 lg:px-8 sm:pt-20">
       <div
         class="noise-overlay relative overflow-hidden rounded-[2rem] p-8 sm:p-10"
         style="background: rgba(255,255,255,0.03); box-shadow: 0 0 0 1px rgba(139,92,246,0.22), 0 0 60px rgba(109,40,217,0.12);"
