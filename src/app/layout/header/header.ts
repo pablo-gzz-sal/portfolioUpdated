@@ -1,12 +1,14 @@
-import { Component, ElementRef, HostListener, ViewChild } from '@angular/core';
+import { Component, ElementRef, HostListener, ViewChild, inject } from '@angular/core';
 import { Router, RouterLink, RouterLinkActive } from '@angular/router';
+import { LanguageService } from '../../shared/services/language.service';
+import { TranslatePipe } from '../../shared/pipes/translate.pipe';
 
 type NavLink = { label: string; fragment?: string; route?: string };
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [RouterLink, RouterLinkActive],
+  imports: [RouterLink, RouterLinkActive, TranslatePipe],
   templateUrl: './header.html',
   styleUrl: './header.css',
 })
@@ -18,12 +20,14 @@ export class Header {
 
   readonly mobileMenuHeight = '360px';
 
+  readonly langService = inject(LanguageService);
+
   navLinks: NavLink[] = [
-    { label: 'Projects', fragment: 'projects' },
-    { label: 'Systems',  fragment: 'systems'  },
-    { label: 'Tech',     fragment: 'tech'     },
-    { label: 'About',    route: '/about'      },
-    { label: 'Contact',  fragment: 'contact'  },
+    { label: 'nav.projects', fragment: 'projects' },
+    { label: 'nav.systems',  fragment: 'systems'  },
+    { label: 'nav.tech',     fragment: 'tech'     },
+    { label: 'nav.about',    route: '/about'      },
+    { label: 'nav.contact',  fragment: 'contact'  },
   ];
 
   constructor(private router: Router) {}
@@ -52,7 +56,6 @@ export class Header {
   @HostListener('window:scroll')
   onScroll(): void {
     this.scrolled = window.scrollY > 8;
-    // Close menu on scroll
     if (this.menuOpen) this.menuOpen = false;
   }
 

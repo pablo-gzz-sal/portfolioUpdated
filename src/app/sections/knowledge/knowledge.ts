@@ -2,6 +2,7 @@ import { CommonModule } from '@angular/common';
 import { AfterViewInit, Component, ElementRef } from '@angular/core';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { TranslatePipe } from '../../shared/pipes/translate.pipe';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -10,7 +11,7 @@ type TechGroup = { title: string; icon: string; items: string[] };
 @Component({
   selector: 'app-knowledge',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, TranslatePipe],
   templateUrl: './knowledge.html',
   styleUrl: './knowledge.css',
 })
@@ -19,32 +20,32 @@ export class Knowledge implements AfterViewInit {
 
   groups: TechGroup[] = [
     {
-      title: 'Frontend',
+      title: 'knowledge.frontend',
       icon: '⬡',
       items: ['Angular', 'React', 'Vue', 'TypeScript', 'Tailwind', 'RxJS'],
     },
     {
-      title: 'Mobile',
+      title: 'knowledge.mobile',
       icon: '◻',
       items: ['React Native', 'Ionic', 'Expo', 'Android Studio'],
     },
     {
-      title: 'Backend',
+      title: 'knowledge.backend',
       icon: '◈',
       items: ['Node.js', 'Express', 'NestJS', '.NET', 'Python', 'REST APIs', 'Auth0'],
     },
     {
-      title: 'Databases',
+      title: 'knowledge.databases',
       icon: '◉',
       items: ['PostgreSQL', 'MongoDB', 'MariaDB'],
     },
     {
-      title: 'Infra / Tooling',
+      title: 'knowledge.infra',
       icon: '⊕',
       items: ['Docker', 'Swagger/OpenAPI', 'Stripe', 'CI/CD', 'Azure'],
     },
     {
-      title: 'Security & Pentesting',
+      title: 'knowledge.security',
       icon: '◎',
       items: ['Kali', 'PortSwigger', 'Red/Blue Team', 'Pentesting'],
     },

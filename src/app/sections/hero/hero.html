@@ -70,7 +70,7 @@
         ></span>
         <span class="relative h-1.5 w-1.5 rounded-full bg-[var(--fuchsia)]"></span>
       </span>
-      Available for new projects
+      {{ 'hero.available' | translate }}
     </div>
   </div>
 
@@ -92,7 +92,7 @@
       #heroText
       class="mx-auto mt-6 max-w-xl text-base leading-relaxed text-[color:var(--muted)] sm:text-lg"
     >
-      Angular frontends. Node.js APIs. Munich-based, working globally.
+      {{ 'hero.subtext' | translate }}
     </p>
 
     <!-- CTAs -->
@@ -103,7 +103,7 @@
                hover:shadow-[0_0_32px_rgba(109,40,217,0.5)]"
         style="background: linear-gradient(135deg, rgba(109,40,217,0.8), rgba(79,70,229,0.8)); box-shadow: 0 0 0 1px rgba(139,92,246,0.4), 0 0 18px rgba(109,40,217,0.3);"
       >
-        See the work
+        {{ 'hero.seeWork' | translate }}
       </a>
       <a
         href="#contact"
@@ -111,7 +111,7 @@
                hover:text-white hover:shadow-[0_0_16px_rgba(232,121,249,0.2)]"
         style="background: rgba(255,255,255,0.05); box-shadow: 0 0 0 1px rgba(255,255,255,0.09);"
       >
-        Get in touch
+        {{ 'hero.getInTouch' | translate }}
       </a>
     </div>
   </div>
@@ -139,9 +139,9 @@
           ></div>
 
           <p class="text-[10px] uppercase tracking-widest text-[rgba(196,181,253,0.6)]">
-            {{ card.label }}
+            {{ card.label | translate }}
           </p>
-          <p class="mt-2 text-sm leading-snug text-[color:var(--text)]">{{ card.value }}</p>
+          <p class="mt-2 text-sm leading-snug text-[color:var(--text)]">{{ card.value | translate }}</p>
         </div>
       </div>
     }

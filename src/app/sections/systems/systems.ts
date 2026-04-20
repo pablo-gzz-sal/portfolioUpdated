@@ -1,13 +1,14 @@
 import { AfterViewInit, Component, ElementRef } from '@angular/core';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { TranslatePipe } from '../../shared/pipes/translate.pipe';
 
 gsap.registerPlugin(ScrollTrigger);
 
 @Component({
   selector: 'app-systems',
   standalone: true,
-  imports: [],
+  imports: [TranslatePipe],
   templateUrl: './systems.html',
   styleUrl: './systems.css',
 })
@@ -19,61 +20,56 @@ export class Systems implements AfterViewInit {
       id: 1,
       number: '01',
       icon: '◎',
-      title: 'Discovery & scope',
-      description:
-        'I define the problem, user flows, and success criteria — then the smallest version that ships value.',
-      badge: 'Clarity first',
-      tags: ['Requirements → MVP', 'UX flows', 'Risks & constraints'],
+      title: 'systems.step1.title',
+      description: 'systems.step1.desc',
+      badge: 'systems.step1.badge',
+      tags: ['systems.step1.tag1', 'systems.step1.tag2', 'systems.step1.tag3'],
       miniCards: null,
     },
     {
       id: 2,
       number: '02',
       icon: '◫',
-      title: 'Architecture & data design',
-      description:
-        'API contracts, data models, auth, and service boundaries defined before a line of implementation is written.',
-      badge: 'Plan the system',
+      title: 'systems.step2.title',
+      description: 'systems.step2.desc',
+      badge: 'systems.step2.badge',
       tags: null,
       miniCards: [
-        { label: 'Backend', value: 'REST + Swagger/OpenAPI • modular services' },
-        { label: 'Database', value: 'Schema + indexes • migrations • audit fields' },
+        { label: 'systems.step2.mc1Label', value: 'systems.step2.mc1Value' },
+        { label: 'systems.step2.mc2Label', value: 'systems.step2.mc2Value' },
       ],
     },
     {
       id: 3,
       number: '03',
       icon: '✦',
-      title: 'Build & iterate',
-      description:
-        'Thin vertical slices from UI to API to data. Clean components, predictable state, readable code.',
-      badge: 'Ship slices',
-      tags: ['Component system', 'Integrations (Stripe / APIs)', 'Performance hygiene'],
+      title: 'systems.step3.title',
+      description: 'systems.step3.desc',
+      badge: 'systems.step3.badge',
+      tags: ['systems.step3.tag1', 'systems.step3.tag2', 'systems.step3.tag3'],
       miniCards: null,
     },
     {
       id: 4,
       number: '04',
       icon: '✓',
-      title: 'Testing, docs & QA',
-      description:
-        'Swagger docs, edge case coverage, and validation before every release. Stable code builds trust.',
-      badge: 'Reduce risk',
+      title: 'systems.step4.title',
+      description: 'systems.step4.desc',
+      badge: 'systems.step4.badge',
       tags: null,
       miniCards: [
-        { label: 'Docs', value: 'Swagger/OpenAPI • README • runbooks' },
-        { label: 'Quality', value: 'Validation • logging • error handling' },
+        { label: 'systems.step4.mc1Label', value: 'systems.step4.mc1Value' },
+        { label: 'systems.step4.mc2Label', value: 'systems.step4.mc2Value' },
       ],
     },
     {
       id: 5,
       number: '05',
       icon: '↗',
-      title: 'Deployment & hosting',
-      description:
-        'Containerized services, automated deployments, monitoring. The system stays healthy after launch.',
-      badge: 'Ship to prod',
-      tags: ['Dockerized services', 'CI/CD pipelines', 'Monitoring & logs'],
+      title: 'systems.step5.title',
+      description: 'systems.step5.desc',
+      badge: 'systems.step5.badge',
+      tags: ['systems.step5.tag1', 'systems.step5.tag2', 'systems.step5.tag3'],
       miniCards: null,
     },
   ];

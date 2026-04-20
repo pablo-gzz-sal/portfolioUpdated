@@ -1,0 +1,198 @@
+{
+  "nav": {
+    "projects": "Projects",
+    "systems": "Systems",
+    "tech": "Tech",
+    "about": "About",
+    "contact": "Contact",
+    "workTogether": "Work together"
+  },
+  "hero": {
+    "available": "Available for new projects",
+    "line1": "Great design.",
+    "line2": "Solid backend.",
+    "line3": "One developer.",
+    "subtext": "Angular frontends. Node.js APIs. Munich-based, working globally.",
+    "seeWork": "See the work",
+    "getInTouch": "Get in touch",
+    "stat": {
+      "clients": { "label": "Clients", "value": "Airbus · Bosch · indie founders" },
+      "stack": { "label": "Stack", "value": "Angular · Node.js · clean systems" },
+      "basedIn": { "label": "Based in", "value": "Munich, DE — remote-first" }
+    }
+  },
+  "landing": {
+    "workedWith": "Worked with",
+    "clientsList": "Airbus · Bosch · Independent clients across the US and Mexico",
+    "contact": {
+      "eyebrow": "Contact",
+      "headline": "Have a project",
+      "headlineAccent": "in mind?",
+      "subtext": "Small number of projects. High focus. Let's talk.",
+      "email": "Email",
+      "linkedin": "LinkedIn",
+      "github": "GitHub"
+    }
+  },
+  "projects": {
+    "eyebrow": "Work",
+    "headline": "Projects that shipped.",
+    "subtext": "Four products. End-to-end."
+  },
+  "systems": {
+    "eyebrow": "How I work",
+    "headline": "From brief to production.",
+    "subtext": "Clarity first. Architecture second. Then ship.",
+    "step1": {
+      "title": "Discovery & scope",
+      "desc": "I define the problem, user flows, and success criteria — then the smallest version that ships value.",
+      "badge": "Clarity first",
+      "tag1": "Requirements → MVP",
+      "tag2": "UX flows",
+      "tag3": "Risks & constraints"
+    },
+    "step2": {
+      "title": "Architecture & data design",
+      "desc": "API contracts, data models, auth, and service boundaries defined before a line of implementation is written.",
+      "badge": "Plan the system",
+      "mc1Label": "Backend",
+      "mc1Value": "REST + Swagger/OpenAPI · modular services",
+      "mc2Label": "Database",
+      "mc2Value": "Schema + indexes · migrations · audit fields"
+    },
+    "step3": {
+      "title": "Build & iterate",
+      "desc": "Thin vertical slices from UI to API to data. Clean components, predictable state, readable code.",
+      "badge": "Ship slices",
+      "tag1": "Component system",
+      "tag2": "Integrations (Stripe / APIs)",
+      "tag3": "Performance hygiene"
+    },
+    "step4": {
+      "title": "Testing, docs & QA",
+      "desc": "Swagger docs, edge case coverage, and validation before every release. Stable code builds trust.",
+      "badge": "Reduce risk",
+      "mc1Label": "Docs",
+      "mc1Value": "Swagger/OpenAPI · README · runbooks",
+      "mc2Label": "Quality",
+      "mc2Value": "Validation · logging · error handling"
+    },
+    "step5": {
+      "title": "Deployment & hosting",
+      "desc": "Containerized services, automated deployments, monitoring. The system stays healthy after launch.",
+      "badge": "Ship to prod",
+      "tag1": "Dockerized services",
+      "tag2": "CI/CD pipelines",
+      "tag3": "Monitoring & logs"
+    }
+  },
+  "knowledge": {
+    "eyebrow": "Stack",
+    "headline": "The full stack.",
+    "subtext": "Tools I use in production. Weekly.",
+    "frontend": "Frontend",
+    "mobile": "Mobile",
+    "backend": "Backend",
+    "databases": "Databases",
+    "infra": "Infra / Tooling",
+    "security": "Security & Pentesting"
+  },
+  "about": {
+    "available": "Available for new projects",
+    "heroTitle": {
+      "line1": "Pablo Gonzalez.",
+      "line2": "Full-stack developer",
+      "line3": "building things that last."
+    },
+    "heroSubtext": "Performance-first. Focused on UX. Built to last.",
+    "emailMe": "Email me",
+    "philosophy": "Philosophy",
+    "philosophyQuote": "\"Ship fast. Refactor honestly. Build things that last.\"",
+    "vision": {
+      "label": "The vision",
+      "strong": "Performance",
+      "meets": "meets",
+      "accent": "aesthetic precision.",
+      "body1": "Unclear brief → shipped product.",
+      "body2": "Clean architecture. No shortcuts."
+    },
+    "stack": {
+      "label": "Tech stack",
+      "headline": "The arsenal",
+      "cloud": "Interactive cloud"
+    },
+    "strengths": {
+      "label": "What I bring",
+      "headline": "What I actually do well.",
+      "frontend": {
+        "title": "Frontend systems",
+        "desc": "Angular + React. Component architecture built to be maintained."
+      },
+      "backend": {
+        "title": "Backend structure",
+        "desc": "REST APIs, auth, schemas. Clean contracts, clear separation."
+      },
+      "product": {
+        "title": "Product thinking",
+        "desc": "Requirements → MVP → iteration. Build what ships value."
+      },
+      "delivery": {
+        "title": "Delivery",
+        "desc": "Fast without slop. Documented, deployed, and production-ready."
+      }
+    },
+    "timeline": {
+      "eyebrow": "Experience timeline",
+      "headline": "Trajectory.",
+      "item1": {
+        "period": "2022 — Present",
+        "title": "Full-Stack Developer · Munich, Germany",
+        "desc": "Consulting on large-scale web applications for enterprise clients. Delivered production systems for Airbus and Bosch — performance-critical frontends, backend API layers, and CI/CD pipelines.",
+        "badge": "Current"
+      },
+      "item2": {
+        "period": "2024 — Present",
+        "title": "Independent / Freelance",
+        "desc": "Building products end-to-end for clients across the US and Mexico. Salon booking platforms, lead generation apps, content subscription platforms, and logistics sites."
+      }
+    },
+    "cta": {
+      "eyebrow": "Contact",
+      "headline": "Let's build",
+      "headlineAccent": "something real.",
+      "subtext": "Small number of projects. High focus. Let's talk.",
+      "email": "Email",
+      "linkedin": "LinkedIn",
+      "github": "GitHub"
+    }
+  },
+  "caseStudy": {
+    "allProjects": "All projects",
+    "caseStudyLabel": "Case Study",
+    "engineeredWith": "Engineered with",
+    "problem": "01 — Problem",
+    "whatNeededSolving": "What needed solving.",
+    "solution": "02 — Solution",
+    "howISolvedIt": "How I solved it.",
+    "technicalDecisions": "Technical decisions.",
+    "howItWasBuilt": "How it was built.",
+    "decisions": "decisions",
+    "inTheProduct": "In the product.",
+    "screenshotsLabel": "Screenshots from the live application.",
+    "screens": "screens",
+    "liveProject": "Live project",
+    "seeItLive": "See it live.",
+    "deployed": "The project is deployed and live. Open it in the browser to explore the full experience.",
+    "viewLiveSite": "View Live Site",
+    "sourceCode": "Source Code",
+    "notFound": "Project not found",
+    "backHome": "← Back home"
+  },
+  "footer": {
+    "tagline": "Full-stack developer. Angular, Node.js, clean systems.",
+    "navigate": "Navigate",
+    "contact": "Contact",
+    "allRightsReserved": "All rights reserved.",
+    "builtWith": "Built with Angular 20 + Tailwind CSS"
+  }
+}

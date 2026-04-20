@@ -7,15 +7,16 @@ import {
   ViewChildren,
 } from '@angular/core';
 import gsap from 'gsap';
+import { TranslatePipe } from '../../shared/pipes/translate.pipe';
 
 @Component({
   selector: 'app-hero',
   standalone: true,
-  imports: [],
+  imports: [TranslatePipe],
   templateUrl: './hero.html',
   styleUrl: './hero.css',
 })
-export class Hero {
+export class Hero implements AfterViewInit {
   @ViewChild('heroSection', { static: true }) heroSection!: ElementRef<HTMLElement>;
   @ViewChild('heroPill', { static: true }) heroPill!: ElementRef<HTMLElement>;
   @ViewChild('heroTitle', { static: true }) heroTitle!: ElementRef<HTMLElement>;
@@ -47,10 +48,7 @@ export class Hero {
         this.heroCtas.nativeElement,
         ...this.statCardEls.map((c) => c.nativeElement),
       ],
-      {
-        opacity: 0,
-        y: 24,
-      },
+      { opacity: 0, y: 24 },
     );
 
     gsap.set([this.blobOne.nativeElement, this.blobTwo.nativeElement], {
@@ -65,71 +63,23 @@ export class Hero {
       stagger: 0.15,
       ease: 'power2.out',
     })
-      .to(
-        this.heroPill.nativeElement,
-        {
-          opacity: 1,
-          y: 0,
-          duration: 0.7,
-        },
-        '-=1',
-      )
-      .to(
-        this.heroTitle.nativeElement,
-        {
-          opacity: 1,
-          y: 0,
-          duration: 0.9,
-        },
-        '-=0.4',
-      )
-      .to(
-        this.heroText.nativeElement,
-        {
-          opacity: 1,
-          y: 0,
-          duration: 0.7,
-        },
-        '-=0.5',
-      )
-      .to(
-        this.heroCtas.nativeElement,
-        {
-          opacity: 1,
-          y: 0,
-          duration: 0.7,
-        },
-        '-=0.45',
-      )
+      .to(this.heroPill.nativeElement,  { opacity: 1, y: 0, duration: 0.7 }, '-=1')
+      .to(this.heroTitle.nativeElement, { opacity: 1, y: 0, duration: 0.9 }, '-=0.4')
+      .to(this.heroText.nativeElement,  { opacity: 1, y: 0, duration: 0.7 }, '-=0.5')
+      .to(this.heroCtas.nativeElement,  { opacity: 1, y: 0, duration: 0.7 }, '-=0.45')
       .to(
         this.statCardEls.map((c) => c.nativeElement),
-        {
-          opacity: 1,
-          y: 0,
-          duration: 0.65,
-          stagger: 0.12,
-        },
+        { opacity: 1, y: 0, duration: 0.65, stagger: 0.12 },
         '-=0.35',
       );
   }
 
   private animateBlobs(): void {
     gsap.to(this.blobOne.nativeElement, {
-      x: 18,
-      y: -12,
-      duration: 7,
-      repeat: -1,
-      yoyo: true,
-      ease: 'sine.inOut',
+      x: 18, y: -12, duration: 7, repeat: -1, yoyo: true, ease: 'sine.inOut',
     });
-
     gsap.to(this.blobTwo.nativeElement, {
-      x: -14,
-      y: 16,
-      duration: 9,
-      repeat: -1,
-      yoyo: true,
-      ease: 'sine.inOut',
+      x: -14, y: 16, duration: 9, repeat: -1, yoyo: true, ease: 'sine.inOut',
     });
   }
 
@@ -141,37 +91,13 @@ export class Hero {
       const x = (event.clientX - rect.left) / rect.width - 0.5;
       const y = (event.clientY - rect.top) / rect.height - 0.5;
 
-      gsap.to(this.blobOne.nativeElement, {
-        x: x * 30,
-        y: y * 20,
-        duration: 1.2,
-        overwrite: 'auto',
-        ease: 'power3.out',
-      });
-
-      gsap.to(this.blobTwo.nativeElement, {
-        x: x * -24,
-        y: y * -18,
-        duration: 1.4,
-        overwrite: 'auto',
-        ease: 'power3.out',
-      });
+      gsap.to(this.blobOne.nativeElement, { x: x * 30, y: y * 20, duration: 1.2, overwrite: 'auto', ease: 'power3.out' });
+      gsap.to(this.blobTwo.nativeElement, { x: x * -24, y: y * -18, duration: 1.4, overwrite: 'auto', ease: 'power3.out' });
     });
 
     section.addEventListener('mouseleave', () => {
-      gsap.to(this.blobOne.nativeElement, {
-        x: 0,
-        y: 0,
-        duration: 1.4,
-        ease: 'power3.out',
-      });
-
-      gsap.to(this.blobTwo.nativeElement, {
-        x: 0,
-        y: 0,
-        duration: 1.4,
-        ease: 'power3.out',
-      });
+      gsap.to(this.blobOne.nativeElement, { x: 0, y: 0, duration: 1.4, ease: 'power3.out' });
+      gsap.to(this.blobTwo.nativeElement, { x: 0, y: 0, duration: 1.4, ease: 'power3.out' });
     });
   }
 }
