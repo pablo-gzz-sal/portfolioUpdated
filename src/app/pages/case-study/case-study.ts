@@ -6,13 +6,14 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { Header } from '../../layout/header/header';
 import { Footer } from '../../layout/footer/footer';
 import { CaseStudyProject } from '../../shared/models/study.model';
+import { TranslatePipe } from '../../shared/pipes/translate.pipe';
 
 gsap.registerPlugin(ScrollTrigger);
 
 @Component({
   selector: 'app-case-study',
   standalone: true,
-  imports: [CommonModule, RouterLink, DecimalPipe, Header, Footer],
+  imports: [CommonModule, RouterLink, DecimalPipe, Header, Footer, TranslatePipe],
   templateUrl: './case-study.html',
   styleUrl: './case-study.css',
 })

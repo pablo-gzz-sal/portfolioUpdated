@@ -4,15 +4,15 @@
   <div class="systems-header">
   <p class="inline-flex items-center gap-2 text-xs uppercase tracking-widest text-[color:var(--muted2)]">
     <span class="animate-shimmer-x h-px w-6 bg-[color:var(--lavender)]"></span>
-    How I work
+    {{ 'systems.eyebrow' | translate }}
   </p>
 
   <div class="mt-3 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
     <h2 class="text-3xl font-bold tracking-tight sm:text-4xl">
-      From brief to production.
+      {{ 'systems.headline' | translate }}
     </h2>
     <p class="max-w-xs text-sm leading-relaxed text-[color:var(--muted2)]">
-      Clarity first. Architecture second. Then ship.
+      {{ 'systems.subtext' | translate }}
     </p>
   </div>
 
@@ -62,7 +62,7 @@
                        text-[color:var(--lavender)]"
               >
                 <span class="animate-glow-pulse h-1.5 w-1.5 rounded-full bg-[color:var(--lavender)]"></span>
-                {{ step.badge }}
+                {{ step.badge | translate }}
               </span>
             </div>
 
@@ -78,10 +78,10 @@
 
                 <div>
                   <h3 class="text-sm font-semibold uppercase tracking-widest text-[color:var(--lavender)]">
-                    {{ step.title }}
+                    {{ step.title | translate }}
                   </h3>
                   <p class="mt-2 text-sm leading-relaxed text-[color:var(--muted2)]">
-                    {{ step.description }}
+                    {{ step.description | translate }}
                   </p>
                 </div>
               </div>
@@ -97,7 +97,7 @@
                              hover:text-[color:var(--text)] hover:bg-[var(--surface2)] hover:ring-[rgba(255,255,255,0.12)]
                              cursor-default"
                     >
-                      {{ tag }}
+                      {{ tag | translate }}
                     </span>
                   }
                 </div>
@@ -112,10 +112,10 @@
                              bg-[var(--bg-raised)] ring-1 ring-[var(--border)]"
                     >
                       <p class="text-[11px] uppercase tracking-widest text-[color:var(--muted2)]">
-                        {{ card.label }}
+                        {{ card.label | translate }}
                       </p>
                       <p class="mt-1.5 text-sm leading-relaxed text-[color:var(--text)]">
-                        {{ card.value }}
+                        {{ card.value | translate }}
                       </p>
                     </div>
                   }

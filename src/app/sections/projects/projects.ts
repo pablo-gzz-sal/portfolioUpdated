@@ -4,13 +4,14 @@ import { RouterLink } from '@angular/router';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { Project, ProjectCard } from '../../shared/project-card/project-card';
+import { TranslatePipe } from '../../shared/pipes/translate.pipe';
 
 gsap.registerPlugin(ScrollTrigger);
 
 @Component({
   selector: 'app-projects',
   standalone: true,
-  imports: [CommonModule, ProjectCard, RouterLink],
+  imports: [CommonModule, ProjectCard, RouterLink, TranslatePipe],
   templateUrl: './projects.html',
   styleUrl: './projects.css',
 })

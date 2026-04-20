@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { SafeHtmlPipe } from '../../shared/pipes/safeHtml';
+import { TranslatePipe } from '../../shared/pipes/translate.pipe';
 
 type Social = { label: string; href: string; svgPath: string };
 type FooterLink = { label: string; href: string };
@@ -9,7 +10,7 @@ type FooterLink = { label: string; href: string };
 @Component({
   selector: 'app-footer',
   standalone: true,
-  imports: [CommonModule, RouterLink, SafeHtmlPipe],
+  imports: [CommonModule, RouterLink, SafeHtmlPipe, TranslatePipe],
   templateUrl: './footer.html',
   styleUrl: './footer.css',
 })
@@ -17,11 +18,11 @@ export class Footer {
   year = new Date().getFullYear();
 
   footerNav: FooterLink[] = [
-    { label: 'Projects', href: '#projects' },
-    { label: 'Systems',  href: '#systems'  },
-    { label: 'Tech',     href: '#tech'     },
-    { label: 'About',    href: '/about'    },
-    { label: 'Contact',  href: '#contact'  },
+    { label: 'nav.projects', href: '#projects' },
+    { label: 'nav.systems',  href: '#systems'  },
+    { label: 'nav.tech',     href: '#tech'     },
+    { label: 'nav.about',    href: '/about'    },
+    { label: 'nav.contact',  href: '#contact'  },
   ];
 
   socials: Social[] = [

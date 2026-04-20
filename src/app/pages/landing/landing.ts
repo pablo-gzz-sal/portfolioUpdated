@@ -4,17 +4,18 @@ import { Knowledge } from '../../sections/knowledge/knowledge';
 import { Projects } from '../../sections/projects/projects';
 import { Hero } from '../../sections/hero/hero';
 import { Footer } from '../../layout/footer/footer';
-import { Systems } from "../../sections/systems/systems";
+import { Systems } from '../../sections/systems/systems';
+import { TranslatePipe } from '../../shared/pipes/translate.pipe';
 
 @Component({
   selector: 'app-landing',
   standalone: true,
-  imports: [Header, Footer, Hero, Projects, Knowledge, Systems],
+  imports: [Header, Footer, Hero, Projects, Knowledge, Systems, TranslatePipe],
   templateUrl: './landing.html',
   styleUrl: './landing.css',
 })
 export class Landing implements OnInit {
   ngOnInit(): void {
-    window.scroll(0,0)
+    window.scroll(0, 0);
   }
 }
