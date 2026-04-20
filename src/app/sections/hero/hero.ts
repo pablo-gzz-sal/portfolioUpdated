@@ -24,12 +24,11 @@ export class Hero implements AfterViewInit {
   @ViewChild('heroCtas', { static: true }) heroCtas!: ElementRef<HTMLElement>;
   @ViewChild('blobOne', { static: true }) blobOne!: ElementRef<SVGElement>;
   @ViewChild('blobTwo', { static: true }) blobTwo!: ElementRef<SVGElement>;
-  @ViewChildren('statCard') statCardEls!: QueryList<ElementRef<HTMLElement>>;
-
-  statCards = [
-    { label: 'hero.stat.clients.label', value: 'hero.stat.clients.value' },
-    { label: 'hero.stat.stack.label',   value: 'hero.stat.stack.value'   },
-    { label: 'hero.stat.basedIn.label', value: 'hero.stat.basedIn.value' },
+ @ViewChildren('statCard') statCardEls!: QueryList<ElementRef<HTMLElement>>;
+    statCards = [
+    { label: 'Clients',  value: 'Airbus · Bosch · indie founders' },
+    { label: 'Stack',    value: 'Frontend · Backend · CyberSec' },
+    { label: 'Based in', value: 'Munich, DE — remote-first' },
   ];
 
   ngAfterViewInit(): void {
