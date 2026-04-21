@@ -1,5 +1,4 @@
 <header class="fixed top-0 left-0 right-0 z-[9999] flex justify-center px-4 pt-4">
-
   <!-- floating glass island -->
   <div
     class="w-full max-w-5xl transition-all duration-500"
@@ -8,17 +7,26 @@
     <div
       class="flex items-center justify-between rounded-2xl px-4 py-2.5 backdrop-blur-xl transition-all duration-500"
       [style.background]="scrolled ? 'rgba(6,6,9,0.88)' : 'rgba(6,6,9,0.55)'"
-      [style.box-shadow]="scrolled
-        ? '0 0 0 1px rgba(139,92,246,0.22), 0 0 0 1px rgba(255,255,255,0.05) inset'
-        : '0 0 0 1px rgba(255,255,255,0.08)'"
+      [style.box-shadow]="
+        scrolled
+          ? '0 0 0 1px rgba(139,92,246,0.22), 0 0 0 1px rgba(255,255,255,0.05) inset'
+          : '0 0 0 1px rgba(255,255,255,0.08)'
+      "
     >
-
       <!-- Logo -->
-      <a routerLink="/" (click)="scrollToTop()" class="group inline-flex items-center gap-2.5 shrink-0">
+      <a
+        routerLink="/"
+        (click)="scrollToTop()"
+        class="group inline-flex items-center gap-2.5 shrink-0"
+      >
         <span
           class="relative h-8 w-8 overflow-hidden rounded-xl ring-1 ring-[var(--a1-ring)] transition duration-300 group-hover:ring-[var(--a1-ring2)] group-hover:shadow-[0_0_14px_var(--a1-glow)]"
         >
-          <img src="assets/images/me.jpeg" alt="Pablo Gonzalez" class="h-full w-full object-cover" />
+          <img
+            src="assets/images/me.jpeg"
+            alt="Pablo Gonzalez"
+            class="h-full w-full object-cover"
+          />
           <span
             class="absolute inset-0 bg-[radial-gradient(circle,rgba(124,58,237,0.18),transparent_70%)] opacity-0 transition duration-300 group-hover:opacity-100"
           ></span>
@@ -49,34 +57,72 @@
 
       <!-- Right side -->
       <div class="flex items-center gap-2 shrink-0">
-
         <!-- Language toggle -->
         <button
           (click)="langService.toggle()"
-          class="hidden sm:inline-flex items-center gap-1.5 rounded-xl px-2.5 py-1.5 text-xs font-medium
-                 text-[color:var(--lavender)] bg-[var(--a1-soft)] ring-1 ring-[var(--a1-ring)]
-                 transition duration-200 hover:bg-[var(--a1-soft2)] hover:ring-[var(--a1-ring2)] hover:text-white"
-          [attr.aria-label]="langService.lang() === 'en' ? 'Switch to Spanish' : 'Switch to English'"
+          class="hidden sm:inline-flex items-center gap-1.5 rounded-xl px-2.5 py-1.5 text-xs font-medium text-[color:var(--lavender)] bg-[var(--a1-soft)] ring-1 ring-[var(--a1-ring)] transition duration-200 hover:bg-[var(--a1-soft2)] hover:ring-[var(--a1-ring2)] hover:text-white"
+          [attr.aria-label]="
+            langService.lang() === 'en' ? 'Switch to Spanish' : 'Switch to English'
+          "
         >
           @if (langService.lang() === 'en') {
             <!-- Mexican flag -->
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21 15" class="h-3.5 w-5 rounded-[2px] shrink-0">
-              <rect width="7" height="15" fill="#006847"/>
-              <rect x="7" width="7" height="15" fill="#FFFFFF"/>
-              <rect x="14" width="7" height="15" fill="#CE1126"/>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 21 15"
+              class="h-3.5 w-5 rounded-[2px] shrink-0"
+              role="img"
+              aria-label="Flag of Mexico"
+            >
+              <rect width="7" height="15" fill="#006847" />
+              <rect x="7" width="7" height="15" fill="#FFFFFF" />
+              <rect x="14" width="7" height="15" fill="#CE1126" />
+              <g transform="translate(10.5 7.5) scale(0.55)">
+                <circle r="2.2" fill="#7A4E2A" />
+                <path
+                  d="M-0.6 0.3c-1.1-0.5-2.4-0.4-3.2 0.3 1 0.3 1.7 0.8 2.3 1.6"
+                  fill="none"
+                  stroke="#2E7D32"
+                  stroke-width="0.35"
+                  stroke-linecap="round"
+                />
+                <path
+                  d="M0.6 0.3c1.1-0.5 2.4-0.4 3.2 0.3-1 0.3-1.7 0.8-2.3 1.6"
+                  fill="none"
+                  stroke="#2E7D32"
+                  stroke-width="0.35"
+                  stroke-linecap="round"
+                />
+                <path
+                  d="M0 -2.2c0.8 0.4 1.2 1.1 1.2 1.8 0 0.8-0.4 1.4-1.2 1.8-.8-.4-1.2-1-1.2-1.8 0-.7.4-1.4 1.2-1.8z"
+                  fill="#D4AF37"
+                />
+                <path
+                  d="M-0.2 -2.8c0.2-0.7 0.8-1.1 1.5-1.1-.1 0 .2 0 .3 0.1-.1 0.7-.5 1.1-1.1 1.3"
+                  fill="#2E7D32"
+                />
+                <path
+                  d="M0.2 -2.8c-0.2-0.7-0.8-1.1-1.5-1.1.1 0-.2 0-.3 0.1.1 0.7.5 1.1 1.1 1.3"
+                  fill="#2E7D32"
+                />
+              </g>
             </svg>
             <span>ES</span>
           } @else {
             <!-- US flag -->
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21 15" class="h-3.5 w-5 rounded-[2px] shrink-0">
-              <rect width="21" height="15" fill="#B22234"/>
-              <rect y="1.15" width="21" height="1.15" fill="white"/>
-              <rect y="3.46" width="21" height="1.15" fill="white"/>
-              <rect y="5.77" width="21" height="1.15" fill="white"/>
-              <rect y="8.08" width="21" height="1.15" fill="white"/>
-              <rect y="10.38" width="21" height="1.15" fill="white"/>
-              <rect y="12.69" width="21" height="1.15" fill="white"/>
-              <rect width="9" height="8.08" fill="#3C3B6E"/>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 21 15"
+              class="h-3.5 w-5 rounded-[2px] shrink-0"
+            >
+              <rect width="21" height="15" fill="#B22234" />
+              <rect y="1.15" width="21" height="1.15" fill="white" />
+              <rect y="3.46" width="21" height="1.15" fill="white" />
+              <rect y="5.77" width="21" height="1.15" fill="white" />
+              <rect y="8.08" width="21" height="1.15" fill="white" />
+              <rect y="10.38" width="21" height="1.15" fill="white" />
+              <rect y="12.69" width="21" height="1.15" fill="white" />
+              <rect width="9" height="8.08" fill="#3C3B6E" />
             </svg>
             <span>EN</span>
           }
@@ -86,12 +132,20 @@
         <a
           href="javascript:void(0)"
           (click)="navigateToSection('contact')"
-          class="shimmer-btn hidden sm:inline-flex relative overflow-hidden items-center gap-2 rounded-xl px-4 py-2 text-sm font-medium text-white transition duration-300
-                 hover:shadow-[0_0_18px_var(--a1-glow)]"
-          style="background: linear-gradient(135deg, rgba(109,40,217,0.75), rgba(79,70,229,0.75)); box-shadow: 0 0 0 1px rgba(139,92,246,0.30);"
+          class="shimmer-btn hidden sm:inline-flex relative overflow-hidden items-center gap-2 rounded-xl px-4 py-2 text-sm font-medium text-white transition duration-300 hover:shadow-[0_0_18px_var(--a1-glow)]"
+          style="
+            background: linear-gradient(135deg, rgba(109, 40, 217, 0.75), rgba(79, 70, 229, 0.75));
+            box-shadow: 0 0 0 1px rgba(139, 92, 246, 0.3);
+          "
         >
           {{ 'nav.workTogether' | translate }}
-          <svg class="h-3 w-3 opacity-70" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+          <svg
+            class="h-3 w-3 opacity-70"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2.5"
+            viewBox="0 0 24 24"
+          >
             <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
           </svg>
         </a>
@@ -128,7 +182,7 @@
     >
       <div
         class="mt-1.5 rounded-2xl border border-[var(--border)] backdrop-blur-xl"
-        style="background: rgba(6,6,9,0.92);"
+        style="background: rgba(6, 6, 9, 0.92)"
       >
         <nav class="flex flex-col p-2">
           @for (link of navLinks; track link.label; let i = $index) {
@@ -142,7 +196,13 @@
                 [style.opacity]="menuOpen ? '1' : '0'"
               >
                 {{ link.label | translate }}
-                <svg class="h-3.5 w-3.5 text-[color:var(--muted2)]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <svg
+                  class="h-3.5 w-3.5 text-[color:var(--muted2)]"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                >
                   <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
                 </svg>
               </a>
@@ -156,7 +216,13 @@
                 [style.opacity]="menuOpen ? '1' : '0'"
               >
                 {{ link.label | translate }}
-                <svg class="h-3.5 w-3.5 text-[color:var(--muted2)]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <svg
+                  class="h-3.5 w-3.5 text-[color:var(--muted2)]"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                >
                   <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
                 </svg>
               </a>
@@ -168,32 +234,38 @@
             <!-- mobile language toggle -->
             <button
               (click)="langService.toggle()"
-              class="flex items-center gap-1.5 rounded-xl px-3 py-2.5 text-sm font-medium
-                     text-[color:var(--lavender)] bg-[var(--a1-soft)] ring-1 ring-[var(--a1-ring)]
-                     transition duration-200 hover:bg-[var(--a1-soft2)] hover:text-white"
+              class="flex items-center gap-1.5 rounded-xl px-3 py-2.5 text-sm font-medium text-[color:var(--lavender)] bg-[var(--a1-soft)] ring-1 ring-[var(--a1-ring)] transition duration-200 hover:bg-[var(--a1-soft2)] hover:text-white"
               [style.transition-delay]="menuOpen ? navLinks.length * 40 + 'ms' : '0ms'"
               [style.transform]="menuOpen ? 'translateY(0)' : 'translateY(-6px)'"
               [style.opacity]="menuOpen ? '1' : '0'"
             >
               @if (langService.lang() === 'en') {
                 <!-- Mexican flag -->
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21 15" class="h-4 w-[22px] rounded-[2px] shrink-0">
-                  <rect width="7" height="15" fill="#006847"/>
-                  <rect x="7" width="7" height="15" fill="#FFFFFF"/>
-                  <rect x="14" width="7" height="15" fill="#CE1126"/>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 21 15"
+                  class="h-4 w-[22px] rounded-[2px] shrink-0"
+                >
+                  <rect width="7" height="15" fill="#006847" />
+                  <rect x="7" width="7" height="15" fill="#FFFFFF" />
+                  <rect x="14" width="7" height="15" fill="#CE1126" />
                 </svg>
                 <span>ES</span>
               } @else {
                 <!-- US flag -->
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21 15" class="h-4 w-[22px] rounded-[2px] shrink-0">
-                  <rect width="21" height="15" fill="#B22234"/>
-                  <rect y="1.15" width="21" height="1.15" fill="white"/>
-                  <rect y="3.46" width="21" height="1.15" fill="white"/>
-                  <rect y="5.77" width="21" height="1.15" fill="white"/>
-                  <rect y="8.08" width="21" height="1.15" fill="white"/>
-                  <rect y="10.38" width="21" height="1.15" fill="white"/>
-                  <rect y="12.69" width="21" height="1.15" fill="white"/>
-                  <rect width="9" height="8.08" fill="#3C3B6E"/>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 21 15"
+                  class="h-4 w-[22px] rounded-[2px] shrink-0"
+                >
+                  <rect width="21" height="15" fill="#B22234" />
+                  <rect y="1.15" width="21" height="1.15" fill="white" />
+                  <rect y="3.46" width="21" height="1.15" fill="white" />
+                  <rect y="5.77" width="21" height="1.15" fill="white" />
+                  <rect y="8.08" width="21" height="1.15" fill="white" />
+                  <rect y="10.38" width="21" height="1.15" fill="white" />
+                  <rect y="12.69" width="21" height="1.15" fill="white" />
+                  <rect width="9" height="8.08" fill="#3C3B6E" />
                 </svg>
                 <span>EN</span>
               }
@@ -204,7 +276,14 @@
               href="javascript:void(0)"
               (click)="navigateToSection('contact'); closeMenu()"
               class="flex flex-1 items-center justify-center rounded-xl px-5 py-2.5 text-sm font-medium text-white transition duration-300"
-              style="background: linear-gradient(135deg, rgba(109,40,217,0.75), rgba(79,70,229,0.75)); box-shadow: 0 0 0 1px rgba(139,92,246,0.30);"
+              style="
+                background: linear-gradient(
+                  135deg,
+                  rgba(109, 40, 217, 0.75),
+                  rgba(79, 70, 229, 0.75)
+                );
+                box-shadow: 0 0 0 1px rgba(139, 92, 246, 0.3);
+              "
               [style.transition-delay]="menuOpen ? navLinks.length * 40 + 'ms' : '0ms'"
               [style.transform]="menuOpen ? 'translateY(0)' : 'translateY(-6px)'"
               [style.opacity]="menuOpen ? '1' : '0'"
