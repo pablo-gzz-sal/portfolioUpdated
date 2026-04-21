@@ -54,15 +54,30 @@
         <button
           (click)="langService.toggle()"
           class="hidden sm:inline-flex items-center gap-1.5 rounded-xl px-2.5 py-1.5 text-xs font-medium
-                 text-[color:var(--muted2)] bg-[var(--surface)] ring-1 ring-[var(--border)]
-                 transition duration-200 hover:text-[color:var(--text)] hover:bg-[var(--surface2)] hover:ring-[var(--border2)]"
+                 text-[color:var(--lavender)] bg-[var(--a1-soft)] ring-1 ring-[var(--a1-ring)]
+                 transition duration-200 hover:bg-[var(--a1-soft2)] hover:ring-[var(--a1-ring2)] hover:text-white"
           [attr.aria-label]="langService.lang() === 'en' ? 'Switch to Spanish' : 'Switch to English'"
         >
           @if (langService.lang() === 'en') {
-            <span class="text-base leading-none">🇲🇽</span>
+            <!-- Mexican flag -->
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21 15" class="h-3.5 w-5 rounded-[2px] shrink-0">
+              <rect width="7" height="15" fill="#006847"/>
+              <rect x="7" width="7" height="15" fill="#FFFFFF"/>
+              <rect x="14" width="7" height="15" fill="#CE1126"/>
+            </svg>
             <span>ES</span>
           } @else {
-            <span class="text-base leading-none">🇺🇸</span>
+            <!-- US flag -->
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21 15" class="h-3.5 w-5 rounded-[2px] shrink-0">
+              <rect width="21" height="15" fill="#B22234"/>
+              <rect y="1.15" width="21" height="1.15" fill="white"/>
+              <rect y="3.46" width="21" height="1.15" fill="white"/>
+              <rect y="5.77" width="21" height="1.15" fill="white"/>
+              <rect y="8.08" width="21" height="1.15" fill="white"/>
+              <rect y="10.38" width="21" height="1.15" fill="white"/>
+              <rect y="12.69" width="21" height="1.15" fill="white"/>
+              <rect width="9" height="8.08" fill="#3C3B6E"/>
+            </svg>
             <span>EN</span>
           }
         </button>
@@ -153,16 +168,33 @@
             <!-- mobile language toggle -->
             <button
               (click)="langService.toggle()"
-              class="flex items-center gap-1.5 rounded-xl px-3 py-2.5 text-sm font-medium text-[color:var(--muted)] ring-1 ring-[var(--border)] bg-[var(--surface)] transition duration-200 hover:text-white hover:bg-[var(--surface2)]"
+              class="flex items-center gap-1.5 rounded-xl px-3 py-2.5 text-sm font-medium
+                     text-[color:var(--lavender)] bg-[var(--a1-soft)] ring-1 ring-[var(--a1-ring)]
+                     transition duration-200 hover:bg-[var(--a1-soft2)] hover:text-white"
               [style.transition-delay]="menuOpen ? navLinks.length * 40 + 'ms' : '0ms'"
               [style.transform]="menuOpen ? 'translateY(0)' : 'translateY(-6px)'"
               [style.opacity]="menuOpen ? '1' : '0'"
             >
               @if (langService.lang() === 'en') {
-                <span class="text-base leading-none">🇲🇽</span>
+                <!-- Mexican flag -->
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21 15" class="h-4 w-[22px] rounded-[2px] shrink-0">
+                  <rect width="7" height="15" fill="#006847"/>
+                  <rect x="7" width="7" height="15" fill="#FFFFFF"/>
+                  <rect x="14" width="7" height="15" fill="#CE1126"/>
+                </svg>
                 <span>ES</span>
               } @else {
-                <span class="text-base leading-none">🇺🇸</span>
+                <!-- US flag -->
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21 15" class="h-4 w-[22px] rounded-[2px] shrink-0">
+                  <rect width="21" height="15" fill="#B22234"/>
+                  <rect y="1.15" width="21" height="1.15" fill="white"/>
+                  <rect y="3.46" width="21" height="1.15" fill="white"/>
+                  <rect y="5.77" width="21" height="1.15" fill="white"/>
+                  <rect y="8.08" width="21" height="1.15" fill="white"/>
+                  <rect y="10.38" width="21" height="1.15" fill="white"/>
+                  <rect y="12.69" width="21" height="1.15" fill="white"/>
+                  <rect width="9" height="8.08" fill="#3C3B6E"/>
+                </svg>
                 <span>EN</span>
               }
             </button>
