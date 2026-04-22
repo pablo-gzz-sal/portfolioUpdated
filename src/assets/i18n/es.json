@@ -199,9 +199,18 @@
       "challenge": "El sistema heredado sufría problemas de rendimiento, generando una mala UX/UI y una experiencia de usuario desarticulada para la clientela de élite.",
       "solution": "Se implementó una API robusta y segura en NestJS y un frontend reactivo en Angular que ofrece retroalimentación instantánea y conexión a la API y Shopify.",
       "feat": {
-        "ds": { "title": "Programación Dinámica", "desc": "Motor de disponibilidad en tiempo real con inteligencia de zona horaria y gestión de turnos de estilistas." },
-        "sv": { "title": "Bóveda Segura", "desc": "Procesamiento de pagos compatible con PCI mediante Shopify con almacenamiento cifrado de perfiles de clientes." },
-        "ie": { "title": "Motor de Análisis", "desc": "Panel de análisis de negocio para la gestión del salón con pronósticos de ingresos y reservas." }
+        "ds": {
+          "title": "Programación Dinámica",
+          "desc": "Motor de disponibilidad en tiempo real con inteligencia de zona horaria y gestión de turnos de estilistas."
+        },
+        "sv": {
+          "title": "Bóveda Segura",
+          "desc": "Procesamiento de pagos compatible con PCI mediante Shopify con almacenamiento cifrado de perfiles de clientes."
+        },
+        "ie": {
+          "title": "Motor de Análisis",
+          "desc": "Panel de análisis de negocio para la gestión del salón con pronósticos de ingresos y reservas."
+        }
       }
     },
     "referral": {
@@ -213,9 +222,18 @@
       "challenge": "El seguimiento manual de leads en hojas de cálculo generaba fricción en el seguimiento, oportunidades perdidas e inconsistencia en la calidad de datos del equipo de ventas.",
       "solution": "Se construyó una aplicación full-stack Angular + Express con un pipeline estructurado en MongoDB, disparadores de email automatizados y un flujo CI/CD que garantiza despliegues sin tiempo de inactividad.",
       "feat": {
-        "lc": { "title": "Captura de Leads", "desc": "Formularios inteligentes con validación y entrada automática al CRM al enviar." },
-        "af": { "title": "Seguimientos Automatizados", "desc": "Secuencias de email basadas en disparadores que mantienen los leads activos sin esfuerzo manual." },
-        "e":  { "title": "Visibilidad", "desc": "SEO y visibilidad con IA para mejorar el alcance de la marca." }
+        "lc": {
+          "title": "Captura de Leads",
+          "desc": "Formularios inteligentes con validación y entrada automática al CRM al enviar."
+        },
+        "af": {
+          "title": "Seguimientos Automatizados",
+          "desc": "Secuencias de email basadas en disparadores que mantienen los leads activos sin esfuerzo manual."
+        },
+        "e": {
+          "title": "Visibilidad",
+          "desc": "SEO y visibilidad con IA para mejorar el alcance de la marca."
+        }
       }
     },
     "video": {
@@ -227,9 +245,18 @@
       "challenge": "El cliente necesitaba una plataforma que pudiera bloquear contenido premium detrás de suscripciones por niveles mientras entregaba video HD sin interrupciones, a escala.",
       "solution": "Se integró BunnyStream para entrega de video respaldada por CDN y Stripe para facturación de suscripciones. Se construyó una UI de administración personalizada para gestionar contenido, usuarios y análisis.",
       "feat": {
-        "vd": { "title": "Entrega de Video", "desc": "Integración CDN de BunnyStream para tiempos de inicio de video inferiores a un segundo globalmente." },
-        "se": { "title": "Motor de Suscripciones", "desc": "Planes por niveles con Stripe, control de acceso automático y renovaciones." },
-        "at": { "title": "Herramientas de Administración", "desc": "Gestión completa de contenido, administración de usuarios y panel de análisis." }
+        "vd": {
+          "title": "Entrega de Video",
+          "desc": "Integración CDN de BunnyStream para tiempos de inicio de video inferiores a un segundo globalmente."
+        },
+        "se": {
+          "title": "Motor de Suscripciones",
+          "desc": "Planes por niveles con Stripe, control de acceso automático y renovaciones."
+        },
+        "at": {
+          "title": "Herramientas de Administración",
+          "desc": "Gestión completa de contenido, administración de usuarios y panel de análisis."
+        }
       }
     },
     "travane": {
@@ -241,10 +268,49 @@
       "challenge": "Crear una presencia digital limpia y confiable para una empresa de logística, con enfoque en identidad de marca, claridad y participación del usuario.",
       "solution": "Se diseñó y desarrolló un frontend responsivo que destaca la marca, comunica los servicios efectivamente y guía a los usuarios hacia acciones de contacto directo.",
       "feat": {
-        "bi": { "title": "Identidad de Marca", "desc": "Diseño visual sólido enfocado en transmitir confianza, fiabilidad y profesionalismo." },
-        "ux": { "title": "Flujo de Usuario Claro", "desc": "Diseño estructurado que guía a los usuarios a través de los servicios y fomenta la participación." },
-        "ct": { "title": "Integración de Contacto", "desc": "Formas simples y directas para que los usuarios se comuniquen e inicien consultas de negocio." },
-        "rd": { "title": "Diseño Responsivo", "desc": "Experiencia optimizada en dispositivos móviles, tablets y escritorio." }
+        "bi": {
+          "title": "Identidad de Marca",
+          "desc": "Diseño visual sólido enfocado en transmitir confianza, fiabilidad y profesionalismo."
+        },
+        "ux": {
+          "title": "Flujo de Usuario Claro",
+          "desc": "Diseño estructurado que guía a los usuarios a través de los servicios y fomenta la participación."
+        },
+        "ct": {
+          "title": "Integración de Contacto",
+          "desc": "Formas simples y directas para que los usuarios se comuniquen e inicien consultas de negocio."
+        },
+        "rd": {
+          "title": "Diseño Responsivo",
+          "desc": "Experiencia optimizada en dispositivos móviles, tablets y escritorio."
+        }
+      }
+    },
+    "kochina": {
+      "title": "La Kochina — Restaurante",
+      "description": "Frontend moderno de restaurante enfocado en identidad de marca y adquisición de clientes.",
+      "highlight": "Experiencia Frontend",
+      "subtitle": "Cocina Mexicana.",
+      "summary": "Una experiencia frontend moderna para presentar la marca La Kochina y proporcionar un canal claro y directo para que los clientes potenciales se pongan en contacto.",
+      "challenge": "Crear una presencia digital limpia y confiable para una empresa de logística, con enfoque en identidad de marca, claridad y participación del usuario.",
+      "solution": "Se diseñó y desarrolló un frontend responsivo que destaca la marca, comunica los servicios efectivamente y guía a los usuarios hacia acciones de contacto directo.",
+      "feat": {
+        "bi": {
+          "title": "Identidad de Marca",
+          "desc": "Diseño visual sólido enfocado en transmitir confianza, fiabilidad y profesionalismo."
+        },
+        "ux": {
+          "title": "Flujo de Usuario Claro",
+          "desc": "Diseño estructurado que guía a los usuarios a través de los servicios y fomenta la participación."
+        },
+        "ct": {
+          "title": "Integración de Contacto",
+          "desc": "Formas simples y directas para que los usuarios se comuniquen e inicien consultas de negocio."
+        },
+        "rd": {
+          "title": "Diseño Responsivo",
+          "desc": "Experiencia optimizada en dispositivos móviles, tablets y escritorio."
+        }
       }
     }
   },

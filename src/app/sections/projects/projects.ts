@@ -55,6 +55,15 @@ export class Projects implements AfterViewInit {
       highlight: 'project.travane.highlight',
       previewImage: '/assets/images/travane.png',
     },
+    {
+      id: 'kochina',
+      title: 'project.kochina.title',
+      description: 'project.kochina.description',
+      tags: ['Angular', 'TypeScript', 'Tailwind CSS'],
+      links: [{ label: 'Live Site', href: 'https://la-kochina.vercel.app/' }],
+      highlight: 'project.kochina.highlight',
+      previewImage: '/assets/images/kochina.png',
+    },
   ];
 
   ngAfterViewInit(): void {

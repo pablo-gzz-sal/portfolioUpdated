@@ -246,6 +246,21 @@
         "ct": { "title": "Contact Integration", "desc": "Simple and direct ways for users to reach out and initiate business inquiries." },
         "rd": { "title": "Responsive Design", "desc": "Optimized experience across mobile, tablet, and desktop devices." }
       }
+    },
+      "kochina": {
+      "title": "La Kochina — Restaurant",
+      "description": "Modern restaurant frontend focused on brand identity and client acquisition.",
+      "highlight": "Frontend Experience",
+      "subtitle": "Mexican Cuisine.",
+      "summary": "A modern frontend experience built to showcase the La Kochina brand and provide a clear, direct channel for potential clients to get in contact.",
+      "challenge": "Creating a clean and trustworthy digital presence for a logistics company, with a focus on brand identity, clarity, and user engagement.",
+      "solution": "Designed and developed a responsive frontend that highlights the brand, communicates services effectively, and guides users toward direct contact actions.",
+      "feat": {
+        "bi": { "title": "Brand Identity", "desc": "Strong visual design focused on conveying trust, reliability, and professionalism." },
+        "ux": { "title": "Clear User Flow", "desc": "Structured layout that guides users through services and encourages engagement." },
+        "ct": { "title": "Contact Integration", "desc": "Simple and direct ways for users to reach out and initiate business inquiries." },
+        "rd": { "title": "Responsive Design", "desc": "Optimized experience across mobile, tablet, and desktop devices." }
+      }
     }
   },
   "footer": {

@@ -133,6 +133,28 @@ export class CaseStudy implements OnInit, AfterViewInit {
       highlight: 'project.travane.highlight',
       description: 'project.travane.description',
     },
+        {
+      id: 'kochina',
+      title: 'La Kochina',
+      subtitle: 'project.kochina.subtitle',
+      year: '2026',
+      tags: ['Frontend', 'Branding', 'Landing Page'],
+      heroImage: '/assets/images/kochina.png',
+      summary: 'project.kochina.summary',
+      stack: ['Angular', 'TypeScript', 'Tailwind CSS'],
+      challenge: 'project.kochina.challenge',
+      solution: 'project.kochina.solution',
+      features: [
+        { icon: 'BI', title: 'project.kochina.feat.bi.title', description: 'project.kochina.feat.bi.desc' },
+        { icon: 'UX', title: 'project.kochina.feat.ux.title', description: 'project.kochina.feat.ux.desc' },
+        { icon: 'CT', title: 'project.kochina.feat.ct.title', description: 'project.kochina.feat.ct.desc' },
+        { icon: 'RD', title: 'project.kochina.feat.rd.title', description: 'project.kochina.feat.rd.desc' },
+      ],
+      screenshots: ['/assets/images/kochina.png', '/assets/images/kochina2.png', '/assets/images/kochina3.png'],
+      links: [{ label: 'Website', href: 'https://la-kochina.vercel.app/' }],
+      highlight: 'project.kochina.highlight',
+      description: 'project.kochina.description',
+    },
   ];
 
   constructor(
