@@ -105,6 +105,21 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+app-root {
+  display: block;
+  min-height: 100vh;
+  opacity: 1;
+  transition: opacity 360ms ease;
+}
+
+html.app-loading app-root {
+  opacity: 0;
+}
+
+html.app-ready app-root {
+  opacity: 1;
+}
+
 h1, h2, h3 {
   font-family: var(--font-display);
   letter-spacing: -0.03em;
@@ -306,5 +321,6 @@ section[id] {
   }
   .shimmer-btn::after { display: none; }
   [style*="aurora-shimmer"] { animation: none !important; }
+  app-root { transition: none; }
 }
 
