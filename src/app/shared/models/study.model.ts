@@ -1,5 +1,5 @@
 export interface CaseStudyFeature {
-  icon: string;        // emoji or SVG string
+  icon: string;
   title: string;
   description: string;
 }
@@ -7,17 +7,20 @@ export interface CaseStudyFeature {
 export interface CaseStudyProject {
   id: string;
   title: string;
-  subtitle: string;           // e.g. "NY Salon"
-  year: string;               // e.g. "2024"
-  tags: string[];             // card tags (Case Study, Full-Stack…)
-  heroImage?: string;         // path to hero bg image, optional
-  summary: string;            // one-liner under hero
-  stack: string[];            // tech used
+  subtitle: string;
+  year: string;
+  tags: string[];
+  heroImage?: string;
+  summary: string;
+  role: string;
+  outcome: string;
+  scope: string;
+  stack: string[];
   challenge: string;
   solution: string;
   features: CaseStudyFeature[];
-  screenshots: string[];      // image paths
+  screenshots: string[];
   links: { label: string; href: string }[];
-  highlight: string;          // badge text on listing card
-  description: string;        // short card description
+  highlight: string;
+  description: string;
 }

@@ -1,9 +1,8 @@
-import { CommonModule, DecimalPipe } from '@angular/common';
+import { CommonModule } from '@angular/common';
 import { AfterViewInit, Component, ElementRef, OnInit } from '@angular/core';
 import { ActivatedRoute, RouterLink } from '@angular/router';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { Header } from '../../layout/header/header';
 import { Footer } from '../../layout/footer/footer';
 import { CaseStudyProject } from '../../shared/models/study.model';
 import { TranslatePipe } from '../../shared/pipes/translate.pipe';
@@ -13,7 +12,7 @@ gsap.registerPlugin(ScrollTrigger);
 @Component({
   selector: 'app-case-study',
   standalone: true,
-  imports: [CommonModule, RouterLink, DecimalPipe, Header, Footer, TranslatePipe],
+  imports: [CommonModule, RouterLink, Footer, TranslatePipe],
   templateUrl: './case-study.html',
   styleUrl: './case-study.css',
 })
@@ -38,6 +37,9 @@ export class CaseStudy implements OnInit, AfterViewInit {
       tags: ['Full-Stack', 'Case Study'],
       heroImage: '/assets/images/joseph.png',
       summary: 'project.josephbattisti.summary',
+      role: 'project.josephbattisti.role',
+      outcome: 'project.josephbattisti.outcome',
+      scope: 'project.josephbattisti.scope',
       stack: ['Angular', 'PostgreSQL', 'Swagger', 'Node.js', 'TypeScript', 'AWS Cloud'],
       challenge: 'project.josephbattisti.challenge',
       solution: 'project.josephbattisti.solution',
@@ -67,6 +69,9 @@ export class CaseStudy implements OnInit, AfterViewInit {
       tags: ['Full-Stack', 'Case Study'],
       heroImage: '/assets/images/bclg.png',
       summary: 'project.referral.summary',
+      role: 'project.referral.role',
+      outcome: 'project.referral.outcome',
+      scope: 'project.referral.scope',
       stack: ['Angular', 'Express', 'MongoDB', 'CI/CD', 'Node.js', 'Docker'],
       challenge: 'project.referral.challenge',
       solution: 'project.referral.solution',
@@ -93,6 +98,9 @@ export class CaseStudy implements OnInit, AfterViewInit {
       tags: ['Content Platform', 'Case Study'],
       heroImage: '/assets/images/esencial.png',
       summary: 'project.video.summary',
+      role: 'project.video.role',
+      outcome: 'project.video.outcome',
+      scope: 'project.video.scope',
       stack: ['Angular', 'Express', 'MongoDB', 'BunnyStream', 'Stripe', 'Node.js'],
       challenge: 'project.video.challenge',
       solution: 'project.video.solution',
@@ -119,6 +127,9 @@ export class CaseStudy implements OnInit, AfterViewInit {
       tags: ['Frontend', 'Branding', 'Landing Page'],
       heroImage: '/assets/images/travane.png',
       summary: 'project.travane.summary',
+      role: 'project.travane.role',
+      outcome: 'project.travane.outcome',
+      scope: 'project.travane.scope',
       stack: ['Angular', 'TypeScript', 'Tailwind CSS'],
       challenge: 'project.travane.challenge',
       solution: 'project.travane.solution',
@@ -141,6 +152,9 @@ export class CaseStudy implements OnInit, AfterViewInit {
       tags: ['Frontend', 'Branding', 'Landing Page'],
       heroImage: '/assets/images/kochina.png',
       summary: 'project.kochina.summary',
+      role: 'project.kochina.role',
+      outcome: 'project.kochina.outcome',
+      scope: 'project.kochina.scope',
       stack: ['Angular', 'TypeScript', 'Tailwind CSS'],
       challenge: 'project.kochina.challenge',
       solution: 'project.kochina.solution',

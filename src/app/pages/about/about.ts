@@ -2,7 +2,6 @@ import { CommonModule } from '@angular/common';
 import { AfterViewInit, Component, ElementRef, OnInit } from '@angular/core';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { Header } from '../../layout/header/header';
 import { Footer } from '../../layout/footer/footer';
 import { TranslatePipe } from '../../shared/pipes/translate.pipe';
 
@@ -30,7 +29,7 @@ type Strength = {
 @Component({
   selector: 'app-about',
   standalone: true,
-  imports: [CommonModule, Header, Footer, TranslatePipe],
+  imports: [CommonModule, Footer, TranslatePipe],
   templateUrl: './about.html',
   styleUrl: './about.css',
 })
@@ -38,37 +37,37 @@ export class About implements OnInit, AfterViewInit {
   constructor(private host: ElementRef<HTMLElement>) {}
 
   stack: StackItem[] = [
-    { label: 'Angular',        tone: 'primary'  },
-    { label: 'React',          tone: 'neutral'  },
-    { label: 'TypeScript',     tone: 'lavender' },
-    { label: 'Node.js',        tone: 'primary'  },
-    { label: 'PostgreSQL',     tone: 'lavender' },
-    { label: 'Docker',         tone: 'neutral'  },
-    { label: 'Tailwind CSS',   tone: 'primary'  },
-    { label: 'AWS',            tone: 'lavender' },
-    { label: 'Swagger/OpenAPI',tone: 'neutral'  },
+    { label: 'Angular', tone: 'primary' },
+    { label: 'React', tone: 'neutral' },
+    { label: 'TypeScript', tone: 'lavender' },
+    { label: 'Node.js', tone: 'primary' },
+    { label: 'PostgreSQL', tone: 'lavender' },
+    { label: 'Docker', tone: 'neutral' },
+    { label: 'Tailwind CSS', tone: 'primary' },
+    { label: 'AWS', tone: 'lavender' },
+    { label: 'Swagger/OpenAPI', tone: 'neutral' },
   ];
 
   strengths: Strength[] = [
-    { icon: '◈', title: 'about.strengths.frontend.title', desc: 'about.strengths.frontend.desc' },
-    { icon: '◈', title: 'about.strengths.backend.title',  desc: 'about.strengths.backend.desc'  },
-    { icon: '◈', title: 'about.strengths.product.title',  desc: 'about.strengths.product.desc'  },
-    { icon: '◈', title: 'about.strengths.delivery.title', desc: 'about.strengths.delivery.desc' },
+    { icon: '01', title: 'about.strengths.frontend.title', desc: 'about.strengths.frontend.desc' },
+    { icon: '02', title: 'about.strengths.backend.title', desc: 'about.strengths.backend.desc' },
+    { icon: '03', title: 'about.strengths.product.title', desc: 'about.strengths.product.desc' },
+    { icon: '04', title: 'about.strengths.delivery.title', desc: 'about.strengths.delivery.desc' },
   ];
 
   timeline: TimelineItem[] = [
     {
-      period:      'about.timeline.item1.period',
-      title:       'about.timeline.item1.title',
+      period: 'about.timeline.item1.period',
+      title: 'about.timeline.item1.title',
       description: 'about.timeline.item1.desc',
-      tone:        'lavender',
-      badge:       'about.timeline.item1.badge',
+      tone: 'lavender',
+      badge: 'about.timeline.item1.badge',
     },
     {
-      period:      'about.timeline.item2.period',
-      title:       'about.timeline.item2.title',
+      period: 'about.timeline.item2.period',
+      title: 'about.timeline.item2.title',
       description: 'about.timeline.item2.desc',
-      tone:        'primary',
+      tone: 'primary',
     },
   ];
 
@@ -78,100 +77,34 @@ export class About implements OnInit, AfterViewInit {
 
   ngAfterViewInit(): void {
     const root = this.host.nativeElement;
-
-    // ── Hero — avatar + text cascade in parallel ──────────────────
-    const badge      = root.querySelector<HTMLElement>('.about-hero-badge');
-    const heroTitle  = root.querySelector<HTMLElement>('.about-hero-title');
-    const heroBody   = root.querySelector<HTMLElement>('.about-hero-body');
-    const heroCtas   = root.querySelector<HTMLElement>('.about-hero-ctas');
+    const intro = root.querySelectorAll<HTMLElement>('.about-hero-badge, .about-hero-title, .about-hero-body, .about-hero-ctas');
     const avatarCard = root.querySelector<HTMLElement>('.about-avatar-card');
     const avatarChip = root.querySelector<HTMLElement>('.about-avatar-chip');
 
-    const textEls = [badge, heroTitle, heroBody, heroCtas].filter(Boolean) as HTMLElement[];
-    if (textEls.length)  gsap.set(textEls,    { opacity: 0, y: 28 });
-    if (avatarCard)      gsap.set(avatarCard,  { opacity: 0, scale: 0.92, y: 20 });
-    if (avatarChip)      gsap.set(avatarChip,  { opacity: 0, y: 18 });
+    if (intro.length) gsap.set(intro, { opacity: 0, y: 28 });
+    if (avatarCard) gsap.set(avatarCard, { opacity: 0, y: 24, scale: 0.96 });
+    if (avatarChip) gsap.set(avatarChip, { opacity: 0, y: 18 });
 
-    const tl = gsap.timeline({ delay: 0.1 });
-    if (avatarCard) tl.to(avatarCard, { opacity: 1, scale: 1, y: 0, duration: 0.9,  ease: 'power3.out' }, 0);
-    if (badge)      tl.to(badge,      { opacity: 1, y: 0,          duration: 0.55, ease: 'power3.out' }, 0.14);
-    if (heroTitle)  tl.to(heroTitle,  { opacity: 1, y: 0,          duration: 0.8,  ease: 'power3.out' }, 0.26);
-    if (heroBody)   tl.to(heroBody,   { opacity: 1, y: 0,          duration: 0.7,  ease: 'power3.out' }, 0.42);
-    if (heroCtas)   tl.to(heroCtas,   { opacity: 1, y: 0,          duration: 0.6,  ease: 'power3.out' }, 0.54);
-    if (avatarChip) tl.to(avatarChip, { opacity: 1, y: 0,          duration: 0.55, ease: 'power3.out' }, 0.72);
+    const tl = gsap.timeline({ delay: 0.08 });
+    if (avatarCard) tl.to(avatarCard, { opacity: 1, y: 0, scale: 1, duration: 0.9, ease: 'power3.out' }, 0);
+    if (intro.length) tl.to(intro, { opacity: 1, y: 0, duration: 0.68, ease: 'power3.out', stagger: 0.09 }, 0.12);
+    if (avatarChip) tl.to(avatarChip, { opacity: 1, y: 0, duration: 0.58, ease: 'power3.out' }, 0.58);
 
-    // ── Vision + Stack — slide in from opposite sides ─────────────
-    const visionCard   = root.querySelector<HTMLElement>('.about-vision-card');
-    const stackCard    = root.querySelector<HTMLElement>('.about-stack-card');
-    const stackSection = root.querySelector<HTMLElement>('.stack-section');
-    if (visionCard) gsap.set(visionCard, { opacity: 0, x: -36 });
-    if (stackCard)  gsap.set(stackCard,  { opacity: 0, x: 36 });
-    if (stackSection) {
-      ScrollTrigger.create({
-        trigger: stackSection,
-        start: 'top 85%',
-        onEnter: () => {
-          if (visionCard) gsap.to(visionCard, { opacity: 1, x: 0, duration: 0.72, ease: 'power3.out' });
-          if (stackCard)  gsap.to(stackCard,  { opacity: 1, x: 0, duration: 0.72, ease: 'power3.out', delay: 0.1 });
-        },
-      });
-    }
+    this.revealOnScroll('.stack-section', '.about-vision-card, .about-stack-card', { y: 28 });
+    this.revealOnScroll('.strengths-section', '.strengths-heading, .strength-card', { y: 28 });
+    this.revealOnScroll('.timeline-section', '.timeline-heading, .timeline-item', { y: 28 });
+    this.revealOnScroll('.about-cta', '.about-cta', { y: 32 });
 
-    // ── Stack badges — spring pop after cards ─────────────────────
     const stackBadges = root.querySelectorAll<HTMLElement>('.stack-badge');
+    const stackSection = root.querySelector<HTMLElement>('.stack-section');
     if (stackBadges.length && stackSection) {
-      gsap.set(stackBadges, { opacity: 0, scale: 0.82 });
+      gsap.set(stackBadges, { opacity: 0, y: 10 });
       ScrollTrigger.create({
         trigger: stackSection,
-        start: 'top 85%',
-        onEnter: () => gsap.to(stackBadges, {
-          opacity: 1, scale: 1, duration: 0.42, ease: 'back.out(1.7)', stagger: 0.04, delay: 0.28,
-        }),
-      });
-    }
-
-    // ── Strengths heading + cards ─────────────────────────────────
-    const strengthsHeading = root.querySelector<HTMLElement>('.strengths-heading');
-    const strengthCards    = root.querySelectorAll<HTMLElement>('.strength-card');
-    const strengthsSection = root.querySelector<HTMLElement>('.strengths-section');
-    if (strengthsHeading)     gsap.set(strengthsHeading, { opacity: 0, y: 20 });
-    if (strengthCards.length) gsap.set(strengthCards,    { opacity: 0, y: 30 });
-    if (strengthsSection) {
-      ScrollTrigger.create({
-        trigger: strengthsSection,
-        start: 'top 85%',
+        start: 'top 82%',
         onEnter: () => {
-          if (strengthsHeading)     gsap.to(strengthsHeading, { opacity: 1, y: 0, duration: 0.6, ease: 'power3.out' });
-          if (strengthCards.length) gsap.to(strengthCards,    { opacity: 1, y: 0, duration: 0.65, ease: 'power3.out', stagger: 0.1, delay: 0.18 });
+          gsap.to(stackBadges, { opacity: 1, y: 0, duration: 0.36, ease: 'power3.out', stagger: 0.035, delay: 0.24 });
         },
-      });
-    }
-
-    // ── Timeline heading + items ──────────────────────────────────
-    const timelineHeading = root.querySelector<HTMLElement>('.timeline-heading');
-    const timelineItems   = root.querySelectorAll<HTMLElement>('.timeline-item');
-    const timelineSection = root.querySelector<HTMLElement>('.timeline-section');
-    if (timelineHeading)       gsap.set(timelineHeading, { opacity: 0, y: 20 });
-    if (timelineItems.length)  gsap.set(timelineItems,   { opacity: 0, x: -32 });
-    if (timelineSection) {
-      ScrollTrigger.create({
-        trigger: timelineSection,
-        start: 'top 85%',
-        onEnter: () => {
-          if (timelineHeading)       gsap.to(timelineHeading, { opacity: 1, y: 0, duration: 0.6, ease: 'power3.out' });
-          if (timelineItems.length)  gsap.to(timelineItems,   { opacity: 1, x: 0, duration: 0.72, ease: 'power3.out', stagger: 0.18, delay: 0.22 });
-        },
-      });
-    }
-
-    // ── Bottom CTA ────────────────────────────────────────────────
-    const cta = root.querySelector<HTMLElement>('.about-cta');
-    if (cta) {
-      gsap.set(cta, { opacity: 0, y: 36 });
-      ScrollTrigger.create({
-        trigger: cta,
-        start: 'top 90%',
-        onEnter: () => gsap.to(cta, { opacity: 1, y: 0, duration: 0.75, ease: 'power3.out' }),
       });
     }
   }
@@ -179,22 +112,39 @@ export class About implements OnInit, AfterViewInit {
   toneClass(tone: StackItem['tone']): string {
     switch (tone) {
       case 'primary':
-        return 'text-[color:var(--lavender)] ring-[var(--a1-ring)] bg-[var(--a1-soft)]';
+        return 'border-[var(--line-warm)] text-[color:var(--accent-2)] bg-[var(--accent-soft)]';
       case 'lavender':
-        return 'text-[color:var(--lavender)] ring-[rgba(180,140,255,0.2)] bg-[rgba(180,140,255,0.08)]';
+        return 'border-[var(--line-strong)] text-[color:var(--text-soft)] bg-[var(--surface)]';
       default:
-        return 'text-[color:var(--muted)] ring-[var(--border)] bg-[var(--surface)]';
+        return 'border-[var(--line)] text-[color:var(--muted)] bg-[rgba(239,234,222,0.035)]';
     }
   }
 
   dotClass(tone: TimelineItem['tone']): string {
     switch (tone) {
       case 'primary':
-        return 'bg-[var(--a1)] shadow-[0_0_16px_var(--a1-glow)]';
+        return 'bg-[var(--accent)]';
       case 'lavender':
-        return 'bg-[color:var(--lavender)] shadow-[0_0_16px_rgba(180,140,255,0.35)]';
+        return 'bg-[var(--text-soft)]';
       default:
-        return 'bg-[rgba(255,255,255,0.3)] shadow-[0_0_12px_rgba(255,255,255,0.15)]';
+        return 'bg-[var(--muted)]';
     }
+  }
+
+  private revealOnScroll(triggerSelector: string, itemSelector: string, from: gsap.TweenVars): void {
+    const root = this.host.nativeElement;
+    const trigger = root.querySelector<HTMLElement>(triggerSelector);
+    const items = root.querySelectorAll<HTMLElement>(itemSelector);
+
+    if (!trigger || !items.length) return;
+
+    gsap.set(items, { opacity: 0, ...from });
+    ScrollTrigger.create({
+      trigger,
+      start: 'top 84%',
+      onEnter: () => {
+        gsap.to(items, { opacity: 1, y: 0, x: 0, duration: 0.66, ease: 'power3.out', stagger: 0.08 });
+      },
+    });
   }
 }

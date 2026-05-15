@@ -1,184 +1,70 @@
-<div
-  class="isolate relative min-h-dvh overflow-hidden text-[color:var(--text)] selection:bg-white selection:text-black"
->
-  <!-- ── Aurora mesh — inset-0 blobs, full-page coverage ─────── -->
-  <!-- orb 1: violet, top-left -->
-  <div
-    class="pointer-events-none absolute inset-0 -z-10"
-    style="background:radial-gradient(ellipse 65% 45% at -5% 5%, rgba(109,40,217,0.42), transparent 65%);
-           animation:aurora-shimmer-1 18s ease-in-out infinite;"
-  ></div>
-  <!-- orb 2: fuchsia, top-right -->
-  <div
-    class="pointer-events-none absolute inset-0 -z-10"
-    style="background:radial-gradient(ellipse 55% 40% at 105% 8%, rgba(232,121,249,0.30), transparent 65%);
-           animation:aurora-shimmer-2 22s ease-in-out infinite;animation-delay:-7s;"
-  ></div>
-  <!-- orb 3: indigo, mid-right -->
-  <div
-    class="pointer-events-none absolute inset-0 -z-10"
-    style="background:radial-gradient(ellipse 50% 35% at 108% 52%, rgba(129,140,248,0.26), transparent 65%);
-           animation:aurora-shimmer-3 26s ease-in-out infinite;animation-delay:-12s;"
-  ></div>
-  <!-- orb 4: violet, mid-left -->
-  <div
-    class="pointer-events-none absolute inset-0 -z-10"
-    style="background:radial-gradient(ellipse 55% 35% at -8% 48%, rgba(109,40,217,0.24), transparent 65%);
-           animation:aurora-shimmer-4 20s ease-in-out infinite;animation-delay:-4s;"
-  ></div>
-  <!-- orb 5: fuchsia, lower-centre -->
-  <div
-    class="pointer-events-none absolute inset-0 -z-10"
-    style="background:radial-gradient(ellipse 60% 35% at 45% 105%, rgba(232,121,249,0.22), transparent 65%);
-           animation:aurora-shimmer-5 24s ease-in-out infinite;animation-delay:-9s;"
-  ></div>
-  <!-- orb 6: indigo, bottom-right -->
-  <div
-    class="pointer-events-none absolute inset-0 -z-10"
-    style="background:radial-gradient(ellipse 50% 30% at 105% 95%, rgba(79,70,229,0.28), transparent 65%);
-           animation:aurora-shimmer-6 28s ease-in-out infinite;animation-delay:-15s;"
-  ></div>
+<div class="site-shell">
+  <main class="page-wrap pb-24 pt-32 sm:pt-40">
+    <section class="about-hero premium-panel p-2 sm:p-3">
+      <div class="relative overflow-hidden rounded-[calc(clamp(1.5rem,3vw,2.25rem)-0.45rem)] border border-[rgba(238,233,220,0.07)] bg-[rgba(7,8,8,0.32)] p-4 sm:p-5 lg:p-6">
+        <div class="pointer-events-none absolute -right-16 -top-16 h-56 w-56 rounded-full border border-[rgba(126,188,214,0.16)]"></div>
+        <div class="pointer-events-none absolute bottom-8 right-12 h-20 w-20 rounded-full border border-[rgba(238,233,220,0.08)]"></div>
 
-  <main class="mx-auto w-full max-w-6xl px-4 pb-32 pt-32 sm:px-6 lg:px-8 sm:pt-40">
-    <!-- ── HERO ─────────────────────────────────────────────── -->
-    <section class="grid items-start gap-10 pb-16 pt-4 md:grid-cols-2">
-      <!-- left: text -->
-      <div class="about-hero order-2 md:order-1 flex flex-col justify-center">
-        <!-- available badge -->
-        <div
-          class="about-hero-badge inline-flex w-fit items-center gap-2 rounded-full border border-[var(--border)] bg-[var(--surface)] px-3 py-1 text-[11px] uppercase tracking-[0.22em] text-[color:var(--muted2)]"
-        >
-          <span class="relative flex h-2 w-2">
-            <span
-              class="absolute inline-flex h-full w-full animate-ping rounded-full bg-[var(--a1)] opacity-60"
-            ></span>
-            <span class="relative inline-flex h-2 w-2 rounded-full bg-[var(--a1)]"></span>
-          </span>
-          {{ 'about.available' | translate }}
-        </div>
-
-        <h1
-          class="about-hero-title mt-5 text-4xl font-bold leading-[1.08] tracking-tight sm:text-5xl lg:text-[4.5rem]"
-        >
-          {{ 'about.heroTitle.line1' | translate }}<br />
-          <span class="text-[color:var(--a3)]">{{ 'about.heroTitle.line2' | translate }}</span><br />
-          {{ 'about.heroTitle.line3' | translate }}
-        </h1>
-
-        <p class="about-hero-body mt-5 max-w-md text-base leading-7 text-[color:var(--muted)] sm:text-lg">
-          {{ 'about.heroSubtext' | translate }}
-        </p>
-
-        <div class="about-hero-ctas mt-7 flex flex-wrap gap-2.5">
-          <a
-            href="mailto:pablo.gzz.sal@gmail.com"
-            class="rounded-full px-5 py-2.5 text-sm font-medium text-white bg-[var(--a1-soft)] ring-1 ring-[var(--a1-ring)] transition duration-300 hover:bg-[rgba(124,58,237,0.28)] hover:shadow-[0_0_18px_var(--a1-glow)]"
-          >
-            {{ 'about.emailMe' | translate }}
-          </a>
-          <a
-            href="https://www.linkedin.com/in/pablo-gonzalez-salcido-bb1a491a9/?locale=en_US"
-            target="_blank"
-            rel="noreferrer"
-            class="inline-flex items-center gap-2 rounded-full border border-[var(--border)] bg-[var(--surface)] px-5 py-2.5 text-sm font-medium text-[color:var(--muted)] transition duration-300 hover:text-white hover:bg-[var(--surface2)]"
-          >
-            LinkedIn
-          </a>
-          <a
-            href="https://github.com/pablo-gzz-sal"
-            target="_blank"
-            rel="noreferrer"
-            class="inline-flex items-center gap-2 rounded-full border border-[var(--border)] bg-[var(--surface)] px-5 py-2.5 text-sm font-medium text-[color:var(--muted)] transition duration-300 hover:text-white hover:bg-[var(--surface2)]"
-          >
-            GitHub
-          </a>
-        </div>
-      </div>
-
-      <!-- right: photo card -->
-      <div class="about-avatar order-1 md:order-2 flex justify-center md:justify-end">
-        <div class="relative w-full max-w-[360px]">
-          <!-- glow halo -->
-          <div
-            class="absolute -inset-4 rounded-[2rem] blur-3xl bg-[radial-gradient(circle,rgba(124,58,237,0.25),transparent_70%)]"
-          ></div>
-
-          <!-- card frame -->
-          <div
-            class="about-avatar-card relative rounded-[1.75rem] border border-[var(--border)] bg-[var(--surface)] p-2.5 backdrop-blur-xl"
-          >
-            <div
-              class="aspect-[4/4.6] overflow-hidden rounded-[1.3rem] bg-[linear-gradient(160deg,rgba(255,255,255,0.12),rgba(255,255,255,0.03))]"
-            >
-              <img
-                src="/assets/images/me.jpeg"
-                alt="Pablo Salcido"
-                class="h-full w-full object-cover"
-              />
-            </div>
-
-            <!-- floating philosophy chip -->
-            <div
-              class="about-avatar-chip absolute -bottom-5 left-4 right-4 max-w-[17rem] rounded-2xl border border-[var(--border)] bg-[rgba(8,6,15,0.82)] p-4 backdrop-blur-xl"
-            >
-              <p class="text-[10px] uppercase tracking-[0.22em] text-[color:var(--muted2)]">
-                {{ 'about.philosophy' | translate }}
+        <div class="relative grid gap-8 lg:grid-cols-[18rem_1fr] lg:items-stretch">
+          <aside class="about-avatar-card relative overflow-hidden rounded-[1.35rem] border border-[rgba(238,233,220,0.1)] bg-[linear-gradient(180deg,rgba(238,233,220,0.06),rgba(238,233,220,0.02))] p-2 shadow-[inset_0_1px_0_rgba(238,251,255,0.1)]">
+            <img src="/assets/images/me.jpeg" alt="Pablo Salcido" class="aspect-[4/5] h-full w-full rounded-[0.95rem] object-cover grayscale-[12%]" />
+            <div class="absolute bottom-4 left-4 right-4 rounded-2xl border border-[rgba(126,188,214,0.18)] bg-[rgba(11,11,10,0.76)] p-4 shadow-[0_18px_42px_rgba(0,0,0,0.32)] backdrop-blur-md">
+              <p class="font-[family-name:var(--font-mono)] text-[10px] uppercase tracking-[0.16em] text-[color:var(--accent-2)]">
+                {{ 'about.available' | translate }}
               </p>
-              <p class="mt-1.5 text-sm leading-6 text-[color:var(--muted)]">
+              <p class="mt-2 text-sm leading-5 text-[color:var(--text-soft)]">{{ 'about.location' | translate }}</p>
+            </div>
+          </aside>
+
+          <div class="grid content-between gap-10">
+          <div>
+            <div class="about-hero-badge eyebrow">{{ 'about.philosophy' | translate }}</div>
+            <h1 class="about-hero-title mt-7 max-w-4xl text-balance text-[clamp(2.8rem,6.4vw,6rem)] font-semibold leading-[0.94]">
+              {{ 'about.heroTitle.line1' | translate }}
+              <span class="block text-[color:var(--accent-2)]">{{ 'about.heroTitle.line2' | translate }}</span>
+              <span class="block">{{ 'about.heroTitle.line3' | translate }}</span>
+            </h1>
+            <p class="about-hero-body mt-7 max-w-2xl text-lg leading-8 text-[color:var(--text-soft)]">
+              {{ 'about.heroSubtext' | translate }}
+            </p>
+          </div>
+
+          <div class="grid gap-4 lg:grid-cols-[1fr_auto] lg:items-end">
+            <div class="about-avatar-chip border-t border-[var(--line)] pt-5">
+              <p class="max-w-2xl text-base leading-7 text-[color:var(--muted)]">
                 {{ 'about.philosophyQuote' | translate }}
               </p>
             </div>
+            <div class="about-hero-ctas flex flex-wrap gap-3 lg:justify-end">
+              <a href="mailto:pablo.gzz.sal@gmail.com" class="btn-primary">{{ 'about.emailMe' | translate }}</a>
+              <a href="https://www.linkedin.com/in/pablo-gonzalez-salcido-bb1a491a9/?locale=en_US" target="_blank" rel="noreferrer" class="btn-secondary">LinkedIn</a>
+              <a href="https://github.com/pablo-gzz-sal" target="_blank" rel="noreferrer" class="btn-secondary">GitHub</a>
+            </div>
           </div>
         </div>
       </div>
+      </div>
     </section>
 
-    <!-- ── VISION + STACK ────────────────────────────────────── -->
-    <section class="stack-section mt-10 grid gap-3 md:grid-cols-[.9fr_1.1fr]">
-      <!-- vision card -->
-      <article
-        class="about-vision-card relative overflow-hidden rounded-[1.75rem] border border-[var(--border)] bg-[var(--surface)] p-6 sm:p-8"
-      >
-        <div
-          class="pointer-events-none absolute -top-12 -left-12 h-40 w-40 rounded-full blur-3xl bg-[radial-gradient(circle,rgba(124,58,237,0.15),transparent_70%)]"
-        ></div>
-
-        <p class="text-xs uppercase tracking-[0.24em] text-[color:var(--muted2)]">{{ 'about.vision.label' | translate }}</p>
-
-        <p class="mt-5 text-2xl leading-snug text-[color:var(--muted)] sm:text-3xl">
-          <span class="font-semibold text-[color:var(--text)]">{{ 'about.vision.strong' | translate }}</span>
+    <section class="stack-section section-space grid gap-4 lg:grid-cols-[.9fr_1.1fr]">
+      <article class="about-vision-card hardware-card p-6 sm:p-8">
+        <p class="section-kicker">{{ 'about.vision.label' | translate }}</p>
+        <p class="mt-8 text-balance text-3xl font-semibold leading-tight sm:text-4xl">
+          {{ 'about.vision.strong' | translate }}
           {{ 'about.vision.meets' | translate }}
-          <span class="font-semibold text-[color:var(--lavender)]">{{ 'about.vision.accent' | translate }}</span>
+          <span class="text-[color:var(--accent-2)]">{{ 'about.vision.accent' | translate }}</span>
         </p>
-
-        <p class="mt-5 text-sm leading-7 text-[color:var(--muted)]">
-          {{ 'about.vision.body1' | translate }}<br />
-          {{ 'about.vision.body2' | translate }}
+        <p class="mt-6 text-base leading-8 text-[color:var(--muted)]">
+          {{ 'about.vision.body1' | translate }} {{ 'about.vision.body2' | translate }}
         </p>
       </article>
 
-      <!-- stack card -->
-      <article
-        class="about-stack-card relative overflow-hidden rounded-[1.75rem] border border-[var(--border)] bg-[var(--surface)] p-6 sm:p-8"
-      >
-        <div class="flex items-end justify-between gap-4">
-          <div>
-            <p class="text-xs uppercase tracking-[0.24em] text-[color:var(--muted2)]">{{ 'about.stack.label' | translate }}</p>
-            <h2 class="mt-3 text-2xl font-semibold tracking-tight">{{ 'about.stack.headline' | translate }}</h2>
-          </div>
-          <p
-            class="hidden text-[11px] uppercase tracking-[0.22em] text-[color:var(--muted2)] sm:block"
-          >
-            {{ 'about.stack.cloud' | translate }}
-          </p>
-        </div>
-
-        <div class="mt-6 flex flex-wrap gap-2">
+      <article class="about-stack-card hardware-card p-6 sm:p-8">
+        <p class="section-kicker">{{ 'about.stack.label' | translate }}</p>
+        <h2 class="mt-5 text-3xl font-semibold tracking-tight">{{ 'about.stack.headline' | translate }}</h2>
+        <div class="mt-7 flex flex-wrap gap-2">
           @for (item of stack; track item.label) {
-            <span
-              class="stack-badge rounded-full px-4 py-2 text-sm font-medium ring-1 transition duration-200 cursor-default"
-              [ngClass]="toneClass(item.tone)"
-            >
+            <span class="stack-badge rounded-full border px-4 py-2 text-sm font-medium" [ngClass]="toneClass(item.tone)">
               {{ item.label }}
             </span>
           }
@@ -186,182 +72,72 @@
       </article>
     </section>
 
-    <!-- ── WHAT I BRING ──────────────────────────────────────── -->
-    <section class="strengths-section mt-8">
-      <div
-        class="relative overflow-hidden rounded-[1.75rem] border border-[var(--border)] bg-[var(--surface)] p-6 sm:p-8"
-      >
-        <div
-          class="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_50%_60%_at_100%_0%,rgba(124,58,237,0.08),transparent_65%)]"
-        ></div>
+    <section class="strengths-section">
+      <div class="strengths-heading">
+        <p class="section-kicker">{{ 'about.strengths.label' | translate }}</p>
+        <h2 class="mt-5 text-balance text-4xl font-semibold leading-tight sm:text-5xl">
+          {{ 'about.strengths.headline' | translate }}
+        </h2>
+      </div>
 
-        <div class="relative">
-          <div class="strengths-heading">
-            <p class="text-xs uppercase tracking-[0.24em] text-[color:var(--muted2)]">{{ 'about.strengths.label' | translate }}</p>
-            <h2 class="mt-3 text-2xl font-bold tracking-tight sm:text-3xl">
-              {{ 'about.strengths.headline' | translate }}
-            </h2>
-          </div>
-
-          <div class="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
-            @for (card of strengths; track card.title) {
-              <div
-                class="strength-card group rounded-2xl border border-[var(--border)] bg-[rgba(0,0,0,0.2)] p-5 transition duration-300 hover:border-[var(--a1-ring)] hover:bg-[var(--a1-soft)]"
-              >
-                <div
-                  class="mb-3 grid h-8 w-8 place-items-center rounded-lg bg-[var(--a1-soft)] ring-1 ring-[var(--a1-ring)]"
-                >
-                  <span class="text-base" [innerHTML]="card.icon"></span>
-                </div>
-                <h3 class="text-sm font-semibold text-[color:var(--text)]">{{ card.title | translate }}</h3>
-                <p class="mt-2 text-sm leading-6 text-[color:var(--muted2)]">{{ card.desc | translate }}</p>
-              </div>
-            }
-          </div>
-        </div>
+      <div class="mt-10 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+        @for (card of strengths; track card.title) {
+          <article class="strength-card hardware-card p-5">
+            <p class="font-[family-name:var(--font-mono)] text-[11px] uppercase tracking-[0.14em] text-[color:var(--accent-2)]">
+              {{ card.icon }}
+            </p>
+            <h3 class="mt-6 text-lg font-semibold">{{ card.title | translate }}</h3>
+            <p class="mt-3 text-sm leading-6 text-[color:var(--muted)]">{{ card.desc | translate }}</p>
+          </article>
+        }
       </div>
     </section>
 
-    <!-- ── TIMELINE ──────────────────────────────────────────── -->
-    <section class="timeline-section pt-20 sm:pt-28">
+    <section class="timeline-section section-space">
       <div class="timeline-heading">
-        <p class="text-xs uppercase tracking-[0.24em] text-[color:var(--muted2)]">
-          {{ 'about.timeline.eyebrow' | translate }}
-        </p>
-        <h2 class="mt-3 text-3xl font-bold tracking-tight sm:text-4xl">{{ 'about.timeline.headline' | translate }}</h2>
+        <p class="section-kicker">{{ 'about.timeline.eyebrow' | translate }}</p>
+        <h2 class="mt-5 text-4xl font-semibold tracking-tight sm:text-5xl">{{ 'about.timeline.headline' | translate }}</h2>
       </div>
 
-      <div class="relative mt-10 pl-7 sm:pl-9">
-        <!-- vertical line -->
-        <div
-          class="absolute left-[10px] top-2 h-[calc(100%-1rem)] w-px sm:left-[13px] bg-[linear-gradient(180deg,var(--a1-ring),rgba(124,58,237,0.08)_90%,transparent)]"
-        ></div>
-
-        <div class="space-y-4">
-          @for (item of timeline; track item.title) {
-            <article
-              class="timeline-item group relative overflow-hidden rounded-[1.5rem] border border-[var(--border)] bg-[var(--surface)] p-5 transition duration-300 hover:border-[var(--a1-ring)] hover:bg-[var(--surface2)] sm:p-6"
-            >
-              <!-- dot -->
-              <span
-                class="absolute -left-[2.05rem] top-6 flex h-5 w-5 items-center justify-center rounded-full border-4 border-[color:var(--bg)] sm:-left-[2.35rem]"
-                [ngClass]="dotClass(item.tone)"
-              ></span>
-
-              <!-- corner glow -->
-              <div
-                class="pointer-events-none absolute -top-8 -right-8 h-28 w-28 rounded-full blur-2xl opacity-0 transition duration-500 group-hover:opacity-100 bg-[radial-gradient(circle,rgba(124,58,237,0.18),transparent_65%)]"
-              ></div>
-
-              <div class="sm:flex sm:items-start sm:justify-between sm:gap-6">
-                <div class="flex-1">
-                  <p class="text-xs uppercase tracking-[0.2em] text-[color:var(--lavender)]">
-                    {{ item.period | translate }}
-                  </p>
-                  <h3 class="mt-2 text-xl font-semibold tracking-tight text-[color:var(--text)]">
-                    {{ item.title | translate }}
-                  </h3>
-                  <p class="mt-2 max-w-2xl text-sm leading-7 text-[color:var(--muted)]">
-                    {{ item.description | translate }}
-                  </p>
-                </div>
-
-                @if (item.badge) {
-                  <span
-                    class="mt-3 inline-flex shrink-0 items-center gap-2 rounded-full px-3 py-1 text-xs bg-[var(--a1-soft)] ring-1 ring-[var(--a1-ring)] text-[color:var(--lavender)] sm:mt-0"
-                  >
-                    <span class="h-1.5 w-1.5 rounded-full bg-[color:var(--lavender)]"></span>
-                    {{ item.badge | translate }}
-                  </span>
-                }
-              </div>
-            </article>
-          }
-        </div>
+      <div class="mt-10 grid gap-4">
+        @for (item of timeline; track item.title) {
+          <article class="timeline-item hardware-card grid gap-4 p-6 md:grid-cols-[14rem_1fr_auto] md:items-start">
+            <p class="font-[family-name:var(--font-mono)] text-xs uppercase tracking-[0.14em] text-[color:var(--accent-2)]">
+              {{ item.period | translate }}
+            </p>
+            <div>
+              <h3 class="text-xl font-semibold tracking-tight">{{ item.title | translate }}</h3>
+              <p class="mt-3 max-w-3xl text-sm leading-7 text-[color:var(--muted)]">{{ item.description | translate }}</p>
+            </div>
+            @if (item.badge) {
+              <span class="rounded-full border border-[var(--line-warm)] px-3 py-1 text-xs text-[color:var(--accent-2)]">
+                {{ item.badge | translate }}
+              </span>
+            }
+          </article>
+        }
       </div>
     </section>
 
-    <!-- ── BOTTOM CTA ────────────────────────────────────────── -->
-    <section class="about-cta pt-20 sm:pt-28">
-      <div
-        class="relative overflow-hidden rounded-[2rem] border border-[var(--border)] bg-[var(--surface)] p-8 sm:p-10"
-      >
-        <div
-          class="pointer-events-none absolute inset-0 bg-[conic-gradient(from_200deg_at_25%_90%,rgba(124,58,237,0.25),transparent_45%,rgba(124,58,237,0.1),transparent_70%)]"
-        ></div>
-
-        <div class="relative flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between">
-          <div class="max-w-2xl">
-            <p
-              class="inline-flex items-center gap-2 text-xs uppercase tracking-widest text-[color:var(--muted2)]"
-            >
-              <span class="animate-shimmer-x h-px w-6 bg-[rgba(180,140,255,0.7)]"></span>
-              {{ 'about.cta.eyebrow' | translate }}
-            </p>
-            <h2 class="mt-3 text-3xl font-bold leading-tight tracking-tight sm:text-4xl">
-              {{ 'about.cta.headline' | translate }}
-              <span class="text-[color:var(--lavender)]">{{ 'about.cta.headlineAccent' | translate }}</span>
-            </h2>
-            <p class="mt-3 text-sm leading-7 text-[color:var(--muted)]">
-              {{ 'about.cta.subtext' | translate }}
-            </p>
-          </div>
-
-          <div class="flex shrink-0 flex-col gap-2 sm:flex-row lg:flex-col lg:w-44">
-            <a
-              href="mailto:pablo.gzz.sal@gmail.com"
-              class="flex items-center justify-center gap-2.5 rounded-2xl border border-[var(--border)] bg-[rgba(0,0,0,0.25)] px-5 py-3.5 text-sm font-medium text-[color:var(--muted)] transition duration-300 hover:text-white hover:border-[var(--a1-ring)] hover:bg-[var(--a1-soft)]"
-            >
-              <svg
-                class="h-4 w-4 text-[color:var(--lavender)]"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="1.8"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-                />
-              </svg>
-              {{ 'about.cta.email' | translate }}
-            </a>
-            <a
-              href="https://www.linkedin.com/in/pablo-gonzalez-salcido-bb1a491a9/?locale=en_US"
-              target="_blank"
-              rel="noreferrer"
-              class="flex items-center justify-center gap-2.5 rounded-2xl border border-[var(--border)] bg-[rgba(0,0,0,0.25)] px-5 py-3.5 text-sm font-medium text-[color:var(--muted)] transition duration-300 hover:text-white hover:bg-[rgba(255,255,255,0.06)]"
-            >
-              <svg
-                class="h-4 w-4 text-[color:var(--lavender)]"
-                fill="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"
-                />
-              </svg>
-              {{ 'about.cta.linkedin' | translate }}
-            </a>
-            <a
-              href="https://github.com/pablo-gzz-sal"
-              target="_blank"
-              rel="noreferrer"
-              class="flex items-center justify-center gap-2.5 rounded-2xl border border-[var(--border)] bg-[rgba(0,0,0,0.25)] px-5 py-3.5 text-sm font-medium text-[color:var(--muted)] transition duration-300 hover:text-white hover:bg-[rgba(255,255,255,0.06)]"
-            >
-              <svg
-                class="h-4 w-4 text-[color:var(--lavender)]"
-                fill="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.942.359.31.678.921.678 1.856 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
-                />
-              </svg>
-              {{ 'about.cta.github' | translate }}
-            </a>
-          </div>
+    <section class="about-cta">
+      <div class="premium-panel grid gap-8 p-6 sm:p-8 lg:grid-cols-[1fr_auto] lg:items-end lg:p-10">
+        <div class="max-w-3xl">
+          <p class="section-kicker">{{ 'about.cta.eyebrow' | translate }}</p>
+          <h2 class="mt-5 text-balance text-4xl font-semibold leading-tight sm:text-5xl">
+            {{ 'about.cta.headline' | translate }}
+            <span class="text-[color:var(--accent-2)]">{{ 'about.cta.headlineAccent' | translate }}</span>
+          </h2>
+          <p class="mt-4 max-w-xl text-base leading-7 text-[color:var(--muted)]">
+            {{ 'about.cta.subtext' | translate }}
+          </p>
+        </div>
+        <div class="grid gap-2 sm:grid-cols-3 lg:w-52 lg:grid-cols-1">
+          <a href="mailto:pablo.gzz.sal@gmail.com" class="btn-primary group">
+            {{ 'about.cta.email' | translate }}
+            <span class="icon-pill">↗</span>
+          </a>
+          <a href="https://www.linkedin.com/in/pablo-gonzalez-salcido-bb1a491a9/?locale=en_US" target="_blank" rel="noreferrer" class="btn-secondary">{{ 'about.cta.linkedin' | translate }}</a>
+          <a href="https://github.com/pablo-gzz-sal" target="_blank" rel="noreferrer" class="btn-secondary">{{ 'about.cta.github' | translate }}</a>
         </div>
       </div>
     </section>

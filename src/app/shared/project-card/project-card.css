@@ -1,0 +1,23 @@
+.project-media__image {
+  --media-y: 0px;
+  --media-scale: 1;
+  transform: translate3d(0, var(--media-y), 0) scale(var(--media-scale));
+  transform-origin: 50% 12%;
+  transition:
+    transform 700ms var(--ease-out),
+    filter 700ms var(--ease-out);
+  will-change: transform;
+}
+
+.project-shell:hover .project-media__image {
+  --media-scale: 1.035;
+  filter: saturate(1.04) contrast(1.03);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .project-media__image {
+    --media-y: 0px !important;
+    transition: none;
+    will-change: auto;
+  }
+}

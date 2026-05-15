@@ -1,149 +1,47 @@
-<div
-  class="isolate relative min-h-dvh text-[color:var(--text)] selection:bg-white selection:text-black"
->
-  <!-- primary bloom — upper centre, violet, animated -->
-  <div
-    class="animate-bloom-breathe pointer-events-none absolute inset-0 -z-10
-           bg-[radial-gradient(ellipse_70%_55%_at_50%_0%,rgba(109,40,217,0.60),transparent_70%)]"
-    style="--bloom-lo:0.50;--bloom-hi:0.70"
-  ></div>
-
-  <!-- secondary bloom — lower right, deep indigo -->
-  <div
-    class="pointer-events-none absolute inset-0 -z-10
-           bg-[radial-gradient(ellipse_55%_45%_at_90%_85%,rgba(79,70,229,0.38),transparent_65%)]"
-    style="animation:aurora-shimmer-3 20s ease-in-out infinite;animation-delay:-6s;"
-  ></div>
-
-  <!-- tertiary bloom — left mid, violet -->
-  <div
-    class="pointer-events-none absolute inset-0 -z-10
-           bg-[radial-gradient(ellipse_42%_35%_at_2%_52%,rgba(109,40,217,0.28),transparent_70%)]"
-    style="animation:aurora-shimmer-5 24s ease-in-out infinite;animation-delay:-10s;"
-  ></div>
-
-  <!-- quaternary bloom — fuchsia accent top-right -->
-  <div
-    class="pointer-events-none absolute inset-0 -z-10
-           bg-[radial-gradient(ellipse_36%_28%_at_94%_16%,rgba(232,121,249,0.22),transparent_70%)]"
-    style="animation:aurora-shimmer-2 18s ease-in-out infinite;animation-delay:-4s;"
-  ></div>
-
-  <!-- quinary bloom — indigo lower-left -->
-  <div
-    class="pointer-events-none absolute inset-0 -z-10
-           bg-[radial-gradient(ellipse_40%_30%_at_8%_88%,rgba(129,140,248,0.18),transparent_70%)]"
-    style="animation:aurora-shimmer-4 22s ease-in-out infinite;animation-delay:-14s;"
-  ></div>
-
-  <main class="relative mx-auto w-full">
-
+<div class="site-shell">
+  <main>
     <app-hero />
 
-    <!-- trust strip -->
-    <div class="mx-auto max-w-6xl py-8 px-4 text-center sm:px-6 lg:px-8">
-      <p class="text-xs uppercase tracking-widest text-[color:var(--muted3)]">{{ 'landing.workedWith' | translate }}</p>
-      <p class="mt-3 text-sm text-[color:var(--muted2)]">
-        {{ 'landing.clientsList' | translate }}
-      </p>
-    </div>
-
-    <app-projects />
-
-    <app-systems />
-    <app-knowledge />
-
-    <section id="contact" class="mx-auto max-w-6xl pt-16 px-4 sm:px-6 lg:px-8 sm:pt-20">
-      <div
-        class="noise-overlay relative overflow-hidden rounded-[2rem] p-8 sm:p-10"
-        style="background: rgba(255,255,255,0.03); box-shadow: 0 0 0 1px rgba(139,92,246,0.22), 0 0 60px rgba(109,40,217,0.12);"
-      >
-        <!-- iridescent gradient wash -->
-        <div
-          class="pointer-events-none absolute inset-0 bg-[conic-gradient(from_200deg_at_20%_110%,rgba(109,40,217,0.30),rgba(79,70,229,0.15),rgba(232,121,249,0.12),transparent_55%)]"
-        ></div>
-        <!-- top-right fuchsia accent -->
-        <div
-          class="pointer-events-none absolute -top-16 -right-16 h-48 w-48 rounded-full blur-2xl
-                 bg-[radial-gradient(circle,rgba(232,121,249,0.20),transparent_70%)]"
-        ></div>
-
-        <div class="relative flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between">
-          <div class="max-w-2xl">
-            <p
-              class="inline-flex items-center gap-2 text-xs uppercase tracking-widest text-[color:var(--muted2)]"
-            >
-              <span class="animate-shimmer-x h-px w-6 bg-[rgba(180,140,255,0.7)]"></span>
-              {{ 'landing.contact.eyebrow' | translate }}
-            </p>
-            <h2 class="mt-3 text-3xl font-bold leading-tight tracking-tight sm:text-4xl">
-              {{ 'landing.contact.headline' | translate }}
-              <span class="text-[color:var(--lavender)]">{{ 'landing.contact.headlineAccent' | translate }}</span>
-            </h2>
-            <p class="mt-3 text-sm leading-7 text-[color:var(--muted)]">
-              {{ 'landing.contact.subtext' | translate }}
-            </p>
-          </div>
-
-          <div class="flex shrink-0 flex-col gap-2 sm:flex-row lg:flex-col lg:w-44">
-            <a
-              href="mailto:pablo.gzz.sal@gmail.com"
-              class="flex items-center justify-center gap-2.5 rounded-2xl border border-[var(--border)] bg-[rgba(0,0,0,0.25)] px-5 py-3.5 text-sm font-medium text-[color:var(--muted)] transition duration-300 hover:text-white hover:border-[var(--a1-ring)] hover:bg-[var(--a1-soft)]"
-            >
-              <svg
-                class="h-4 w-4 text-[color:var(--lavender)]"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="1.8"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-                />
-              </svg>
-              {{ 'landing.contact.email' | translate }}
-            </a>
-            <a
-              href="https://www.linkedin.com/in/pablo-gonzalez-salcido-bb1a491a9/?locale=en_US"
-              target="_blank"
-              rel="noreferrer"
-              class="flex items-center justify-center gap-2.5 rounded-2xl border border-[var(--border)] bg-[rgba(0,0,0,0.25)] px-5 py-3.5 text-sm font-medium text-[color:var(--muted)] transition duration-300 hover:text-white hover:bg-[rgba(255,255,255,0.06)]"
-            >
-              <svg
-                class="h-4 w-4 text-[color:var(--lavender)]"
-                fill="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"
-                />
-              </svg>
-              {{ 'landing.contact.linkedin' | translate }}
-            </a>
-            <a
-              href="https://github.com/pablo-gzz-sal"
-              target="_blank"
-              rel="noreferrer"
-              class="flex items-center justify-center gap-2.5 rounded-2xl border border-[var(--border)] bg-[rgba(0,0,0,0.25)] px-5 py-3.5 text-sm font-medium text-[color:var(--muted)] transition duration-300 hover:text-white hover:bg-[rgba(255,255,255,0.06)]"
-            >
-              <svg
-                class="h-4 w-4 text-[color:var(--lavender)]"
-                fill="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.942.359.31.678.921.678 1.856 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
-                />
-              </svg>
-              {{ 'landing.contact.github' | translate }}
-            </a>
-          </div>
-        </div>
+    <section class="page-wrap border-y border-[var(--line)] py-8">
+      <div class="grid gap-4 md:grid-cols-[auto_1fr] md:items-center md:gap-10">
+        <p class="section-kicker">{{ 'landing.workedWith' | translate }}</p>
+        <p class="text-lg leading-8 text-[color:var(--text-soft)] md:text-right">
+          {{ 'landing.clientsList' | translate }}
+        </p>
       </div>
     </section>
 
+    <app-projects />
+    <app-systems />
+    <app-knowledge />
+
+    <section id="contact" class="page-wrap section-space">
+      <div class="premium-panel grid gap-8 p-6 sm:p-8 lg:grid-cols-[1fr_auto] lg:items-end lg:p-10">
+        <div class="max-w-3xl">
+          <p class="section-kicker">{{ 'landing.contact.eyebrow' | translate }}</p>
+          <h2 class="mt-5 text-balance text-4xl font-semibold leading-tight sm:text-5xl">
+            {{ 'landing.contact.headline' | translate }}
+            <span class="text-[color:var(--accent-2)]">{{ 'landing.contact.headlineAccent' | translate }}</span>
+          </h2>
+          <p class="mt-4 max-w-xl text-base leading-7 text-[color:var(--muted)]">
+            {{ 'landing.contact.subtext' | translate }}
+          </p>
+        </div>
+
+        <div class="grid gap-2 sm:grid-cols-3 lg:w-52 lg:grid-cols-1">
+          <a href="mailto:pablo.gzz.sal@gmail.com" class="btn-primary group">
+            {{ 'landing.contact.email' | translate }}
+            <span class="icon-pill">↗</span>
+          </a>
+          <a href="https://www.linkedin.com/in/pablo-gonzalez-salcido-bb1a491a9/?locale=en_US" target="_blank" rel="noreferrer" class="btn-secondary">
+            {{ 'landing.contact.linkedin' | translate }}
+          </a>
+          <a href="https://github.com/pablo-gzz-sal" target="_blank" rel="noreferrer" class="btn-secondary">
+            {{ 'landing.contact.github' | translate }}
+          </a>
+        </div>
+      </div>
+    </section>
   </main>
 
   <app-footer />

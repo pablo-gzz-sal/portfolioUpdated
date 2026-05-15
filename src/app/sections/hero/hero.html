@@ -1,149 +1,71 @@
-<section #heroSection class="noise-overlay isolate relative pt-28 pb-20 px-4 sm:pt-32 sm:pb-28 lg:pt-36 lg:pb-36 text-center">
-
-  <!-- background blobs (GSAP-controlled: mouse parallax + entrance) -->
-  <div class="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
-
-    <!-- blob 1 — main violet centre-top (GSAP controlled) -->
-    <svg
-      #blobOne
-      class="absolute -top-24 left-1/2 h-[680px] w-[680px] -translate-x-1/2 opacity-70 blur-3xl"
-      viewBox="0 0 600 600"
-      aria-hidden="true"
-    >
-      <defs>
-        <radialGradient id="g1">
-          <stop offset="0%"   stop-color="rgba(109,40,217,1)"  stop-opacity="0.65" />
-          <stop offset="55%"  stop-color="rgba(76,29,149,1)"   stop-opacity="0.30" />
-          <stop offset="100%" stop-color="transparent" />
-        </radialGradient>
-      </defs>
-      <path
-        fill="url(#g1)"
-        d="M421,86Q507,172,475,283.5Q443,395,339.5,451Q236,507,152.5,428Q69,349,88.5,241.5Q108,134,210,74Q312,14,421,86Z"
-      />
-    </svg>
-
-    <!-- blob 2 — indigo right (GSAP controlled) -->
-    <svg
-      #blobTwo
-      class="absolute top-20 right-[-140px] h-[420px] w-[420px] opacity-35 blur-3xl"
-      viewBox="0 0 600 600"
-      aria-hidden="true"
-    >
-      <defs>
-        <radialGradient id="g2">
-          <stop offset="0%"   stop-color="rgba(129,140,248,1)" stop-opacity="0.55" />
-          <stop offset="100%" stop-color="transparent" />
-        </radialGradient>
-      </defs>
-      <ellipse fill="url(#g2)" cx="300" cy="300" rx="280" ry="260" />
-    </svg>
-
-    <!-- blob 3 — fuchsia left accent (static) -->
-    <svg
-      class="absolute -top-8 -left-28 h-[360px] w-[360px] opacity-28 blur-3xl"
-      viewBox="0 0 600 600"
-      aria-hidden="true"
-    >
-      <defs>
-        <radialGradient id="g3">
-          <stop offset="0%"   stop-color="rgba(232,121,249,1)" stop-opacity="0.40" />
-          <stop offset="100%" stop-color="transparent" />
-        </radialGradient>
-      </defs>
-      <ellipse fill="url(#g3)" cx="300" cy="300" rx="260" ry="240" />
-    </svg>
-
-  </div>
-
-  <!-- available pill -->
-  <div class="flex justify-center">
-    <div
-      #heroPill
-      class="inline-flex items-center gap-2 rounded-full px-3.5 py-1.5 text-xs
-             bg-[rgba(109,40,217,0.15)] text-[color:var(--lavender)]"
-      style="box-shadow: 0 0 0 1px rgba(196,181,253,0.30), 0 0 24px rgba(109,40,217,0.25);"
-    >
-      <span class="relative flex h-1.5 w-1.5">
-        <span
-          class="absolute inline-flex h-full w-full animate-ping rounded-full bg-[var(--fuchsia)] opacity-70"
-        ></span>
-        <span class="relative h-1.5 w-1.5 rounded-full bg-[var(--fuchsia)]"></span>
-      </span>
+<section #heroSection class="mobile-hero page-wrap relative grid min-h-[92dvh] items-end gap-12 overflow-hidden pb-16 pt-32 lg:grid-cols-[1.04fr_.96fr] lg:pb-24 lg:pt-40">
+  <div
+    class="hero-ring-large pointer-events-none absolute left-[-8%] top-24 h-80 w-80 rounded-full border border-[rgba(126,188,214,0.2)] opacity-70"
+    style="animation:ring-breathe 8s var(--ease-in-out) infinite alternate;"
+  ></div>
+  <div
+    class="hero-ring-small pointer-events-none absolute bottom-20 left-[38%] h-28 w-28 rounded-full border border-[rgba(238,233,220,0.12)] opacity-70"
+    style="animation:ring-breathe 10s var(--ease-in-out) infinite alternate-reverse;"
+  ></div>
+  <div class="max-w-3xl">
+    <div #heroPill class="eyebrow">
       {{ 'hero.available' | translate }}
     </div>
-  </div>
 
-  <!-- headline -->
-  <div class="mx-auto mt-8 max-w-4xl">
-    <div class="overflow-hidden">
-      <h1
-        #heroTitle
-        class="animate-gradient-pan text-5xl font-bold leading-[1.08] tracking-tight sm:text-7xl lg:text-8xl
-               bg-[linear-gradient(135deg,#e8e4ff_0%,#a78bfa_22%,#818cf8_48%,#e879f9_72%,#a78bfa_100%)]
-               bg-clip-text text-transparent"
-      >
-        {{ 'hero.title' | translate }}
-      </h1>
-    </div>
+    <h1 #heroTitle class="mt-8 max-w-4xl text-balance text-[clamp(3rem,7vw,6.4rem)] font-semibold leading-[0.94] text-[color:var(--text)]">
+      {{ 'hero.title' | translate }}
+    </h1>
 
-    <p
-      #heroText
-      class="mx-auto mt-6 max-w-xl text-base leading-relaxed text-[color:var(--muted)] sm:text-lg"
-    >
+    <p #heroText class="hero-copy mt-7 max-w-2xl text-lg leading-8 text-[color:var(--text-soft)] sm:text-xl">
       {{ 'hero.subtext' | translate }}
     </p>
 
-    <!-- CTAs -->
-    <div #heroCtas class="mt-8 flex flex-wrap justify-center gap-3">
-      <a
-        href="#projects"
-        class="shimmer-btn relative overflow-hidden rounded-full px-7 py-3 text-sm font-semibold text-white transition duration-300
-               hover:shadow-[0_0_32px_rgba(109,40,217,0.5)]"
-        style="background: linear-gradient(135deg, rgba(109,40,217,0.8), rgba(79,70,229,0.8)); box-shadow: 0 0 0 1px rgba(139,92,246,0.4), 0 0 18px rgba(109,40,217,0.3);"
-      >
+    <div #heroCtas class="hero-ctas mt-9 flex flex-wrap gap-3">
+      <a href="#projects" class="btn-primary group">
         {{ 'hero.seeWork' | translate }}
+        <span class="icon-pill">↗</span>
       </a>
-      <a
-        href="#contact"
-        class="rounded-full px-7 py-3 text-sm font-medium text-[color:var(--muted)] transition duration-300
-               hover:text-white hover:shadow-[0_0_16px_rgba(232,121,249,0.2)]"
-        style="background: rgba(255,255,255,0.05); box-shadow: 0 0 0 1px rgba(255,255,255,0.09);"
-      >
+      <a href="#contact" class="btn-secondary">
         {{ 'hero.getInTouch' | translate }}
       </a>
     </div>
-  </div>
 
-  <!-- stat cards -->
-  <div class="mx-auto mt-16 grid max-w-3xl gap-3 sm:grid-cols-3">
-    @for (card of statCards; track card.label) {
-      <div
-        #statCard
-        class="group relative overflow-hidden rounded-2xl p-px text-left transition-all duration-300 hover:shadow-[0_0_24px_rgba(109,40,217,0.20),0_0_0_1px_rgba(139,92,246,0.30)]"
-        style="background: rgba(255,255,255,0.04);"
-      >
-        <!-- iridescent rotating border on hover -->
-        <div
-          class="animate-iridescent pointer-events-none absolute inset-0 rounded-2xl opacity-0 transition duration-500 group-hover:opacity-100
-                 bg-[conic-gradient(from_var(--angle,0deg)_at_50%_50%,#7c3aed,#4f46e5,#db2777,#7c3aed,#4f46e5,#7c3aed)]"
-        ></div>
-
-        <div class="relative rounded-[15px] bg-[var(--bg-alt)] p-5">
-          <!-- corner glow — always faint, full on hover -->
-          <div
-            class="pointer-events-none absolute -top-8 -right-8 h-28 w-28 rounded-full blur-xl
-                   opacity-10 transition duration-500 group-hover:opacity-100
-                   bg-[radial-gradient(circle,rgba(232,121,249,0.4),transparent_65%)]"
-          ></div>
-
-          <p class="text-[10px] uppercase tracking-widest text-[rgba(196,181,253,0.6)]">
+    <div class="mt-12 grid gap-3 sm:grid-cols-3">
+      @for (card of statCards; track card.label) {
+        <div #statCard class="border-t border-[var(--line)] pt-4">
+          <p class="font-[family-name:var(--font-mono)] text-[11px] uppercase tracking-[0.14em] text-[color:var(--muted-2)]">
             {{ card.label | translate }}
           </p>
-          <p class="mt-2 text-sm leading-snug text-[color:var(--text)]">{{ card.value | translate }}</p>
+          <p class="mt-2 text-sm leading-6 text-[color:var(--text-soft)]">{{ card.value | translate }}</p>
         </div>
-      </div>
-    }
+      }
+    </div>
   </div>
 
+  <div class="hero-visual relative lg:self-center">
+    <div class="pointer-events-none absolute -left-16 -top-14 h-56 w-56 rounded-full border border-[var(--line-warm)] opacity-45"></div>
+    <div class="pointer-events-none absolute -left-8 -top-6 h-40 w-40 rounded-full border border-[var(--line)] opacity-55"></div>
+    <div #blobOne class="pointer-events-none absolute left-6 top-8 h-24 w-24 rounded-full border border-[var(--line-warm)] opacity-50"></div>
+    <div #blobTwo class="pointer-events-none absolute -right-6 bottom-24 h-24 w-24 rounded-full border border-[var(--line)] opacity-60"></div>
+    <div class="pointer-events-none absolute -right-12 top-10 h-32 w-32 rounded-full border border-[var(--line)] opacity-35"></div>
+    <div class="pointer-events-none absolute -right-3 top-24 h-2 w-2 rounded-full bg-[var(--accent)] shadow-[0_0_24px_rgba(126,188,214,0.45)]"></div>
+    <div class="pointer-events-none absolute -left-5 bottom-20 h-2 w-2 rounded-full bg-[var(--accent-2)] opacity-80"></div>
+    <div class="pointer-events-none absolute left-1/2 top-8 h-px w-44 -translate-x-1/2 bg-[linear-gradient(90deg,transparent,var(--line-warm),transparent)]"></div>
+    <div class="pointer-events-none absolute right-16 top-0 h-44 w-px bg-[linear-gradient(180deg,transparent,var(--line),transparent)]"></div>
+
+    <div class="hardware-card p-2.5">
+      <div class="overflow-hidden rounded-[1.25rem] bg-[var(--bg-2)] shadow-[inset_0_1px_0_rgba(238,233,220,0.12)]">
+        <img src="/assets/images/me.jpeg" alt="Pablo Salcido" class="aspect-[4/5] w-full object-cover grayscale-[18%]" />
+      </div>
+    </div>
+
+    <div class="hero-proof hardware-card absolute -bottom-7 left-5 right-5 p-5 sm:left-8 sm:right-auto sm:w-80">
+      <p class="font-[family-name:var(--font-mono)] text-[11px] uppercase tracking-[0.14em] text-[color:var(--accent-2)]">
+        {{ 'hero.proofLabel' | translate }}
+      </p>
+      <p class="mt-2 text-sm leading-6 text-[color:var(--text-soft)]">
+        {{ 'hero.proofText' | translate }}
+      </p>
+    </div>
+  </div>
 </section>

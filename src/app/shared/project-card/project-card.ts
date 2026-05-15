@@ -10,8 +10,10 @@ export type Project = {
   description: string;
   tags: string[];
   highlight?: string;
+  role?: string;
+  outcome?: string;
   links?: ProjectLink[];
-  previewImage?: string;   // optional screenshot shown at top of card
+  previewImage?: string;
 };
 
 @Component({

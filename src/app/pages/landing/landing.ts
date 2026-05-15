@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Header } from '../../layout/header/header';
 import { Knowledge } from '../../sections/knowledge/knowledge';
 import { Projects } from '../../sections/projects/projects';
 import { Hero } from '../../sections/hero/hero';
@@ -10,7 +9,7 @@ import { TranslatePipe } from '../../shared/pipes/translate.pipe';
 @Component({
   selector: 'app-landing',
   standalone: true,
-  imports: [Header, Footer, Hero, Projects, Knowledge, Systems, TranslatePipe],
+  imports: [Footer, Hero, Projects, Knowledge, Systems, TranslatePipe],
   templateUrl: './landing.html',
   styleUrl: './landing.css',
 })
