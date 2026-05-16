@@ -1,11 +1,11 @@
 <div class="site-shell">
   @if (project) {
     <main>
-      <section class="relative min-h-[92dvh] overflow-hidden">
+      <section class="cs-hero relative min-h-[92dvh] overflow-hidden">
         @if (project.heroImage) {
-          <img [src]="project.heroImage" [alt]="project.title" class="absolute inset-0 h-full w-full object-cover opacity-52" />
+          <img [src]="project.heroImage" [alt]="project.title" class="cs-hero-image absolute inset-0 h-full w-full object-cover opacity-52" />
         }
-        <div class="absolute inset-0 bg-[linear-gradient(to_top,rgba(11,11,10,1)_12%,rgba(11,11,10,0.78)_48%,rgba(11,11,10,0.34)_100%)]"></div>
+        <div class="cs-hero-overlay absolute inset-0"></div>
 
         <div class="page-wrap relative flex min-h-[92dvh] flex-col justify-end pb-14 pt-32 sm:pb-20">
           <a routerLink="/" class="cs-hero-back mb-8 inline-flex w-fit items-center gap-2 text-sm text-[color:var(--text-soft)] transition hover:text-[color:var(--text)]">
@@ -32,31 +32,32 @@
             {{ project.summary | translate }}
           </p>
         </div>
+        <div class="cs-hero-bridge" aria-hidden="true"></div>
       </section>
 
-      <div class="page-wrap py-24">
-        <section class="cs-body-section grid gap-px overflow-hidden rounded-[1.6rem] border border-[var(--line)] bg-[var(--line)] md:grid-cols-3">
-          <article class="bg-[var(--bg-2)] p-6">
+      <div class="cs-content-flow page-wrap">
+        <section class="cs-body-section cs-overview-panel grid gap-px overflow-hidden rounded-[1.6rem] border border-[var(--line)] bg-[var(--line)] md:grid-cols-3">
+          <article class="cs-overview-cell p-6">
             <p class="font-[family-name:var(--font-mono)] text-[11px] uppercase tracking-[0.14em] text-[color:var(--muted-2)]">Role</p>
             <p class="mt-3 text-base text-[color:var(--text-soft)]">{{ project.role | translate }}</p>
           </article>
-          <article class="bg-[var(--bg-2)] p-6">
+          <article class="cs-overview-cell p-6">
             <p class="font-[family-name:var(--font-mono)] text-[11px] uppercase tracking-[0.14em] text-[color:var(--muted-2)]">Outcome</p>
             <p class="mt-3 text-base text-[color:var(--text-soft)]">{{ project.outcome | translate }}</p>
           </article>
-          <article class="bg-[var(--bg-2)] p-6">
+          <article class="cs-overview-cell p-6">
             <p class="font-[family-name:var(--font-mono)] text-[11px] uppercase tracking-[0.14em] text-[color:var(--muted-2)]">Scope</p>
             <p class="mt-3 text-base text-[color:var(--text-soft)]">{{ project.scope | translate }}</p>
           </article>
         </section>
 
-        <section class="cs-body-section section-space grid gap-4 lg:grid-cols-[.9fr_1.1fr]">
-          <article class="hardware-card p-6 sm:p-8">
+        <section class="cs-body-section cs-challenge-solution section-space grid gap-4 lg:grid-cols-[.9fr_1.1fr]">
+          <article class="cs-challenge hardware-card p-6 sm:p-8">
             <p class="section-kicker">{{ 'caseStudy.problem' | translate }}</p>
             <h2 class="mt-6 text-3xl font-semibold tracking-tight">{{ 'caseStudy.whatNeededSolving' | translate }}</h2>
             <p class="mt-5 text-base leading-8 text-[color:var(--muted)]">{{ project.challenge | translate }}</p>
           </article>
-          <article class="hardware-card p-6 sm:p-8">
+          <article class="cs-solution hardware-card p-6 sm:p-8">
             <p class="section-kicker">{{ 'caseStudy.solution' | translate }}</p>
             <h2 class="mt-6 text-3xl font-semibold tracking-tight">{{ 'caseStudy.howISolvedIt' | translate }}</h2>
             <p class="mt-5 text-base leading-8 text-[color:var(--muted)]">{{ project.solution | translate }}</p>

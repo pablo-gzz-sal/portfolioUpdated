@@ -1,0 +1,105 @@
+:host {
+  display: block;
+}
+
+.cs-hero {
+  background:
+    radial-gradient(ellipse at 18% 18%, oklch(72% 0.062 215 / 0.055), transparent 32rem),
+    linear-gradient(180deg, oklch(7.4% 0.009 250), var(--bg) 82%);
+}
+
+.cs-hero-image {
+  filter: saturate(0.86) contrast(1.03) brightness(0.84);
+  transform: scale(1.01);
+}
+
+.cs-hero-overlay {
+  z-index: 1;
+  background:
+    linear-gradient(90deg, oklch(7.8% 0.008 250 / 0.78) 0%, oklch(7.8% 0.008 250 / 0.55) 42%, oklch(7.8% 0.008 250 / 0.28) 100%),
+    linear-gradient(180deg, oklch(7.8% 0.008 250 / 0.18) 0%, oklch(7.8% 0.008 250 / 0.48) 56%, var(--bg) 100%);
+}
+
+.cs-hero-bridge {
+  position: absolute;
+  inset-inline: 0;
+  bottom: -1px;
+  z-index: 1;
+  height: clamp(7rem, 16vh, 12rem);
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse at 50% 0%, oklch(72% 0.062 215 / 0.032), transparent 34rem),
+    linear-gradient(180deg, transparent 0%, var(--bg) 74%, var(--bg) 100%);
+}
+
+.cs-hero > .page-wrap {
+  z-index: 2;
+}
+
+.cs-hero-subtitle {
+  color: var(--text-soft);
+}
+
+.cs-content-flow {
+  position: relative;
+  margin-top: 0;
+  padding-block: clamp(3rem, 5vw, 5.25rem) clamp(5.5rem, 9vw, 9.5rem);
+}
+
+.cs-content-flow::before {
+  content: '';
+  position: absolute;
+  inset: -7rem -2rem auto;
+  z-index: -1;
+  height: 18rem;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse at 18% 48%, oklch(92% 0.018 82 / 0.055), transparent 26rem),
+    linear-gradient(180deg, var(--bg), oklch(8.5% 0.008 250 / 0));
+}
+
+.cs-overview-panel {
+  position: relative;
+  border-color: oklch(92% 0.018 82 / 0.11);
+  background: oklch(92% 0.018 82 / 0.08);
+  box-shadow:
+    inset 0 1px 0 oklch(96% 0.018 82 / 0.1),
+    0 30px 90px oklch(0% 0 0 / 0.34);
+}
+
+.cs-overview-panel::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse at 10% 0%, oklch(70% 0.062 215 / 0.055), transparent 20rem),
+    linear-gradient(180deg, oklch(92% 0.018 82 / 0.04), transparent 62%);
+}
+
+.cs-overview-cell {
+  position: relative;
+  background:
+    linear-gradient(180deg, oklch(92% 0.018 82 / 0.052), oklch(92% 0.018 82 / 0.02)),
+    oklch(9.5% 0.009 250 / 0.94);
+}
+
+.cs-feature-card,
+.cs-screenshot,
+.cs-challenge,
+.cs-solution {
+  background:
+    linear-gradient(180deg, oklch(92% 0.018 82 / 0.07), oklch(92% 0.018 82 / 0.024)),
+    oklch(9.4% 0.009 250 / 0.9);
+}
+
+.cs-feature-card:hover,
+.cs-screenshot:hover {
+  border-color: oklch(70% 0.062 215 / 0.18);
+}
+
+@media (max-width: 767px) {
+  .cs-content-flow {
+    padding-top: 2.5rem;
+  }
+}

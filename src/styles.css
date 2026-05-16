@@ -12,27 +12,27 @@
   --scroll-shift-soft: 0px;
   --scroll-shift-strong: 0px;
   --scroll-shift-reverse: 0px;
-  --scroll-texture-opacity: 0.66;
+  --scroll-texture-opacity: 0.62;
   --scroll-instrument-opacity: 0.46;
-  --bg: oklch(8.5% 0.008 245);
-  --bg-2: oklch(11% 0.012 250);
-  --bg-3: oklch(15% 0.018 258);
+  --bg: oklch(8.4% 0.007 245);
+  --bg-2: oklch(11% 0.009 250);
+  --bg-3: oklch(14.6% 0.012 258);
   --surface: oklch(92% 0.018 75 / 0.045);
   --surface-strong: oklch(92% 0.018 75 / 0.08);
   --surface-inverse: oklch(8.8% 0.01 245 / 0.82);
   --line: oklch(90% 0.018 80 / 0.12);
   --line-strong: oklch(90% 0.018 80 / 0.22);
-  --line-warm: oklch(80% 0.07 82 / 0.32);
+  --line-warm: oklch(80% 0.052 82 / 0.26);
   --text: oklch(92% 0.018 82);
   --text-soft: oklch(92% 0.018 82 / 0.78);
   --muted: oklch(92% 0.018 82 / 0.6);
   --muted-2: oklch(92% 0.018 82 / 0.42);
-  --accent: oklch(75% 0.095 215);
-  --accent-2: oklch(86% 0.062 210);
-  --accent-iris: oklch(63% 0.075 285);
-  --accent-warm: oklch(81% 0.082 86);
-  --accent-soft: oklch(75% 0.095 215 / 0.13);
-  --accent-ring: oklch(75% 0.095 215 / 0.36);
+  --accent: oklch(72% 0.062 215);
+  --accent-2: oklch(84% 0.04 210);
+  --accent-iris: oklch(58% 0.045 285);
+  --accent-warm: oklch(80% 0.052 86);
+  --accent-soft: oklch(72% 0.062 215 / 0.075);
+  --accent-ring: oklch(72% 0.062 215 / 0.22);
   --danger: oklch(67% 0.12 32);
   --success: oklch(73% 0.095 132);
   --font-display: 'Syne', 'Geist', ui-sans-serif, system-ui, sans-serif;
@@ -58,10 +58,10 @@ body {
   min-width: 320px;
   overflow-x: hidden;
   background:
-    radial-gradient(ellipse at 14% -12%, oklch(75% 0.095 215 / 0.18), transparent 35rem),
-    radial-gradient(ellipse at 91% 9%, oklch(63% 0.075 285 / 0.16), transparent 34rem),
-    radial-gradient(ellipse at 52% 118%, oklch(81% 0.082 86 / 0.105), transparent 44rem),
-    linear-gradient(180deg, oklch(7.4% 0.009 250) 0%, oklch(10.2% 0.013 252) 38%, oklch(8.2% 0.01 245) 100%);
+    radial-gradient(ellipse at 14% -12%, oklch(72% 0.062 215 / 0.12), transparent 35rem),
+    radial-gradient(ellipse at 91% 9%, oklch(58% 0.045 285 / 0.075), transparent 34rem),
+    radial-gradient(ellipse at 52% 118%, oklch(80% 0.052 86 / 0.09), transparent 44rem),
+    linear-gradient(180deg, oklch(7.4% 0.008 250) 0%, oklch(10.2% 0.01 252) 38%, oklch(8.2% 0.008 245) 100%);
   color: var(--text);
   font-family: var(--font-sans);
   font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
@@ -78,9 +78,9 @@ body::before {
   pointer-events: none;
   opacity: var(--scroll-texture-opacity);
   background:
-    linear-gradient(115deg, transparent 0 31%, oklch(75% 0.095 215 / 0.075) 31.1%, transparent 31.55% 100%),
-    linear-gradient(158deg, transparent 0 58%, oklch(81% 0.082 86 / 0.055) 58.12%, transparent 58.5% 100%),
-    radial-gradient(ellipse at calc(47% + var(--pointer-x-soft)) calc(24% + var(--scroll-shift)), oklch(75% 0.095 215 / 0.14), transparent 26rem),
+    linear-gradient(115deg, transparent 0 31%, oklch(72% 0.062 215 / 0.045) 31.1%, transparent 31.48% 100%),
+    linear-gradient(158deg, transparent 0 58%, oklch(80% 0.052 86 / 0.045) 58.12%, transparent 58.48% 100%),
+    radial-gradient(ellipse at calc(47% + var(--pointer-x-soft)) calc(24% + var(--scroll-shift)), oklch(72% 0.062 215 / 0.085), transparent 26rem),
     radial-gradient(ellipse at calc(82% + var(--pointer-x)) 72%, oklch(92% 0.018 82 / 0.055), transparent 28rem);
   mask-image: linear-gradient(to bottom, black 0%, black 38%, transparent 78%);
 }
@@ -94,6 +94,29 @@ body::after {
   opacity: 0.03;
   mix-blend-mode: soft-light;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.82' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='240' height='240' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+}
+
+@media (max-width: 767px) {
+  :root {
+    --scroll-texture-opacity: 0.46;
+  }
+
+  body {
+    background:
+      radial-gradient(ellipse at 8% -8%, oklch(72% 0.062 215 / 0.052), transparent 19rem),
+      radial-gradient(ellipse at 106% 4%, oklch(58% 0.045 285 / 0.038), transparent 18rem),
+      radial-gradient(ellipse at 48% 112%, oklch(80% 0.052 86 / 0.075), transparent 26rem),
+      linear-gradient(180deg, oklch(7.6% 0.008 250) 0%, oklch(10.1% 0.009 252) 42%, oklch(8.4% 0.008 245) 100%);
+  }
+
+  body::before {
+    background:
+      linear-gradient(115deg, transparent 0 36%, oklch(72% 0.062 215 / 0.02) 36.1%, transparent 36.42% 100%),
+      linear-gradient(158deg, transparent 0 62%, oklch(80% 0.052 86 / 0.035) 62.12%, transparent 62.46% 100%),
+      radial-gradient(ellipse at calc(36% + var(--pointer-x-soft)) calc(18% + var(--scroll-shift)), oklch(72% 0.062 215 / 0.038), transparent 18rem),
+      radial-gradient(ellipse at calc(88% + var(--pointer-x)) 74%, oklch(92% 0.018 82 / 0.045), transparent 22rem);
+    mask-image: linear-gradient(to bottom, black 0%, black 30%, transparent 72%);
+  }
 }
 
 app-root {
@@ -156,8 +179,8 @@ button:focus-visible {
   inset: -10%;
   opacity: 0.34;
   background:
-    radial-gradient(circle at 50% 30%, rgba(126, 188, 214, 0.2), transparent 28rem),
-    radial-gradient(circle at 68% 62%, rgba(238, 233, 220, 0.08), transparent 22rem);
+    radial-gradient(circle at 50% 30%, oklch(72% 0.062 215 / 0.105), transparent 28rem),
+    radial-gradient(circle at 68% 62%, oklch(92% 0.018 82 / 0.072), transparent 22rem);
   transform: translate3d(var(--pointer-x-soft), calc(var(--pointer-y-soft) - var(--scroll-shift)), 0);
   transition: transform 900ms var(--ease-out);
   mask-image: radial-gradient(circle at 50% 18%, black, transparent 68%);
@@ -165,9 +188,9 @@ button:focus-visible {
 
 .ambient-ring {
   position: absolute;
-  border: 1px solid rgba(126, 188, 214, 0.28);
+  border: 1px solid oklch(72% 0.062 215 / 0.16);
   border-radius: 999px;
-  box-shadow: inset 0 0 40px rgba(126, 188, 214, 0.035), 0 0 60px rgba(126, 188, 214, 0.045);
+  box-shadow: inset 0 0 40px oklch(72% 0.062 215 / 0.02), 0 0 60px oklch(72% 0.062 215 / 0.025);
   transform: translate3d(var(--pointer-x), var(--pointer-y), 0);
   animation: ring-breathe 9s var(--ease-in-out) infinite alternate;
   transition: transform 900ms var(--ease-out);
@@ -196,7 +219,7 @@ button:focus-visible {
   bottom: 10rem;
   width: 11rem;
   height: 11rem;
-  border-color: rgba(126, 188, 214, 0.18);
+  border-color: oklch(72% 0.062 215 / 0.12);
   transform: translate3d(var(--pointer-x), calc(var(--pointer-y) + var(--scroll-shift-strong)), 0) rotate(14deg);
   animation-delay: -6s;
 }
@@ -207,11 +230,11 @@ button:focus-visible {
   top: 36vh;
   width: 12rem;
   height: 12rem;
-  opacity: 0.38;
+  opacity: 0.26;
   background:
-    radial-gradient(circle, rgba(126, 188, 214, 0.24) 0 2px, transparent 3px),
-    linear-gradient(90deg, transparent calc(50% - 0.5px), rgba(182, 221, 234, 0.62) 50%, transparent calc(50% + 0.5px)),
-    linear-gradient(0deg, transparent calc(50% - 0.5px), rgba(182, 221, 234, 0.62) 50%, transparent calc(50% + 0.5px));
+    radial-gradient(circle, oklch(72% 0.062 215 / 0.18) 0 2px, transparent 3px),
+    linear-gradient(90deg, transparent calc(50% - 0.5px), oklch(84% 0.04 210 / 0.38) 50%, transparent calc(50% + 0.5px)),
+    linear-gradient(0deg, transparent calc(50% - 0.5px), oklch(84% 0.04 210 / 0.34) 50%, transparent calc(50% + 0.5px));
   transform: translate3d(var(--pointer-x), calc(var(--pointer-y) + var(--scroll-shift-soft)), 0) rotate(4deg);
   animation: crosshair-scan 7s var(--ease-in-out) infinite alternate;
   transition: transform 900ms var(--ease-out);
@@ -230,7 +253,7 @@ button:focus-visible {
   top: 18vh;
   width: 8rem;
   height: 8rem;
-  background: radial-gradient(circle, rgba(126, 188, 214, 0.16), transparent 68%);
+  background: radial-gradient(circle, oklch(72% 0.062 215 / 0.075), transparent 68%);
   transform: translate3d(var(--pointer-x), calc(var(--pointer-y) + var(--scroll-shift-soft)), 0);
 }
 
@@ -276,10 +299,10 @@ button:focus-visible {
   top: 0;
   height: 100%;
   border-radius: inherit;
-  background: linear-gradient(180deg, rgba(238, 233, 220, 0.2), rgba(126, 188, 214, 0.76), rgba(238, 233, 220, 0.14));
+  background: linear-gradient(180deg, rgba(238, 233, 220, 0.18), oklch(72% 0.062 215 / 0.48), rgba(238, 233, 220, 0.14));
   transform: scaleY(var(--scroll-progress));
   transform-origin: top;
-  box-shadow: 0 0 18px rgba(126, 188, 214, 0.18);
+  box-shadow: 0 0 18px oklch(72% 0.062 215 / 0.1);
 }
 
 .scroll-instrument__dot {
@@ -291,8 +314,8 @@ button:focus-visible {
   border-radius: 999px;
   background: var(--accent-2);
   box-shadow:
-    0 0 0 0.38rem rgba(126, 188, 214, 0.08),
-    0 0 22px rgba(126, 188, 214, 0.26);
+    0 0 0 0.38rem oklch(72% 0.062 215 / 0.055),
+    0 0 22px oklch(72% 0.062 215 / 0.16);
   transform: translate3d(-50%, -50%, 0);
 }
 
@@ -369,7 +392,7 @@ button:focus-visible {
   z-index: -1;
   border-radius: inherit;
   background:
-    radial-gradient(circle at 50% 0%, rgba(126, 188, 214, 0.14), transparent 68%),
+    radial-gradient(circle at 50% 0%, oklch(72% 0.062 215 / 0.075), transparent 68%),
     rgba(238, 233, 220, 0.04);
   opacity: 0;
   transform: scale(0.96);
@@ -386,7 +409,7 @@ button:focus-visible {
   bottom: 0.38rem;
   height: 1px;
   border-radius: 999px;
-  background: linear-gradient(90deg, transparent, rgba(182, 221, 234, 0.72), transparent);
+  background: linear-gradient(90deg, transparent, oklch(84% 0.04 210 / 0.46), transparent);
   opacity: 0;
   transform: scaleX(0.42);
   transition:
@@ -426,7 +449,7 @@ button:focus-visible {
   border: 1px solid rgba(238, 233, 220, 0.1);
   border-radius: 1.75rem;
   background:
-    radial-gradient(ellipse at 20% 0%, oklch(75% 0.095 215 / 0.12), transparent 22rem),
+    radial-gradient(ellipse at 20% 0%, oklch(72% 0.062 215 / 0.055), transparent 22rem),
     linear-gradient(180deg, oklch(92% 0.018 82 / 0.085), oklch(92% 0.018 82 / 0.028)),
     var(--surface);
   box-shadow:
@@ -438,18 +461,18 @@ button:focus-visible {
 .premium-panel {
   position: relative;
   overflow: hidden;
-  border: 1px solid rgba(126, 188, 214, 0.18);
+  border: 1px solid oklch(72% 0.062 215 / 0.12);
   border-radius: clamp(1.5rem, 3vw, 2.25rem);
   background:
-    radial-gradient(ellipse at 82% 18%, oklch(75% 0.095 215 / 0.18), transparent 20rem),
-    radial-gradient(ellipse at 8% 100%, oklch(81% 0.082 86 / 0.09), transparent 18rem),
+    radial-gradient(ellipse at 82% 18%, oklch(72% 0.062 215 / 0.075), transparent 20rem),
+    radial-gradient(ellipse at 8% 100%, oklch(80% 0.052 86 / 0.055), transparent 18rem),
     linear-gradient(145deg, oklch(92% 0.018 82 / 0.09), oklch(92% 0.018 82 / 0.035) 42%, oklch(8.5% 0.008 245 / 0.36)),
     oklch(12% 0.012 250 / 0.78);
   box-shadow:
     inset 0 1px 0 rgba(238, 251, 255, 0.14),
     inset 0 -1px 0 rgba(0, 0, 0, 0.34),
     0 28px 90px rgba(0, 0, 0, 0.34),
-    0 0 60px rgba(126, 188, 214, 0.08);
+    0 0 60px oklch(72% 0.062 215 / 0.035);
 }
 
 .premium-panel::before {
@@ -468,7 +491,7 @@ button:focus-visible {
   width: 44%;
   height: 1px;
   pointer-events: none;
-  background: linear-gradient(90deg, transparent, rgba(182, 221, 234, 0.75), transparent);
+  background: linear-gradient(90deg, transparent, oklch(84% 0.04 210 / 0.42), transparent);
 }
 
 .hardware-card::before {
@@ -476,7 +499,7 @@ button:focus-visible {
   position: absolute;
   inset: 0;
   pointer-events: none;
-  background: linear-gradient(135deg, rgba(126, 188, 214, 0.12), transparent 38%);
+  background: linear-gradient(135deg, oklch(72% 0.062 215 / 0.055), transparent 38%);
   opacity: 0;
   transition: opacity 360ms var(--ease-out);
 }
@@ -509,15 +532,15 @@ button:focus-visible {
 }
 
 .btn-primary {
-  border: 1px solid oklch(75% 0.095 215 / 0.24);
+  border: 1px solid oklch(72% 0.062 215 / 0.16);
   background:
     linear-gradient(180deg, oklch(96% 0.02 210 / 0.078), oklch(96% 0.02 210 / 0.028)),
-    oklch(10.5% 0.013 245 / 0.86);
+    oklch(9.2% 0.009 245 / 0.88);
   color: var(--text);
   box-shadow:
     inset 0 1px 0 rgba(238, 251, 255, 0.12),
     0 12px 30px rgba(0, 0, 0, 0.24),
-    0 0 22px rgba(126, 188, 214, 0.075);
+    0 0 22px oklch(72% 0.062 215 / 0.035);
 }
 
 .btn-primary:has(.icon-pill) {
@@ -529,7 +552,7 @@ button:focus-visible {
   position: absolute;
   inset: 0;
   pointer-events: none;
-  background: linear-gradient(110deg, transparent 0%, oklch(86% 0.062 210 / 0.13) 42%, transparent 68%);
+  background: linear-gradient(110deg, transparent 0%, oklch(84% 0.04 210 / 0.085) 42%, transparent 68%);
   transform: translateX(-120%) skewX(-14deg);
   transition: transform 620ms var(--ease-out);
 }
@@ -540,12 +563,12 @@ button:focus-visible {
 
 .btn-primary:hover {
   background:
-    linear-gradient(180deg, oklch(96% 0.02 210 / 0.1), oklch(75% 0.095 215 / 0.045)),
-    oklch(12% 0.017 245 / 0.9);
+    linear-gradient(180deg, oklch(96% 0.02 210 / 0.085), oklch(72% 0.062 215 / 0.028)),
+    oklch(10.5% 0.011 245 / 0.92);
   box-shadow:
     inset 0 1px 0 rgba(238, 251, 255, 0.16),
     0 14px 34px rgba(0, 0, 0, 0.28),
-    0 0 28px rgba(126, 188, 214, 0.12);
+    0 0 28px oklch(72% 0.062 215 / 0.065);
 }
 
 .btn-secondary {
@@ -582,11 +605,11 @@ button:focus-visible {
   place-items: center;
   border-radius: 999px;
   background:
-    linear-gradient(180deg, oklch(88% 0.058 208 / 0.95), oklch(68% 0.105 219 / 0.95));
+    linear-gradient(180deg, oklch(87% 0.038 208 / 0.95), oklch(62% 0.065 219 / 0.95));
   color: oklch(11% 0.018 230);
   box-shadow:
     inset 0 1px 0 rgba(238, 251, 255, 0.55),
-    0 0 24px rgba(126, 188, 214, 0.2);
+    0 0 24px oklch(72% 0.062 215 / 0.12);
   transition: transform 180ms var(--ease-out);
 }
 

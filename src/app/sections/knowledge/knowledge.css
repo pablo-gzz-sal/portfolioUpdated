@@ -2,12 +2,40 @@
   display: block;
 }
 
+/* .stack-panel {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  border: 1px solid oklch(92% 0.018 82 / 0.11);
+  border-radius: clamp(1.35rem, 2.6vw, 2rem);
+  background:
+    radial-gradient(ellipse at 18% 0%, oklch(72% 0.062 215 / 0.055), transparent 24rem),
+    radial-gradient(ellipse at 12% 100%, oklch(80% 0.052 86 / 0.04), transparent 20rem),
+    linear-gradient(145deg, oklch(92% 0.018 82 / 0.058), oklch(92% 0.018 82 / 0.022) 48%, oklch(7.6% 0.006 250 / 0.32)),
+    oklch(9% 0.008 250 / 0.84);
+  box-shadow:
+    inset 0 1px 0 oklch(96% 0.02 210 / 0.08),
+    inset 0 -1px 0 oklch(0% 0 0 / 0.32),
+    0 28px 84px oklch(0% 0 0 / 0.3);
+} */
+
+.stack-panel::after {
+  content: '';
+  position: absolute;
+  left: 10%;
+  right: 16%;
+  top: 0;
+  height: 1px;
+  pointer-events: none;
+  background: linear-gradient(90deg, transparent, oklch(84% 0.04 210 / 0.32), transparent);
+}
+
 .tech-card {
   border-color: oklch(92% 0.018 82 / 0.09);
   background:
-    radial-gradient(ellipse at 18% 0%, oklch(75% 0.095 215 / 0.095), transparent 15rem),
-    linear-gradient(180deg, oklch(92% 0.018 82 / 0.074), oklch(92% 0.018 82 / 0.026)),
-    oklch(9.8% 0.011 250 / 0.78);
+    radial-gradient(ellipse at 18% 0%, oklch(72% 0.062 215 / 0.042), transparent 15rem),
+    linear-gradient(180deg, oklch(92% 0.018 82 / 0.064), oklch(92% 0.018 82 / 0.023)),
+    oklch(8.8% 0.008 250 / 0.82);
   box-shadow:
     inset 0 1px 0 oklch(96% 0.02 210 / 0.1),
     0 18px 46px oklch(0% 0 0 / 0.18);
@@ -15,9 +43,9 @@
 
 .tech-card:nth-child(2n) {
   background:
-    radial-gradient(ellipse at 82% 0%, oklch(63% 0.075 285 / 0.09), transparent 15rem),
-    linear-gradient(180deg, oklch(92% 0.018 82 / 0.068), oklch(92% 0.018 82 / 0.024)),
-    oklch(9.8% 0.011 250 / 0.78);
+    radial-gradient(ellipse at 82% 0%, oklch(58% 0.045 285 / 0.036), transparent 15rem),
+    linear-gradient(180deg, oklch(92% 0.018 82 / 0.058), oklch(92% 0.018 82 / 0.022)),
+    oklch(8.8% 0.008 250 / 0.82);
 }
 
 .tech-card span {
