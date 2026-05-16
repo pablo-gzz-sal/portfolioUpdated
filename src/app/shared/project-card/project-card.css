@@ -6,18 +6,24 @@
   transition:
     transform 700ms var(--ease-out),
     filter 700ms var(--ease-out);
-  will-change: transform;
 }
 
 .project-shell:hover .project-media__image {
-  --media-scale: 1.035;
-  filter: saturate(1.04) contrast(1.03);
+  --media-scale: 1.025;
+  filter: saturate(1.02) contrast(1.02);
+}
+
+.project-shell {
+  min-height: 100%;
+}
+
+.project-shell:focus-within {
+  border-color: var(--accent-ring);
 }
 
 @media (prefers-reduced-motion: reduce) {
   .project-media__image {
     --media-y: 0px !important;
     transition: none;
-    will-change: auto;
   }
 }

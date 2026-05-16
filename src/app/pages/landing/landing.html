@@ -2,7 +2,7 @@
   <main>
     <app-hero />
 
-    <section class="page-wrap border-y border-[var(--line)] py-8">
+    <section class="page-wrap border-y border-[var(--line)] py-7">
       <div class="grid gap-4 md:grid-cols-[auto_1fr] md:items-center md:gap-10">
         <p class="section-kicker">{{ 'landing.workedWith' | translate }}</p>
         <p class="text-lg leading-8 text-[color:var(--text-soft)] md:text-right">
@@ -31,7 +31,7 @@
         <div class="grid gap-2 sm:grid-cols-3 lg:w-52 lg:grid-cols-1">
           <a href="mailto:pablo.gzz.sal@gmail.com" class="btn-primary group">
             {{ 'landing.contact.email' | translate }}
-            <span class="icon-pill">↗</span>
+            <span class="icon-pill" aria-hidden="true">&nearr;</span>
           </a>
           <a href="https://www.linkedin.com/in/pablo-gonzalez-salcido-bb1a491a9/?locale=en_US" target="_blank" rel="noreferrer" class="btn-secondary">
             {{ 'landing.contact.linkedin' | translate }}

@@ -9,7 +9,7 @@
 
         <div class="page-wrap relative flex min-h-[92dvh] flex-col justify-end pb-14 pt-32 sm:pb-20">
           <a routerLink="/" class="cs-hero-back mb-8 inline-flex w-fit items-center gap-2 text-sm text-[color:var(--text-soft)] transition hover:text-[color:var(--text)]">
-            <span>←</span>
+            <span aria-hidden="true">&larr;</span>
             {{ 'caseStudy.allProjects' | translate }}
           </a>
 
@@ -132,7 +132,7 @@
               @for (link of project.links; track link.label) {
                 <a [href]="link.href" target="_blank" rel="noreferrer" class="btn-primary group">
                   {{ link.label === 'Website' ? ('caseStudy.viewLiveSite' | translate) : ('caseStudy.sourceCode' | translate) }}
-                  <span class="icon-pill">↗</span>
+                  <span class="icon-pill" aria-hidden="true">&nearr;</span>
                 </a>
               }
               <a routerLink="/" class="btn-secondary">{{ 'caseStudy.allProjects' | translate }}</a>
@@ -154,8 +154,8 @@
 @if (selectedImage) {
   <div class="fixed inset-0 z-50 grid place-items-center bg-[rgba(11,11,10,0.9)] p-4 backdrop-blur-md" (click)="closeImage()">
     <img [src]="selectedImage" alt="Selected project screenshot" class="max-h-[90dvh] max-w-[92vw] rounded-2xl border border-[var(--line)] shadow-2xl" (click)="$event.stopPropagation()" />
-    <button class="absolute right-5 top-5 grid h-11 w-11 place-items-center rounded-full border border-[var(--line)] bg-[var(--surface-inverse)] text-[color:var(--text)]" (click)="closeImage()" aria-label="Close">
-      ×
+    <button class="absolute right-5 top-5 grid h-11 w-11 place-items-center rounded-full border border-[var(--line)] bg-[var(--surface-inverse)] text-[color:var(--text)] transition duration-200 ease-[var(--ease-out)] hover:border-[var(--line-strong)] hover:bg-[var(--bg-3)]" (click)="closeImage()" aria-label="Close">
+      &times;
     </button>
   </div>
 }

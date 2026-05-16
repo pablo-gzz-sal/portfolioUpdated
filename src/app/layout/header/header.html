@@ -1,17 +1,17 @@
 <header class="fixed inset-x-0 top-0 z-40 flex justify-center px-4 pt-4">
   <div
     class="w-full max-w-5xl rounded-2xl border px-3 py-2 transition-all duration-300 ease-[var(--ease-out)]"
-    [style.background]="scrolled ? 'rgba(11, 11, 10, 0.86)' : 'rgba(11, 11, 10, 0.58)'"
+    [style.background]="scrolled ? 'rgba(9, 10, 10, 0.88)' : 'rgba(9, 10, 10, 0.66)'"
     [style.border-color]="scrolled ? 'var(--line-strong)' : 'var(--line)'"
     [style.backdrop-filter]="'blur(18px)'"
-    [style.box-shadow]="scrolled ? '0 18px 60px rgba(0,0,0,0.28)' : 'none'"
+    [style.box-shadow]="scrolled ? '0 16px 46px rgba(0,0,0,0.24)' : '0 8px 28px rgba(0,0,0,0.1)'"
   >
     <div class="flex items-center justify-between gap-3">
       <a routerLink="/" (click)="scrollToTop()" class="group inline-flex items-center gap-3">
         <span class="relative h-9 w-9 overflow-hidden rounded-full border border-[var(--line-warm)] p-0.5">
           <img src="assets/images/me.jpeg" alt="Pablo Salcido" class="h-full w-full rounded-full object-cover" />
         </span>
-        <span class="hidden text-sm font-semibold tracking-tight text-[color:var(--text)] sm:block">
+        <span class="text-sm font-semibold tracking-tight text-[color:var(--text)]">
           Pablo Salcido
         </span>
       </a>
@@ -93,7 +93,7 @@
               [style.opacity]="menuOpen ? '1' : '0'"
             >
               {{ link.label | translate }}
-              <span>→</span>
+              <span aria-hidden="true">&rarr;</span>
             </a>
           } @else {
             <a
@@ -105,7 +105,7 @@
               [style.opacity]="menuOpen ? '1' : '0'"
             >
               {{ link.label | translate }}
-              <span>→</span>
+              <span aria-hidden="true">&rarr;</span>
             </a>
           }
         }

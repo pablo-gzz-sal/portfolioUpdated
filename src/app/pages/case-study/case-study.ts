@@ -27,7 +27,6 @@ export class CaseStudy implements OnInit, AfterViewInit {
     return (this.project?.screenshots ?? []).slice(0, 4);
   }
 
-  // ── All project data ────────────────────────────────────────────
   private readonly projects: CaseStudyProject[] = [
     {
       id: 'josephbattisti',
@@ -184,8 +183,13 @@ export class CaseStudy implements OnInit, AfterViewInit {
 
   ngAfterViewInit(): void {
     const root = this._host.nativeElement;
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-    // ── Hero — cinematic line-by-line reveal ──────────────────────
+    if (prefersReducedMotion) {
+      return;
+    }
+
+    // Hero reveal.
     const heroBack    = root.querySelector<HTMLElement>('.cs-hero-back');
     const heroMeta    = root.querySelector<HTMLElement>('.cs-hero-meta');
     const heroTitle   = root.querySelector<HTMLElement>('.cs-hero-title');
@@ -208,7 +212,7 @@ export class CaseStudy implements OnInit, AfterViewInit {
     if (heroSum)     heroTl.to(heroSum,     { opacity: 1, y: 0,      duration: 0.65, ease: 'power3.out' }, 0.56);
     if (heroDivider) heroTl.to(heroDivider, { opacity: 1, scaleX: 1, duration: 0.85, ease: 'power3.out' }, 0.68);
 
-    // ── Stack section — fade up on scroll ────────────────────────
+    // Overview sections.
     const bodySections = root.querySelectorAll<HTMLElement>('.cs-body-section');
     bodySections.forEach((section) => {
       gsap.set(section, { opacity: 0, y: 32 });
@@ -219,7 +223,7 @@ export class CaseStudy implements OnInit, AfterViewInit {
       });
     });
 
-    // ── Challenge + Solution — from opposite sides ────────────────
+    // Challenge and solution.
     const challenge               = root.querySelector<HTMLElement>('.cs-challenge');
     const solution                = root.querySelector<HTMLElement>('.cs-solution');
     const challengeSolutionSection = root.querySelector<HTMLElement>('.cs-challenge-solution');
@@ -236,7 +240,7 @@ export class CaseStudy implements OnInit, AfterViewInit {
       });
     }
 
-    // ── Feature cards stagger in ──────────────────────────────────
+    // Feature cards.
     const featureSection = root.querySelector<HTMLElement>('.cs-features');
     const featureCards   = root.querySelectorAll<HTMLElement>('.cs-feature-card');
     if (featureSection && featureCards.length) {
@@ -248,7 +252,7 @@ export class CaseStudy implements OnInit, AfterViewInit {
       });
     }
 
-    // ── Screenshots stagger in ────────────────────────────────────
+    // Screenshots.
     const screenshotSection = root.querySelector<HTMLElement>('.cs-screenshots');
     const shots             = root.querySelectorAll<HTMLElement>('.cs-screenshot');
     if (screenshotSection && shots.length) {
@@ -260,7 +264,7 @@ export class CaseStudy implements OnInit, AfterViewInit {
       });
     }
 
-    // ── CTA section — fade up ─────────────────────────────────────
+    // CTA.
     const cta = root.querySelector<HTMLElement>('.cs-cta');
     if (cta) {
       gsap.set(cta, { opacity: 0, y: 36 });

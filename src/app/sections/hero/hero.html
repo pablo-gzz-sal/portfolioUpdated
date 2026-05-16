@@ -1,10 +1,10 @@
-<section #heroSection class="mobile-hero page-wrap relative grid min-h-[92dvh] items-end gap-12 overflow-hidden pb-16 pt-32 lg:grid-cols-[1.04fr_.96fr] lg:pb-24 lg:pt-40">
+<section #heroSection class="mobile-hero page-wrap relative grid min-h-[92dvh] items-end gap-12 overflow-hidden pb-16 pt-32 lg:grid-cols-[1.08fr_.92fr] lg:pb-24 lg:pt-40">
   <div
-    class="hero-ring-large pointer-events-none absolute left-[-8%] top-24 h-80 w-80 rounded-full border border-[rgba(126,188,214,0.2)] opacity-70"
+    class="hero-ring-large pointer-events-none absolute left-[-8%] top-24 h-80 w-80 rounded-full border border-[rgba(126,188,214,0.14)] opacity-45"
     style="animation:ring-breathe 8s var(--ease-in-out) infinite alternate;"
   ></div>
   <div
-    class="hero-ring-small pointer-events-none absolute bottom-20 left-[38%] h-28 w-28 rounded-full border border-[rgba(238,233,220,0.12)] opacity-70"
+    class="hero-ring-small pointer-events-none absolute bottom-20 left-[38%] h-28 w-28 rounded-full border border-[rgba(238,233,220,0.09)] opacity-40"
     style="animation:ring-breathe 10s var(--ease-in-out) infinite alternate-reverse;"
   ></div>
   <div class="max-w-3xl">
@@ -23,7 +23,7 @@
     <div #heroCtas class="hero-ctas mt-9 flex flex-wrap gap-3">
       <a href="#projects" class="btn-primary group">
         {{ 'hero.seeWork' | translate }}
-        <span class="icon-pill">↗</span>
+        <span class="icon-pill" aria-hidden="true">&nearr;</span>
       </a>
       <a href="#contact" class="btn-secondary">
         {{ 'hero.getInTouch' | translate }}
@@ -43,11 +43,11 @@
   </div>
 
   <div class="hero-visual relative lg:self-center">
-    <div class="pointer-events-none absolute -left-16 -top-14 h-56 w-56 rounded-full border border-[var(--line-warm)] opacity-45"></div>
-    <div class="pointer-events-none absolute -left-8 -top-6 h-40 w-40 rounded-full border border-[var(--line)] opacity-55"></div>
+    <div class="pointer-events-none absolute -left-16 -top-14 h-56 w-56 rounded-full border border-[var(--line-warm)] opacity-28"></div>
+    <div class="pointer-events-none absolute -left-8 -top-6 h-40 w-40 rounded-full border border-[var(--line)] opacity-32"></div>
     <div #blobOne class="pointer-events-none absolute left-6 top-8 h-24 w-24 rounded-full border border-[var(--line-warm)] opacity-50"></div>
     <div #blobTwo class="pointer-events-none absolute -right-6 bottom-24 h-24 w-24 rounded-full border border-[var(--line)] opacity-60"></div>
-    <div class="pointer-events-none absolute -right-12 top-10 h-32 w-32 rounded-full border border-[var(--line)] opacity-35"></div>
+    <div class="pointer-events-none absolute -right-12 top-10 h-32 w-32 rounded-full border border-[var(--line)] opacity-20"></div>
     <div class="pointer-events-none absolute -right-3 top-24 h-2 w-2 rounded-full bg-[var(--accent)] shadow-[0_0_24px_rgba(126,188,214,0.45)]"></div>
     <div class="pointer-events-none absolute -left-5 bottom-20 h-2 w-2 rounded-full bg-[var(--accent-2)] opacity-80"></div>
     <div class="pointer-events-none absolute left-1/2 top-8 h-px w-44 -translate-x-1/2 bg-[linear-gradient(90deg,transparent,var(--line-warm),transparent)]"></div>

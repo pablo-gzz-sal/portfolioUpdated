@@ -1,5 +1,5 @@
 <section id="projects" class="page-wrap section-space">
-  <div class="projects-header grid gap-6 lg:grid-cols-[.8fr_1fr] lg:items-end">
+  <div class="projects-header grid gap-6 lg:grid-cols-[.78fr_1fr] lg:items-end">
     <div>
       <p class="section-kicker">{{ 'projects.eyebrow' | translate }}</p>
       <h2 class="mt-5 text-balance text-4xl font-semibold leading-tight sm:text-5xl">
@@ -17,8 +17,8 @@
         [project]="p"
         [routerLink]="['/projects', p.id]"
         class="block cursor-pointer"
-        [class.lg:col-span-3]="i < 2"
-        [class.lg:col-span-2]="i >= 2"
+        [class.lg:col-span-4]="i === 0"
+        [class.lg:col-span-2]="i !== 0"
       />
     }
   </div>

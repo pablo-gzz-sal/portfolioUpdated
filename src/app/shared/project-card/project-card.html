@@ -1,4 +1,4 @@
-<article class="project-shell hardware-card group flex h-full flex-col p-2.5 transition duration-300 ease-[var(--ease-out)] hover:-translate-y-1">
+<article class="project-shell hardware-card group flex h-full flex-col p-2.5 transition duration-300 ease-[var(--ease-out)] hover:-translate-y-1" [attr.aria-label]="(project.title | translate) + ' case study'">
   @if (project.previewImage) {
     <div class="project-media relative overflow-hidden rounded-[1.25rem] bg-[var(--bg-2)] shadow-[inset_0_1px_0_rgba(238,233,220,0.1)]">
       <img
@@ -6,9 +6,9 @@
         [alt]="(project.title | translate) + ' preview'"
         class="project-media__image aspect-[16/10] w-full object-cover object-top"
       />
-      <div class="absolute inset-0 bg-[linear-gradient(to_top,rgba(11,11,10,0.82),transparent_48%)]"></div>
+      <div class="absolute inset-0 bg-[linear-gradient(to_top,rgba(8,9,9,0.82),transparent_52%)]"></div>
       @if (project.highlight) {
-        <span class="absolute bottom-3 left-3 rounded-full border border-[var(--line-warm)] bg-[rgba(11,11,10,0.72)] px-3 py-1 font-[family-name:var(--font-mono)] text-[11px] uppercase tracking-[0.1em] text-[color:var(--accent-2)] backdrop-blur-md">
+        <span class="absolute bottom-3 left-3 rounded-full border border-[var(--line)] bg-[rgba(8,9,9,0.78)] px-3 py-1 font-[family-name:var(--font-mono)] text-[11px] uppercase tracking-[0.1em] text-[color:var(--accent-2)]">
           {{ project.highlight | translate }}
         </span>
       }
@@ -25,7 +25,7 @@
           {{ project.description | translate }}
         </p>
       </div>
-      <span class="mt-1 text-[color:var(--muted-2)] transition duration-200 group-hover:translate-x-1 group-hover:text-[color:var(--accent-2)]">↗</span>
+      <span class="mt-1 grid h-8 w-8 shrink-0 place-items-center rounded-full border border-[var(--line)] text-[color:var(--muted)] transition duration-200 group-hover:translate-x-1 group-hover:border-[var(--line-strong)] group-hover:text-[color:var(--accent-2)]" aria-hidden="true">&nearr;</span>
     </div>
 
     <div class="mt-5 grid gap-3 border-t border-[var(--line)] pt-4 sm:grid-cols-2">
@@ -43,14 +43,19 @@
       }
     </div>
 
-    @if (project.tags.length) {
-      <div class="mt-5 flex flex-wrap gap-1.5">
+    <div class="mt-auto pt-5">
+      @if (project.tags.length) {
+      <div class="flex flex-wrap gap-1.5">
         @for (tag of project.tags; track tag) {
           <span class="rounded-full border border-[var(--line)] bg-[var(--surface)] px-2.5 py-1 font-[family-name:var(--font-mono)] text-[10.5px] text-[color:var(--muted)]">
             {{ tag }}
           </span>
         }
       </div>
-    }
+      }
+      <p class="mt-5 font-[family-name:var(--font-mono)] text-[10.5px] uppercase tracking-[0.14em] text-[color:var(--accent-2)]">
+        {{ 'caseStudy.caseStudyLabel' | translate }}
+      </p>
+    </div>
   </div>
 </article>

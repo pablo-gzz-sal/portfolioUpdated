@@ -31,6 +31,11 @@ export class Knowledge implements AfterViewInit {
     const root = this.host.nativeElement;
     const header = root.querySelector<HTMLElement>('.knowledge-header');
     const cards = root.querySelectorAll<HTMLElement>('.tech-card');
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    if (prefersReducedMotion) {
+      return;
+    }
 
     if (header) gsap.set(header, { opacity: 0, y: 24 });
     if (cards.length) gsap.set(cards, { opacity: 0, y: 26 });

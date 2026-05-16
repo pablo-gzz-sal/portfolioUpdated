@@ -12,27 +12,27 @@
   --scroll-shift-soft: 0px;
   --scroll-shift-strong: 0px;
   --scroll-shift-reverse: 0px;
-  --scroll-texture-opacity: 0.62;
-  --scroll-instrument-opacity: 0.46;
-  --bg: oklch(8.4% 0.007 245);
-  --bg-2: oklch(11% 0.009 250);
-  --bg-3: oklch(14.6% 0.012 258);
-  --surface: oklch(92% 0.018 75 / 0.045);
-  --surface-strong: oklch(92% 0.018 75 / 0.08);
+  --scroll-texture-opacity: 0.38;
+  --scroll-instrument-opacity: 0.32;
+  --bg: oklch(8.1% 0.006 245);
+  --bg-2: oklch(10.6% 0.007 248);
+  --bg-3: oklch(13.2% 0.009 252);
+  --surface: oklch(92% 0.014 75 / 0.038);
+  --surface-strong: oklch(92% 0.014 75 / 0.068);
   --surface-inverse: oklch(8.8% 0.01 245 / 0.82);
-  --line: oklch(90% 0.018 80 / 0.12);
-  --line-strong: oklch(90% 0.018 80 / 0.22);
-  --line-warm: oklch(80% 0.052 82 / 0.26);
+  --line: oklch(90% 0.014 80 / 0.1);
+  --line-strong: oklch(90% 0.014 80 / 0.18);
+  --line-warm: oklch(80% 0.04 82 / 0.2);
   --text: oklch(92% 0.018 82);
   --text-soft: oklch(92% 0.018 82 / 0.78);
   --muted: oklch(92% 0.018 82 / 0.6);
   --muted-2: oklch(92% 0.018 82 / 0.42);
-  --accent: oklch(72% 0.062 215);
-  --accent-2: oklch(84% 0.04 210);
-  --accent-iris: oklch(58% 0.045 285);
-  --accent-warm: oklch(80% 0.052 86);
-  --accent-soft: oklch(72% 0.062 215 / 0.075);
-  --accent-ring: oklch(72% 0.062 215 / 0.22);
+  --accent: oklch(72% 0.052 215);
+  --accent-2: oklch(84% 0.034 210);
+  --accent-iris: oklch(58% 0.024 285);
+  --accent-warm: oklch(80% 0.038 86);
+  --accent-soft: oklch(72% 0.052 215 / 0.055);
+  --accent-ring: oklch(72% 0.052 215 / 0.16);
   --danger: oklch(67% 0.12 32);
   --success: oklch(73% 0.095 132);
   --font-display: 'Syne', 'Geist', ui-sans-serif, system-ui, sans-serif;
@@ -58,10 +58,9 @@ body {
   min-width: 320px;
   overflow-x: hidden;
   background:
-    radial-gradient(ellipse at 14% -12%, oklch(72% 0.062 215 / 0.12), transparent 35rem),
-    radial-gradient(ellipse at 91% 9%, oklch(58% 0.045 285 / 0.075), transparent 34rem),
-    radial-gradient(ellipse at 52% 118%, oklch(80% 0.052 86 / 0.09), transparent 44rem),
-    linear-gradient(180deg, oklch(7.4% 0.008 250) 0%, oklch(10.2% 0.01 252) 38%, oklch(8.2% 0.008 245) 100%);
+    radial-gradient(ellipse at 16% -10%, oklch(72% 0.052 215 / 0.075), transparent 34rem),
+    radial-gradient(ellipse at 74% 112%, oklch(80% 0.038 86 / 0.052), transparent 42rem),
+    linear-gradient(180deg, oklch(7.2% 0.007 250) 0%, oklch(9.8% 0.008 252) 42%, oklch(7.9% 0.007 245) 100%);
   color: var(--text);
   font-family: var(--font-sans);
   font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
@@ -78,11 +77,10 @@ body::before {
   pointer-events: none;
   opacity: var(--scroll-texture-opacity);
   background:
-    linear-gradient(115deg, transparent 0 31%, oklch(72% 0.062 215 / 0.045) 31.1%, transparent 31.48% 100%),
-    linear-gradient(158deg, transparent 0 58%, oklch(80% 0.052 86 / 0.045) 58.12%, transparent 58.48% 100%),
-    radial-gradient(ellipse at calc(47% + var(--pointer-x-soft)) calc(24% + var(--scroll-shift)), oklch(72% 0.062 215 / 0.085), transparent 26rem),
-    radial-gradient(ellipse at calc(82% + var(--pointer-x)) 72%, oklch(92% 0.018 82 / 0.055), transparent 28rem);
-  mask-image: linear-gradient(to bottom, black 0%, black 38%, transparent 78%);
+    linear-gradient(115deg, transparent 0 31%, oklch(72% 0.052 215 / 0.024) 31.1%, transparent 31.4% 100%),
+    radial-gradient(ellipse at calc(46% + var(--pointer-x-soft)) calc(22% + var(--scroll-shift)), oklch(72% 0.052 215 / 0.05), transparent 28rem),
+    radial-gradient(ellipse at calc(82% + var(--pointer-x)) 72%, oklch(92% 0.014 82 / 0.034), transparent 30rem);
+  mask-image: linear-gradient(to bottom, black 0%, black 32%, transparent 74%);
 }
 
 body::after {
@@ -98,22 +96,20 @@ body::after {
 
 @media (max-width: 767px) {
   :root {
-    --scroll-texture-opacity: 0.46;
+    --scroll-texture-opacity: 0.26;
   }
 
   body {
     background:
-      radial-gradient(ellipse at 8% -8%, oklch(72% 0.062 215 / 0.052), transparent 19rem),
-      radial-gradient(ellipse at 106% 4%, oklch(58% 0.045 285 / 0.038), transparent 18rem),
-      radial-gradient(ellipse at 48% 112%, oklch(80% 0.052 86 / 0.075), transparent 26rem),
+      radial-gradient(ellipse at 8% -8%, oklch(72% 0.052 215 / 0.04), transparent 19rem),
+      radial-gradient(ellipse at 48% 112%, oklch(80% 0.038 86 / 0.05), transparent 26rem),
       linear-gradient(180deg, oklch(7.6% 0.008 250) 0%, oklch(10.1% 0.009 252) 42%, oklch(8.4% 0.008 245) 100%);
   }
 
   body::before {
     background:
-      linear-gradient(115deg, transparent 0 36%, oklch(72% 0.062 215 / 0.02) 36.1%, transparent 36.42% 100%),
-      linear-gradient(158deg, transparent 0 62%, oklch(80% 0.052 86 / 0.035) 62.12%, transparent 62.46% 100%),
-      radial-gradient(ellipse at calc(36% + var(--pointer-x-soft)) calc(18% + var(--scroll-shift)), oklch(72% 0.062 215 / 0.038), transparent 18rem),
+      linear-gradient(115deg, transparent 0 36%, oklch(72% 0.052 215 / 0.015) 36.1%, transparent 36.38% 100%),
+      radial-gradient(ellipse at calc(36% + var(--pointer-x-soft)) calc(18% + var(--scroll-shift)), oklch(72% 0.052 215 / 0.028), transparent 18rem),
       radial-gradient(ellipse at calc(88% + var(--pointer-x)) 74%, oklch(92% 0.018 82 / 0.045), transparent 22rem);
     mask-image: linear-gradient(to bottom, black 0%, black 30%, transparent 72%);
   }
@@ -135,7 +131,7 @@ h1,
 h2,
 h3 {
   font-family: var(--font-display);
-  letter-spacing: -0.04em;
+  letter-spacing: -0.032em;
 }
 
 section[id] {
@@ -179,8 +175,8 @@ button:focus-visible {
   inset: -10%;
   opacity: 0.34;
   background:
-    radial-gradient(circle at 50% 30%, oklch(72% 0.062 215 / 0.105), transparent 28rem),
-    radial-gradient(circle at 68% 62%, oklch(92% 0.018 82 / 0.072), transparent 22rem);
+    radial-gradient(circle at 50% 30%, oklch(72% 0.052 215 / 0.055), transparent 28rem),
+    radial-gradient(circle at 68% 62%, oklch(92% 0.014 82 / 0.038), transparent 22rem);
   transform: translate3d(var(--pointer-x-soft), calc(var(--pointer-y-soft) - var(--scroll-shift)), 0);
   transition: transform 900ms var(--ease-out);
   mask-image: radial-gradient(circle at 50% 18%, black, transparent 68%);
@@ -226,11 +222,12 @@ button:focus-visible {
 
 .ambient-crosshair {
   position: absolute;
+  display: none;
   right: 14vw;
   top: 36vh;
   width: 12rem;
   height: 12rem;
-  opacity: 0.26;
+  opacity: 0.18;
   background:
     radial-gradient(circle, oklch(72% 0.062 215 / 0.18) 0 2px, transparent 3px),
     linear-gradient(90deg, transparent calc(50% - 0.5px), oklch(84% 0.04 210 / 0.38) 50%, transparent calc(50% + 0.5px)),
@@ -253,7 +250,7 @@ button:focus-visible {
   top: 18vh;
   width: 8rem;
   height: 8rem;
-  background: radial-gradient(circle, oklch(72% 0.062 215 / 0.075), transparent 68%);
+  background: radial-gradient(circle, oklch(72% 0.052 215 / 0.04), transparent 68%);
   transform: translate3d(var(--pointer-x), calc(var(--pointer-y) + var(--scroll-shift-soft)), 0);
 }
 
@@ -262,7 +259,7 @@ button:focus-visible {
   bottom: 18vh;
   width: 12rem;
   height: 12rem;
-  background: radial-gradient(circle, rgba(238, 233, 220, 0.08), transparent 70%);
+  background: radial-gradient(circle, rgba(238, 233, 220, 0.045), transparent 70%);
   transform: translate3d(var(--pointer-x-soft), calc(var(--pointer-y-soft) + var(--scroll-shift-reverse)), 0);
 }
 
@@ -299,7 +296,7 @@ button:focus-visible {
   top: 0;
   height: 100%;
   border-radius: inherit;
-  background: linear-gradient(180deg, rgba(238, 233, 220, 0.18), oklch(72% 0.062 215 / 0.48), rgba(238, 233, 220, 0.14));
+  background: linear-gradient(180deg, rgba(238, 233, 220, 0.12), oklch(72% 0.052 215 / 0.34), rgba(238, 233, 220, 0.1));
   transform: scaleY(var(--scroll-progress));
   transform-origin: top;
   box-shadow: 0 0 18px oklch(72% 0.062 215 / 0.1);
@@ -314,8 +311,8 @@ button:focus-visible {
   border-radius: 999px;
   background: var(--accent-2);
   box-shadow:
-    0 0 0 0.38rem oklch(72% 0.062 215 / 0.055),
-    0 0 22px oklch(72% 0.062 215 / 0.16);
+    0 0 0 0.32rem oklch(72% 0.052 215 / 0.04),
+    0 0 18px oklch(72% 0.052 215 / 0.1);
   transform: translate3d(-50%, -50%, 0);
 }
 
@@ -351,7 +348,7 @@ button:focus-visible {
   display: inline-flex;
   align-items: center;
   gap: 0.625rem;
-  color: var(--accent-2);
+  color: var(--muted);
   font-family: var(--font-mono);
   font-size: 0.68rem;
   letter-spacing: 0.16em;
@@ -362,16 +359,16 @@ button:focus-visible {
   content: '';
   width: 2rem;
   height: 1px;
-  background: var(--line-warm);
+  background: var(--line);
 }
 
 .eyebrow {
   display: inline-flex;
   align-items: center;
-  border: 1px solid var(--line-warm);
+  border: 1px solid var(--line);
   border-radius: 999px;
-  background: var(--accent-soft);
-  padding: 0.42rem 0.72rem;
+  background: oklch(92% 0.014 75 / 0.035);
+  padding: 0.42rem 0.76rem;
   color: var(--accent-2);
   font-family: var(--font-mono);
   font-size: 0.68rem;
@@ -446,33 +443,33 @@ button:focus-visible {
 .hardware-card {
   position: relative;
   overflow: hidden;
-  border: 1px solid rgba(238, 233, 220, 0.1);
+  border: 1px solid rgba(238, 233, 220, 0.082);
   border-radius: 1.75rem;
   background:
-    radial-gradient(ellipse at 20% 0%, oklch(72% 0.062 215 / 0.055), transparent 22rem),
-    linear-gradient(180deg, oklch(92% 0.018 82 / 0.085), oklch(92% 0.018 82 / 0.028)),
+    radial-gradient(ellipse at 20% 0%, oklch(72% 0.052 215 / 0.034), transparent 22rem),
+    linear-gradient(180deg, oklch(92% 0.014 82 / 0.065), oklch(92% 0.014 82 / 0.022)),
     var(--surface);
   box-shadow:
     inset 0 1px 0 rgba(239, 234, 222, 0.12),
     inset 0 -1px 0 rgba(0, 0, 0, 0.28),
-    0 24px 70px rgba(0, 0, 0, 0.3);
+    0 18px 52px rgba(0, 0, 0, 0.24);
 }
 
 .premium-panel {
   position: relative;
   overflow: hidden;
-  border: 1px solid oklch(72% 0.062 215 / 0.12);
+  border: 1px solid oklch(72% 0.052 215 / 0.095);
   border-radius: clamp(1.5rem, 3vw, 2.25rem);
   background:
-    radial-gradient(ellipse at 82% 18%, oklch(72% 0.062 215 / 0.075), transparent 20rem),
-    radial-gradient(ellipse at 8% 100%, oklch(80% 0.052 86 / 0.055), transparent 18rem),
-    linear-gradient(145deg, oklch(92% 0.018 82 / 0.09), oklch(92% 0.018 82 / 0.035) 42%, oklch(8.5% 0.008 245 / 0.36)),
+    radial-gradient(ellipse at 82% 18%, oklch(72% 0.052 215 / 0.048), transparent 20rem),
+    radial-gradient(ellipse at 8% 100%, oklch(80% 0.038 86 / 0.035), transparent 18rem),
+    linear-gradient(145deg, oklch(92% 0.014 82 / 0.07), oklch(92% 0.014 82 / 0.028) 42%, oklch(8.5% 0.008 245 / 0.32)),
     oklch(12% 0.012 250 / 0.78);
   box-shadow:
     inset 0 1px 0 rgba(238, 251, 255, 0.14),
     inset 0 -1px 0 rgba(0, 0, 0, 0.34),
-    0 28px 90px rgba(0, 0, 0, 0.34),
-    0 0 60px oklch(72% 0.062 215 / 0.035);
+    0 22px 70px rgba(0, 0, 0, 0.28),
+    0 0 40px oklch(72% 0.052 215 / 0.025);
 }
 
 .premium-panel::before {
@@ -629,15 +626,16 @@ button:focus-visible {
 @media (max-width: 767px) {
   .mobile-hero {
     min-height: auto;
-    padding-top: 8.25rem;
-    padding-bottom: 4.5rem;
-    gap: 2.75rem;
+    padding-top: 6.7rem;
+    padding-bottom: 4.2rem;
+    gap: 2.25rem;
   }
 
   .mobile-hero h1 {
-    font-size: clamp(3.45rem, 16vw, 5.1rem);
-    line-height: 0.93;
-    letter-spacing: -0.055em;
+    max-width: 100%;
+    font-size: clamp(2.65rem, 11.2vw, 3.65rem);
+    line-height: 0.98;
+    letter-spacing: -0.045em;
   }
 
   .mobile-hero .eyebrow {
@@ -648,8 +646,9 @@ button:focus-visible {
   }
 
   .mobile-hero .hero-copy {
-    font-size: 1.05rem;
-    line-height: 1.85;
+    margin-top: 1.35rem;
+    font-size: 1rem;
+    line-height: 1.7;
     max-width: 31rem;
   }
 

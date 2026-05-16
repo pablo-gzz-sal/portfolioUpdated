@@ -11,9 +11,9 @@
     </p>
   </div>
 
-  <div class="mt-12 grid gap-px overflow-hidden rounded-[1.6rem] border border-[var(--line)] bg-[var(--line)] md:grid-cols-5">
+  <div class="systems-track mt-12 grid gap-3 md:grid-cols-2 lg:grid-cols-[1.12fr_.94fr_.94fr_.94fr_1.06fr]">
     @for (step of steps; track step.id) {
-      <article class="group bg-[var(--bg-2)] p-5 transition duration-300 ease-[var(--ease-out)] hover:bg-[var(--bg-3)] sm:p-6">
+      <article class="process-card group p-5 transition duration-300 ease-[var(--ease-out)] sm:p-6">
         <div class="flex items-center justify-between gap-4">
           <span class="font-[family-name:var(--font-mono)] text-xs text-[color:var(--accent-2)]">{{ step.number }}</span>
           <span class="rounded-full border border-[var(--line)] px-2.5 py-1 font-[family-name:var(--font-mono)] text-[10px] uppercase tracking-[0.12em] text-[color:var(--muted-2)]">

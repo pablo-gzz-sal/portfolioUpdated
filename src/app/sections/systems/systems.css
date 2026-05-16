@@ -1,0 +1,44 @@
+:host {
+  display: block;
+}
+
+.process-card {
+  position: relative;
+  min-height: 16rem;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 1.35rem;
+  background:
+    linear-gradient(180deg, oklch(92% 0.014 82 / 0.046), oklch(92% 0.014 82 / 0.018)),
+    oklch(9.2% 0.007 250 / 0.86);
+  box-shadow: inset 0 1px 0 oklch(96% 0.02 210 / 0.08);
+}
+
+.process-card::after {
+  content: '';
+  position: absolute;
+  inset-inline: 1.25rem;
+  top: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, oklch(84% 0.034 210 / 0.18), transparent);
+  opacity: 0;
+  transition: opacity 260ms var(--ease-out);
+}
+
+.process-card:hover {
+  border-color: var(--line-strong);
+  background:
+    linear-gradient(180deg, oklch(92% 0.014 82 / 0.058), oklch(92% 0.014 82 / 0.022)),
+    oklch(10.4% 0.008 250 / 0.9);
+  transform: translateY(-2px);
+}
+
+.process-card:hover::after {
+  opacity: 1;
+}
+
+@media (max-width: 767px) {
+  .process-card {
+    min-height: auto;
+  }
+}

@@ -33,6 +33,11 @@ export class Hero implements AfterViewInit {
   ];
 
   ngAfterViewInit(): void {
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (prefersReducedMotion) {
+      return;
+    }
+
     this.animateHero();
     this.animateOrnaments();
     this.bindParallax();

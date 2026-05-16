@@ -2,7 +2,7 @@ import { Pipe, PipeTransform, inject } from '@angular/core';
 import { LanguageService } from '../services/language.service';
 
 /**
- * Impure translate pipe — re-evaluated on every change detection cycle
+ * Impure translate pipe, re-evaluated on every change detection cycle.
  * so it picks up language changes from LanguageService immediately.
  *
  * Usage: {{ 'nav.projects' | translate }}
